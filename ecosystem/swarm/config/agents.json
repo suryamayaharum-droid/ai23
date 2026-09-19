@@ -1,0 +1,310 @@
+{
+  "version": "1.0",
+  "policy": {
+    "local_first": true,
+    "zero_cost_default": true,
+    "max_hops": 12,
+    "default_ttl_seconds": 3600,
+    "require_provenance": true,
+    "publication_gates": [
+      "canon",
+      "truth",
+      "license",
+      "quality",
+      "human_review"
+    ]
+  },
+  "districts": [
+    {
+      "id": "control_tower",
+      "agents": [
+        {
+          "id": "mayor",
+          "role": "orchestrator",
+          "priority": 100,
+          "capabilities": [
+            "plan",
+            "decompose",
+            "route",
+            "coordinate",
+            "recover",
+            "prioritize"
+          ]
+        },
+        {
+          "id": "dispatcher",
+          "role": "scheduler",
+          "priority": 95,
+          "capabilities": [
+            "schedule",
+            "queue",
+            "retry",
+            "dependency_resolution",
+            "load_balance"
+          ]
+        },
+        {
+          "id": "health_guard",
+          "role": "resilience",
+          "priority": 90,
+          "capabilities": [
+            "healthcheck",
+            "dead_letter",
+            "loop_detection",
+            "recovery"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "atelier",
+      "agents": [
+        {
+          "id": "atelier_curator",
+          "role": "visual_curator",
+          "priority": 80,
+          "capabilities": [
+            "image_curate",
+            "collection_structure",
+            "novelty_check",
+            "visual_taxonomy"
+          ]
+        },
+        {
+          "id": "charcoal_master",
+          "role": "drawing_specialist",
+          "priority": 80,
+          "capabilities": [
+            "charcoal",
+            "gesture",
+            "figure",
+            "anatomy",
+            "composition"
+          ]
+        },
+        {
+          "id": "tattoo_architect",
+          "role": "tattoo_design",
+          "priority": 80,
+          "capabilities": [
+            "tattoo",
+            "body_flow",
+            "negative_space",
+            "flash",
+            "placement"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noir_editorial",
+      "agents": [
+        {
+          "id": "noir_writer",
+          "role": "narrative",
+          "priority": 85,
+          "capabilities": [
+            "story",
+            "caption",
+            "serial_narrative",
+            "noir_loop",
+            "cta"
+          ]
+        },
+        {
+          "id": "canon_guard",
+          "role": "character_guard",
+          "priority": 100,
+          "capabilities": [
+            "canon",
+            "face_lock",
+            "voice_lock",
+            "wardrobe_lock",
+            "continuity"
+          ]
+        },
+        {
+          "id": "editorial_planner",
+          "role": "calendar",
+          "priority": 75,
+          "capabilities": [
+            "content_calendar",
+            "sequence",
+            "format_adaptation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cinema",
+      "agents": [
+        {
+          "id": "cinebrain",
+          "role": "director",
+          "priority": 90,
+          "capabilities": [
+            "scene_graph",
+            "shot_plan",
+            "camera",
+            "cinematic_direction"
+          ]
+        },
+        {
+          "id": "compute_broker",
+          "role": "compute_router",
+          "priority": 90,
+          "capabilities": [
+            "compute_route",
+            "vram_match",
+            "cpu_gpu_split",
+            "provider_policy"
+          ]
+        },
+        {
+          "id": "post_master",
+          "role": "post",
+          "priority": 80,
+          "capabilities": [
+            "edit",
+            "audio",
+            "subtitles",
+            "grade",
+            "master"
+          ]
+        },
+        {
+          "id": "cinema_qc",
+          "role": "quality_control",
+          "priority": 95,
+          "capabilities": [
+            "video_qc",
+            "continuity_qc",
+            "encode_qc",
+            "identity_qc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "products",
+      "agents": [
+        {
+          "id": "product_architect",
+          "role": "product",
+          "priority": 80,
+          "capabilities": [
+            "pdf_product",
+            "course_structure",
+            "bundle",
+            "offer_structure"
+          ]
+        },
+        {
+          "id": "commerce_guard",
+          "role": "commerce_truth",
+          "priority": 100,
+          "capabilities": [
+            "checkout_gate",
+            "claim_check",
+            "availability_check",
+            "consumer_clarity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "distribution",
+      "agents": [
+        {
+          "id": "site_integrator",
+          "role": "web",
+          "priority": 80,
+          "capabilities": [
+            "site",
+            "seo",
+            "metadata",
+            "gallery",
+            "deployment_brief"
+          ]
+        },
+        {
+          "id": "channel_router",
+          "role": "distribution",
+          "priority": 75,
+          "capabilities": [
+            "youtube",
+            "instagram",
+            "github",
+            "format_delivery"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "memory_archive",
+      "agents": [
+        {
+          "id": "archivist",
+          "role": "archive",
+          "priority": 90,
+          "capabilities": [
+            "inventory",
+            "manifest",
+            "hash",
+            "versioning",
+            "dedupe",
+            "restore"
+          ]
+        },
+        {
+          "id": "memory_librarian",
+          "role": "knowledge",
+          "priority": 85,
+          "capabilities": [
+            "index",
+            "retrieve",
+            "cross_reference",
+            "context_pack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "agents": [
+        {
+          "id": "truth_guard",
+          "role": "truth",
+          "priority": 100,
+          "capabilities": [
+            "truth",
+            "evidence",
+            "fiction_label",
+            "claim_gate"
+          ]
+        },
+        {
+          "id": "license_guard",
+          "role": "rights",
+          "priority": 100,
+          "capabilities": [
+            "license",
+            "provenance",
+            "usage_rights",
+            "attribution"
+          ]
+        },
+        {
+          "id": "publication_guard",
+          "role": "release",
+          "priority": 100,
+          "capabilities": [
+            "publish_gate",
+            "human_review",
+            "release_checklist"
+          ]
+        }
+      ]
+    }
+  ]
+}
