@@ -1,0 +1,61 @@
+name: HARUM binary import via PR
+
+on:
+  pull_request_target:
+    branches:
+      - harum-archive
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  import-binaries:
+    if: github.head_ref == 'harum-binary-import'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout archive branch
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+          fetch-depth: 0
+
+      - name: Import PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ecosystem/products-pdf
+          curl -fL --retry 3 'https://at.adobe.com/TVIstJdqRa6ipZuG' -o 'ecosystem/products-pdf/Ritual_do_Carvao_7_Dias_V2_Ilustrada.pdf'
+          curl -fL --retry 3 'https://at.adobe.com/W3IH85KLddkBGjFT' -o 'ecosystem/products-pdf/Traco_Corpo_e_Presenca_V2_Ilustrada.pdf'
+          curl -fL --retry 3 'https://at.adobe.com/f62bQ56uXhCc5Z3B' -o 'ecosystem/products-pdf/Planner_Autoral_30_Dias_V2_Ilustrada.pdf'
+          curl -fL --retry 3 'https://at.adobe.com/3FJeN6CfidsUfQ1h' -o 'ecosystem/products-pdf/Portfolio_com_Intencao_V2_Ilustrada.pdf'
+          curl -fL --retry 3 'https://at.adobe.com/8mq9O1vZC6OLaDyg' -o 'ecosystem/products-pdf/Preco_de_Atelie_V2_Ilustrada.pdf'
+          curl -fL --retry 3 'https://at.adobe.com/Tesqi8CZlCg4OKgg' -o 'ecosystem/products-pdf/Metodo_Harum_32h_V1_Editorial.pdf'
+          curl -fL --retry 3 'https://at.adobe.com/hN8T9CUQWtpgYcs3' -o 'ecosystem/products-pdf/Laboratorio_do_Traco_V1_Editorial.pdf'
+          curl -fL --retry 3 'https://at.adobe.com/GjojeoWtOPvKGNvI' -o 'ecosystem/products-pdf/Mapa_Mestre_Ecossistema_Arte_Harum_2026.pdf'
+          curl -fL --retry 3 'https://at.adobe.com/AkHyznGys14qCnRs' -o 'ecosystem/products-pdf/Pesquisa_Internacional_Ativos_Arte_Harum_V2_Editorial.pdf'
+          curl -fL --retry 3 'https://at.adobe.com/RV4bfl9dF1zbLegj' -o 'ecosystem/products-pdf/Relatorio_Executivo_Produtos_e_Funis_V2_Editorial.pdf'
+
+      - name: Import packaged programs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/harum-core ecosystem/programs/releases
+          curl -fL --retry 3 'https://at.adobe.com/Cprei8GJyQyv9vhi' -o /tmp/harum-core.zip
+          unzip -q -o /tmp/harum-core.zip -d /tmp/harum-core
+          find /tmp/harum-core -type f -name '*.zip' -exec cp '{}' ecosystem/programs/releases/ ';'
+
+      - name: Commit binaries to archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'harum-archive-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add ecosystem/products-pdf ecosystem/programs/releases
+          if git diff --cached --quiet; then
+            echo 'No binary changes.'
+            exit 0
+          fi
+          git commit -m 'Import HARUM PDFs and program releases'
+          git push origin HEAD:harum-archive
