@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "input_topics": [
+    "mission.plan.requested",
+    "task.needs_reasoning",
+    "cortex.deliberation.requested",
+    "capability.gap",
+    "evolution.review.requested"
+  ],
+  "output_topics": [
+    "cortex.proposal.created",
+    "cortex.consensus.completed",
+    "cortex.disagreement",
+    "cortex.low_confidence",
+    "cortex.experience.accepted",
+    "cortex.evolution.proposed"
+  ],
+  "swarm_routes": [
+    {
+      "district": "control_tower",
+      "use": [
+        "planner",
+        "synthesizer"
+      ]
+    },
+    {
+      "district": "cinema",
+      "use": [
+        "planner",
+        "critic"
+      ]
+    },
+    {
+      "district": "memory_archive",
+      "use": [
+        "embedding",
+        "summarizer"
+      ]
+    },
+    {
+      "district": "governance",
+      "use": [
+        "critic",
+        "judge"
+      ]
+    },
+    {
+      "district": "atelier",
+      "use": [
+        "scout",
+        "planner"
+      ]
+    },
+    {
+      "district": "products",
+      "use": [
+        "planner",
+        "critic"
+      ]
+    },
+    {
+      "district": "distribution",
+      "use": [
+        "summarizer",
+        "critic"
+      ]
+    }
+  ],
+  "rule": "Cortex advises and resolves internal reasoning tasks. External actions still pass through existing permission, truth, license and publication gates."
+}
