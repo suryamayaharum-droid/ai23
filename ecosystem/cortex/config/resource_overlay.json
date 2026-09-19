@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "resources": [
+    {
+      "id": "harum_cortex",
+      "type": "local_collective_intelligence",
+      "status": "staged_until_smoke_proof",
+      "capabilities": [
+        "local_reasoning",
+        "planner",
+        "critic",
+        "scout",
+        "synthesis",
+        "consensus",
+        "tool_agent",
+        "skill_forge",
+        "verified_learning",
+        "local_memory"
+      ],
+      "providers": [
+        "smollm3_3b_scout",
+        "phi4_mini_critic",
+        "qwen3_4b_planner",
+        "qwen3_8b_deep",
+        "qwen35_2b_fast",
+        "qwen35_4b_frontier"
+      ],
+      "proof_path": "ecosystem/runtime/cortex-local-smoke-latest.json",
+      "gateway": "http://127.0.0.1:8899/v1",
+      "fallback": [
+        "deterministic_agents",
+        "human_review",
+        "external_model_optional"
+      ]
+    }
+  ]
+}
