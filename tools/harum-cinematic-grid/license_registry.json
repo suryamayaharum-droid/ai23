@@ -1,0 +1,15 @@
+{
+  "updated":"2026-09-19",
+  "models":{
+    "wan2.2":{"status":"green","license":"Apache-2.0","public_global":true},
+    "musetalk-1.5":{"status":"green-with-dependency-check","license":"MIT code; model commercial use stated by project","public_global":true},
+    "liveportrait":{"status":"yellow","license":"MIT code; bundled InsightFace models non-commercial research","public_global":"replace InsightFace dependency first"},
+    "video-depth-anything-small":{"status":"green","license":"Apache-2.0","public_global":true},
+    "video-depth-anything-base-large":{"status":"red-commercial","license":"CC-BY-NC-4.0","public_global":false},
+    "hunyuanvideo":{"status":"yellow-red-global","license":"Tencent Hunyuan Community License with territorial restrictions","public_global":false},
+    "ltx-2.x":{"status":"yellow","license":"LTX Community License, version/revenue dependent","public_global":"review exact version"},
+    "skyreels-v3":{"status":"yellow","license":"Skywork Community License","public_global":"review terms"},
+    "chatterbox":{"status":"green-code","license":"MIT code","public_global":"review model card/checkpoint and authorized reference"},
+    "mmaudio":{"status":"green-code","license":"MIT code","public_global":"review checkpoints/dependencies"}
+  }
+}
