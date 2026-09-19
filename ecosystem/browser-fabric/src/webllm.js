@@ -5,7 +5,7 @@ export async function supported(){
 }
 export async function loadLocalAI(progress=()=>{}){
   if(engine)return engine;
-  if(!(await supported())) throw new Error("WebGPU indisponível neste navegador");
+  if(!(await supported()))throw new Error("WebGPU indisponível neste navegador");
   const webllm=await import("https://esm.run/@mlc-ai/web-llm");
   const candidates=[
     "Qwen2.5-0.5B-Instruct-q4f16_1-MLC",
@@ -14,10 +14,23 @@ export async function loadLocalAI(progress=()=>{}){
   let last;
   for(const model of candidates){
     try{
-      engine=await webllm.CreateMLCEngine(model,{initProgressCallback:progress});
+      const worker=new Worker("./src/llm-worker.js",{type:"module"});
+      engine=await webllm.CreateWebWorkerMLCEngine(
+        worker,
+        model,
+        {
+          initProgressCallback:progress,
+          appConfig:{...webllm.prebuiltAppConfig,cacheBackend:"indexeddb"}
+        }
+      );
       engine.__harumModel=model;
+      engine.__harumWorker=worker;
       return engine;
-    }catch(e){last=e;}
+    }catch(e){
+      last=e;
+      if(engine?.__harumWorker)engine.__harumWorker.terminate();
+      engine=null;
+    }
   }
   throw last||new Error("Nenhum modelo WebLLM compatível conseguiu carregar");
 }
