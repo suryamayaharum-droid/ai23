@@ -15,8 +15,11 @@ jobs:
       - name: Install FFmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: Validate compiler
-        run: python -m py_compile tools/harum-cinematic-grid/harum_cinematic.py
+      - name: Validate Python toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/harum-cinematic-grid/harum_*.py
 
       - name: Build synthetic vertical test asset and manifest
         shell: bash
@@ -74,6 +77,33 @@ jobs:
         run: |
           cd tools/harum-cinematic-grid
           python harum_cinematic.py ci/project.json
+
+      - name: Technical QC
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd tools/harum-cinematic-grid
+          python harum_qc.py ci/ci_master.mp4             --target-width 360 --target-height 640 --target-fps 24             --out ci/qc.json
+          python - <<'PY'
+          import json
+          q=json.load(open("ci/qc.json"))
+          assert q["pass"], q
+          assert q["checks"]["resolution_ok"], q
+          assert q["checks"]["fps_ok"], q
+          print("HARUM_QC_OK")
+          PY
+
+      - name: Asset registry smoke test
+        run: |
+          cd tools/harum-cinematic-grid
+          python harum_assets.py ci --out registry.json
+          test -s ci/registry.json
+
+      - name: Model router smoke test
+        run: |
+          cd tools/harum-cinematic-grid
+          python harum_router.py --task still_motion --vram 0
+          python harum_router.py --task i2v --vram 16
 
       - name: Verify output with ffprobe
         shell: bash
