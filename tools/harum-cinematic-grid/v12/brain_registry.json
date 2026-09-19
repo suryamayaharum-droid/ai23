@@ -1,0 +1,63 @@
+{
+  "version": "12.0",
+  "models": [
+    {
+      "id": "qwen35_08b_q4",
+      "name": "Qwen3.5-0.8B Q4_0 GGUF",
+      "license": "Apache-2.0",
+      "size_mb": 563,
+      "role": "default_shared_brain"
+    },
+    {
+      "id": "qwen3_06b_q4",
+      "name": "Qwen3-0.6B Q4 GGUF",
+      "license": "Apache-2.0",
+      "role": "fallback_sentinel"
+    },
+    {
+      "id": "smollm3_3b_q4",
+      "name": "SmolLM3-3B Q4_K_M GGUF",
+      "license": "Apache-2.0",
+      "role": "optional_deep_brain"
+    }
+  ],
+  "logical_brains": [
+    {
+      "id": "router",
+      "model": "qwen35_08b_q4"
+    },
+    {
+      "id": "planner",
+      "model": "qwen35_08b_q4"
+    },
+    {
+      "id": "critic",
+      "model": "qwen35_08b_q4"
+    },
+    {
+      "id": "coder",
+      "model": "qwen35_08b_q4"
+    },
+    {
+      "id": "researcher",
+      "model": "qwen35_08b_q4"
+    },
+    {
+      "id": "synthesizer",
+      "model": "qwen35_08b_q4"
+    },
+    {
+      "id": "sentinel",
+      "model": "qwen3_06b_q4"
+    }
+  ],
+  "hard_gates": [
+    "zero_extra_spend",
+    "truth",
+    "license",
+    "identity",
+    "security",
+    "no_quota_evasion"
+  ],
+  "promotion_rule": "No mutation is promoted unless it beats the active version on held-out benchmarks and passes hard gates."
+}
