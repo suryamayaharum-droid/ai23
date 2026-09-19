@@ -1,0 +1,33 @@
+{
+  "schema": "harum.cortex.status.v1",
+  "installed": true,
+  "local_inference_proven": false,
+  "state": "STAGED",
+  "core_brains": [
+    "qwen3_4b_planner",
+    "phi4_mini_critic",
+    "smollm3_3b_scout",
+    "qwen3_8b_deep",
+    "nomic_embed_memory"
+  ],
+  "frontier_brains": [
+    "qwen35_2b_fast",
+    "qwen35_4b_frontier"
+  ],
+  "skills": [
+    "archive_audit",
+    "mission_decompose",
+    "local_code_review",
+    "memory_recall"
+  ],
+  "council": null,
+  "smoke": null,
+  "dream": null,
+  "knowledge": null,
+  "gateway": {
+    "provider": "harum-cortex",
+    "base_url": "http://127.0.0.1:8899/v1",
+    "usable": false
+  },
+  "fallback": "deterministic_swarm_runtime"
+}
