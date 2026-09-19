@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "modes": [
+    {
+      "id": "pyodide_wasm",
+      "status": "core",
+      "cost": "free/open-source",
+      "full_linux": false,
+      "capabilities": [
+        "python",
+        "wasm",
+        "packages-compatible-with-pyodide",
+        "web-worker"
+      ],
+      "limitations": [
+        "no raw sockets",
+        "browser CORS",
+        "not full CPython OS environment"
+      ]
+    },
+    {
+      "id": "v86_linux",
+      "status": "optional-adapter",
+      "cost": "free/open-source",
+      "full_linux": true,
+      "capabilities": [
+        "x86-emulation",
+        "linux-kernel",
+        "filesystem",
+        "terminal"
+      ],
+      "limitations": [
+        "slow",
+        "single-core-emulated",
+        "large disk images",
+        "browser memory"
+      ]
+    },
+    {
+      "id": "webcontainers",
+      "status": "optional-noncore",
+      "full_linux": false,
+      "capabilities": [
+        "nodejs",
+        "npm",
+        "processes",
+        "filesystem",
+        "dev-servers"
+      ],
+      "limitations": [
+        "production commercial licensing may be required"
+      ]
+    }
+  ],
+  "selection": "Prefer Pyodide/WASM; use v86 only for software that truly needs a Linux userspace."
+}
