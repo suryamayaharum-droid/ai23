@@ -1,0 +1,66 @@
+{
+  "version": "2.0",
+  "ecosystem": "Arte Harum / HARUM NOIR",
+  "branch": "harum-archive",
+  "coordination_layer": {
+    "name": "HARUM Swarm City",
+    "path": "ecosystem/swarm",
+    "model": "event_driven_capability_routed",
+    "persistent_agents": 22,
+    "subagents": "ephemeral_scoped_ttl",
+    "districts": [
+      "control_tower",
+      "atelier",
+      "noir_editorial",
+      "cinema",
+      "products",
+      "distribution",
+      "memory_archive",
+      "governance"
+    ],
+    "core": [
+      "harum_swarm.py",
+      "capability_mesh.py",
+      "subagent_factory.py",
+      "autopilot.py"
+    ],
+    "contracts": [
+      "config/agents.json",
+      "config/workflows.json",
+      "config/integration_map.json",
+      "config/event_rules.json",
+      "config/missions.json"
+    ]
+  },
+  "layers": {
+    "identity": "assets/harum-noir/identity",
+    "visual_archive": "assets/harum-noir/raw",
+    "editorial": "assets/harum-noir/editorial",
+    "charcoal": "assets/harum-noir/charcoal",
+    "program_source": "ecosystem/programs/source",
+    "program_releases": "ecosystem/programs/releases",
+    "documentation": "ecosystem/docs",
+    "products": "ecosystem/products-pdf",
+    "integration": "ecosystem/integration"
+  },
+  "canonical_flow": [
+    "brief_or_canon",
+    "swarm_city",
+    "domain_agent",
+    "worker",
+    "qc_and_governance",
+    "archive",
+    "distribution",
+    "metrics_and_memory"
+  ],
+  "invariants": [
+    "preserve_face_lock_and_canon",
+    "no_fabricated_real_world_claims",
+    "no_commerce_availability_without_validation",
+    "no_publish_without_gates",
+    "no_secret_in_event_bus",
+    "no_quota_bypass",
+    "bounded_retries_and_hops",
+    "preserve_versions_and_provenance"
+  ]
+}
