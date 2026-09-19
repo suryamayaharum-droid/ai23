@@ -9,30 +9,49 @@
 <style>
 :root{font-family:Inter,system-ui,sans-serif;background:#0b0b0b;color:#eee8dc}
 body{margin:0;min-height:100vh;background:linear-gradient(180deg,#0b0b0b,#171717)}
-main{max-width:980px;margin:auto;padding:24px}
-h1{font-family:Georgia,serif;font-weight:600;letter-spacing:.03em}
+main{max-width:1040px;margin:auto;padding:24px}
+h1,h2{font-family:Georgia,serif;font-weight:600;letter-spacing:.03em}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
-.card{border:1px solid #3a3428;background:#141414;padding:16px;border-radius:12px}
+.card{border:1px solid #3a3428;background:#141414;padding:16px;border-radius:12px;margin-top:12px}
 small,.muted{color:#aaa49a}.ok{color:#d5b66f}.bad{color:#d88}
-button{background:#b58a3a;color:#0b0b0b;border:0;border-radius:8px;padding:10px 14px;font-weight:700;cursor:pointer}
-pre{white-space:pre-wrap;word-break:break-word;background:#0d0d0d;padding:12px;border-radius:8px;max-height:320px;overflow:auto}
-input,textarea{width:100%;box-sizing:border-box;background:#101010;color:#eee8dc;border:1px solid #444;padding:10px;border-radius:8px}
+button{background:#b58a3a;color:#0b0b0b;border:0;border-radius:8px;padding:10px 14px;font-weight:700;cursor:pointer;margin:3px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0d0d0d;padding:12px;border-radius:8px;max-height:330px;overflow:auto}
+input,textarea{width:100%;box-sizing:border-box;background:#101010;color:#eee8dc;border:1px solid #444;padding:10px;border-radius:8px;margin-top:6px}
 </style>
 </head>
 <body>
 <main>
 <h1>HARUM Browser Fabric</h1>
-<p class="muted">Célula autoprovisionável: navegador → worker → memória local → Python/WASM → IA WebGPU.</p>
+<p class="muted">Navegador → célula → workers → memória → Python/WASM → IA WebGPU → P2P.</p>
 <div class="grid">
   <section class="card"><b>Nó</b><pre id="node">iniciando…</pre></section>
   <section class="card"><b>Capacidades</b><pre id="caps">detectando…</pre></section>
   <section class="card"><b>Malha local</b><pre id="mesh">aguardando…</pre></section>
 </div>
-<section class="card" style="margin-top:12px">
+
+<section class="card">
   <b>Executar tarefa local</b>
-  <textarea id="task" rows="4">Conte quantos arquivos existem no índice local e responda em JSON.</textarea>
-  <p><button id="run">Executar</button> <button id="python">Testar Python</button> <button id="ai">Carregar IA WebGPU</button></p>
+  <textarea id="task" rows="4">Conte quantos registros existem no armazenamento local e responda em JSON.</textarea>
+  <p><button id="run">Executar</button><button id="python">Testar Python</button><button id="ai">Carregar IA WebGPU</button></p>
   <pre id="out"></pre>
+</section>
+
+<section class="card">
+  <b>Pareamento P2P sem VPS</b>
+  <p class="muted">Máquina A cria oferta. Máquina B cola a oferta e gera resposta. A cola a resposta.</p>
+  <button id="offer">Criar oferta</button>
+  <button id="answer">Responder oferta</button>
+  <button id="accept">Aceitar resposta</button>
+  <textarea id="signal" rows="5" placeholder="oferta ou resposta WebRTC"></textarea>
+  <pre id="peer">sem peer</pre>
+</section>
+
+<section class="card">
+  <b>Estado holográfico CRDT</b>
+  <input id="stateKey" value="organism.browser.status"/>
+  <textarea id="stateValue" rows="3">{"health":"online"}</textarea>
+  <p><button id="publishState">Publicar/replicar</button><button id="syncState">Sincronizar tudo</button></p>
+  <pre id="crdt"></pre>
 </section>
 <script type="module" src="./src/app.js"></script>
 </main>
