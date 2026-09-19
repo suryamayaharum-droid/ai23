@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "policy": "Training is optional and never required for inference availability.",
+  "base_candidates": [
+    {
+      "id": "qwen35_4b_lora",
+      "upstream": "Qwen/Qwen3.5-4B",
+      "framework": "Unsloth",
+      "method": "LoRA_or_QLoRA",
+      "status": "prepared-not-running",
+      "minimum_verified_examples": 200,
+      "promotion_eval_delta_min": 0.03
+    },
+    {
+      "id": "phi4_mini_lora",
+      "upstream": "microsoft/Phi-4-mini-instruct",
+      "framework": "Unsloth",
+      "method": "LoRA_or_QLoRA",
+      "status": "prepared-not-running",
+      "minimum_verified_examples": 200,
+      "promotion_eval_delta_min": 0.03
+    }
+  ],
+  "data_rules": [
+    "accepted experiences only",
+    "deduplicate by instruction+response hash",
+    "exclude secrets and private credentials",
+    "keep provenance",
+    "hold out regression set",
+    "do not train on model self-approval alone"
+  ],
+  "promotion_rules": [
+    "candidate beats baseline",
+    "no regression on truth/secret/invariant cases",
+    "license compatible",
+    "resource budget acceptable",
+    "GGUF export reproducible",
+    "rollback model remains available"
+  ]
+}
