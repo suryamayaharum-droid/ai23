@@ -1,0 +1,165 @@
+{
+  "version": "3.0",
+  "policy": {
+    "global_publish_requires_license_gate": true,
+    "quotas": "Never bypass provider quotas or pool accounts.",
+    "gpu": "Spend GPU only on synthesis; CPU handles edit, QC, audio, captions and manifests."
+  },
+  "engines": [
+    {
+      "id": "ffmpeg_motion",
+      "capabilities": [
+        "still_motion",
+        "edit",
+        "compile",
+        "grade",
+        "audio",
+        "subtitles",
+        "qc"
+      ],
+      "min_vram_gb": 0,
+      "license_gate": "approved"
+    },
+    {
+      "id": "framepack",
+      "capabilities": [
+        "i2v",
+        "long_video"
+      ],
+      "min_vram_gb": 6,
+      "license_gate": "review"
+    },
+    {
+      "id": "wan22",
+      "capabilities": [
+        "i2v",
+        "t2v"
+      ],
+      "min_vram_gb": 8,
+      "license_gate": "review"
+    },
+    {
+      "id": "hunyuan15",
+      "capabilities": [
+        "i2v",
+        "t2v",
+        "sr"
+      ],
+      "min_vram_gb": 14,
+      "license_gate": "review"
+    },
+    {
+      "id": "ltx2",
+      "capabilities": [
+        "i2v",
+        "native_audio_video",
+        "multi_keyframe",
+        "extend"
+      ],
+      "min_vram_gb": 16,
+      "license_gate": "review"
+    },
+    {
+      "id": "skyreelsv3",
+      "capabilities": [
+        "multi_reference",
+        "audio_guided",
+        "v2v"
+      ],
+      "min_vram_gb": 24,
+      "license_gate": "review"
+    },
+    {
+      "id": "lightx2v",
+      "capabilities": [
+        "quantization",
+        "offload",
+        "cache",
+        "distillation"
+      ],
+      "min_vram_gb": 8,
+      "license_gate": "framework"
+    },
+    {
+      "id": "video_depth_anything",
+      "capabilities": [
+        "depth",
+        "parallax"
+      ],
+      "min_vram_gb": 0,
+      "license_gate": "review-checkpoint"
+    },
+    {
+      "id": "sam2",
+      "capabilities": [
+        "segmentation",
+        "mask_tracking"
+      ],
+      "min_vram_gb": 6,
+      "license_gate": "review"
+    },
+    {
+      "id": "cotracker3",
+      "capabilities": [
+        "point_tracking"
+      ],
+      "min_vram_gb": 6,
+      "license_gate": "review"
+    },
+    {
+      "id": "dinov2",
+      "capabilities": [
+        "visual_embedding",
+        "continuity_qc"
+      ],
+      "min_vram_gb": 0,
+      "license_gate": "approved-apache2"
+    },
+    {
+      "id": "pyscenedetect",
+      "capabilities": [
+        "shot_detection",
+        "ingest"
+      ],
+      "min_vram_gb": 0,
+      "license_gate": "approved"
+    },
+    {
+      "id": "vmaf",
+      "capabilities": [
+        "quality_metric"
+      ],
+      "min_vram_gb": 0,
+      "license_gate": "approved"
+    },
+    {
+      "id": "opencolorio",
+      "capabilities": [
+        "color_management",
+        "aces"
+      ],
+      "min_vram_gb": 0,
+      "license_gate": "approved"
+    },
+    {
+      "id": "opentimelineio",
+      "capabilities": [
+        "timeline",
+        "nle_interchange"
+      ],
+      "min_vram_gb": 0,
+      "license_gate": "approved"
+    },
+    {
+      "id": "prefect",
+      "capabilities": [
+        "retries",
+        "cache",
+        "state",
+        "scheduling"
+      ],
+      "min_vram_gb": 0,
+      "license_gate": "approved-apache2"
+    }
+  ]
+}
