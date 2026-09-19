@@ -1,0 +1,100 @@
+name: HARUM Resource Fabric v2
+
+on:
+  schedule:
+    - cron: '41 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/harum-resource-fabric-v2.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: harum-resource-fabric-v2
+  cancel-in-progress: false
+
+jobs:
+  shard:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - name: Checkout HARUM DNA
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+          fetch-depth: 0
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Execute bounded shard
+        run: |
+          mkdir -p runtime/shard-${{ matrix.shard }}
+          python ecosystem/swarm/shard_worker.py             --shard ${{ matrix.shard }}             --count 4             --output runtime/shard-${{ matrix.shard }}/report.json
+
+      - name: Upload shard result
+        uses: actions/upload-artifact@v4
+        with:
+          name: harum-fabric-shard-${{ matrix.shard }}
+          path: runtime/shard-${{ matrix.shard }}/report.json
+          retention-days: 2
+
+  fan_in:
+    needs: shard
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout HARUM DNA
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+          fetch-depth: 0
+
+      - name: Download shard results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: harum-fabric-shard-*
+          path: runtime/shards
+          merge-multiple: false
+
+      - name: Merge
+        run: |
+          python ecosystem/swarm/merge_shards.py             --input runtime/shards             --output runtime/fabric-latest.json
+
+      - name: Build health snapshot
+        run: |
+          python ecosystem/swarm/organism_cycle.py             --db runtime/harum_organism.db             --output runtime/organism-pulse.json
+
+      - name: Persist compact state into HARUM branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ecosystem/runtime
+          cp runtime/fabric-latest.json ecosystem/runtime/fabric-latest.json
+          cp runtime/organism-pulse.json ecosystem/runtime/organism-pulse-latest.json
+          git config user.name 'harum-organism-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add ecosystem/runtime/
+          if git diff --cached --quiet; then
+            echo 'No state change.'
+            exit 0
+          fi
+          git commit -m 'Update HARUM organism runtime snapshot'
+          git push origin HEAD:harum-archive
+
+      - name: Preserve telemetry
+        uses: actions/upload-artifact@v4
+        with:
+          name: harum-resource-fabric-${{ github.run_id }}
+          path: |
+            runtime/fabric-latest.json
+            runtime/organism-pulse.json
+          retention-days: 2
