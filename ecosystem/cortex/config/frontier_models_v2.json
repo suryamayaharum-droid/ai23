@@ -1,0 +1,52 @@
+{
+  "version": "2.0",
+  "tracks": [
+    {
+      "id": "qwen35_2b_fast",
+      "repo": "unsloth/Qwen3.5-2B-GGUF",
+      "quant": "UD-Q4_K_XL",
+      "upstream": "Qwen/Qwen3.5-2B",
+      "license": "Apache-2.0",
+      "approximate_quant_gb": 1.34,
+      "modality": [
+        "text",
+        "vision-with-mmproj"
+      ],
+      "status": "experimental",
+      "role": [
+        "fast_reasoner",
+        "tool_agent",
+        "trainable_personal_core"
+      ],
+      "train_target": "unsloth/Qwen3.5-2B",
+      "expected_lora_vram_gb": 5
+    },
+    {
+      "id": "qwen35_4b_frontier",
+      "repo": "unsloth/Qwen3.5-4B-GGUF",
+      "quant": "UD-Q4_K_XL",
+      "upstream": "Qwen/Qwen3.5-4B",
+      "license": "Apache-2.0",
+      "modality": [
+        "text",
+        "vision-with-mmproj"
+      ],
+      "status": "experimental",
+      "role": [
+        "frontier_reasoner",
+        "vision_candidate",
+        "future_core"
+      ],
+      "train_target": "unsloth/Qwen3.5-4B",
+      "expected_lora_vram_gb": 10,
+      "promotion_gate": [
+        "local_inference_smoke",
+        "harum_regression_suite",
+        "memory_budget",
+        "latency_budget",
+        "license_verified",
+        "rollback_ready"
+      ]
+    }
+  ]
+}
