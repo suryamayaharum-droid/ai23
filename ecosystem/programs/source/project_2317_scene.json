@@ -1,0 +1,69 @@
+{
+  "project": "HARUM NOIR — 23:17 — Scene 01",
+  "render": "HARUM_NOIR_2317_SCENE.mp4",
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "crf": 19,
+    "preset": "medium",
+    "grade": {
+      "contrast": 1.045,
+      "brightness": -0.025,
+      "saturation": 0.78
+    }
+  },
+  "audio": {
+    "room_tone": true,
+    "room_level": 0.025,
+    "voice": null,
+    "music": null
+  },
+  "shots": [
+    {
+      "id": "abertura",
+      "type": "image",
+      "src": "assets/2317.png",
+      "duration": 3.8,
+      "motion": "drift_left",
+      "zoom_start": 1.0,
+      "zoom_end": 1.045
+    },
+    {
+      "id": "papel",
+      "type": "image",
+      "src": "assets/2317.png",
+      "duration": 4.2,
+      "motion": "macro_bottom",
+      "zoom_start": 1.02,
+      "zoom_end": 1.09
+    },
+    {
+      "id": "objetos",
+      "type": "image",
+      "src": "assets/2317.png",
+      "duration": 4.0,
+      "motion": "drift_right",
+      "zoom_start": 1.0,
+      "zoom_end": 1.05
+    },
+    {
+      "id": "presenca",
+      "type": "image",
+      "src": "assets/2317.png",
+      "duration": 4.5,
+      "motion": "push",
+      "zoom_start": 1.01,
+      "zoom_end": 1.075
+    },
+    {
+      "id": "residuo",
+      "type": "image",
+      "src": "assets/2317.png",
+      "duration": 4.0,
+      "motion": "macro_top",
+      "zoom_start": 1.0,
+      "zoom_end": 1.04
+    }
+  ]
+}
