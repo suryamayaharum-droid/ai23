@@ -1,15 +1,15 @@
 {
   "schema": "harum.organism.cycle.v4",
-  "timestamp": 1789850675,
-  "cycle_event": "c871eb27b97c7e77c3ef4d5bc097350761f01de02756dc496b210b8ed1c7957d",
+  "timestamp": 1789859399,
+  "cycle_event": "7b212f0490553948adc9a19d237391cad6203d4e2a2d66d24b5a3a59683d5b17",
   "pulse": {
     "schema": "harum.organism.pulse.v1",
-    "timestamp": 1789850675,
+    "timestamp": 1789859399,
     "organism_digest": "b41eb05202449f15ff324502b88092c7036dac5086b0c35c8632fe66d422413a",
     "vector_clock": {
-      "mayor": 3,
-      "dispatcher": 3,
-      "health_guard": 3
+      "mayor": 4,
+      "dispatcher": 4,
+      "health_guard": 4
     },
     "city": {
       "db": "runtime/harum_organism.db",
@@ -256,14 +256,14 @@
       "signals": [],
       "task_counts": {},
       "dead_letters": 0,
-      "checked_at": 1789850675
+      "checked_at": 1789859399
     },
     "synapses": {
-      "PENDING": 6
+      "PENDING": 8
     },
     "pulse_event": {
-      "event_id": "0a15bbd9-eb13-4afb-b1a9-4dbc60f2567f",
-      "correlation_id": "9f9280b7-ea89-4335-8ea5-05aa04754f39",
+      "event_id": "d30020e7-2f38-43d0-b5d2-446c64099a6d",
+      "correlation_id": "dfd25b84-af76-4750-a801-3136c09b2672",
       "topic": "health.pulse",
       "delivered": [
         "mayor"
@@ -1193,7 +1193,7 @@
       "gaps": []
     },
     "actions": [],
-    "timestamp": 1789850675
+    "timestamp": 1789859399
   },
   "redundancy": {
     "schema": "harum.redundancy.audit.v1",
@@ -1368,9 +1368,9 @@
       "load": 0,
       "hologram_digest": "b41eb05202449f15ff324502b88092c7036dac5086b0c35c8632fe66d422413a",
       "vector_clock": {
-        "mayor": 3,
-        "dispatcher": 3,
-        "health_guard": 3
+        "mayor": 4,
+        "dispatcher": 4,
+        "health_guard": 4
       },
       "state": {
         "cycle": "v3",
@@ -1378,15 +1378,15 @@
         "resource_fabric_complete": true,
         "backend_mode": "local-only"
       },
-      "last_heartbeat": 1789850675
+      "last_heartbeat": 1789859399
     },
     "remote": "not-configured",
     "mode": "local-only"
   },
-  "timestamp_v3": 1789850675,
-  "timestamp_v4": 1789850675,
+  "timestamp_v3": 1789859399,
+  "timestamp_v4": 1789859399,
   "digital_twin": {
-    "digest": "951e93af0007f5bfa10b11daf65017ada5a37617d2c5f3d2fded159db56e6632",
+    "digest": "301068a3607994ea5922eaf3383adb88befd6e4c58b09a452a1a2d29f5c9c793",
     "knowledge_counts": {
       "nodes": 262,
       "edges": 231
