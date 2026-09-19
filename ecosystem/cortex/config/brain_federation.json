@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "protocol": "harum.brain-node.v1",
+  "required_manifest": [
+    "node_id",
+    "endpoint",
+    "models",
+    "capabilities",
+    "ram_gb",
+    "health",
+    "load",
+    "last_heartbeat",
+    "digest"
+  ],
+  "health_ttl_seconds": 180,
+  "selection_order": [
+    "required_capabilities",
+    "verified_local_inference",
+    "eval_score",
+    "lower_load",
+    "lower_latency",
+    "smaller_memory_cost"
+  ],
+  "transport": {
+    "inference": "OpenAI-compatible /v1/chat/completions",
+    "health": "GET /health",
+    "models": "GET /v1/models"
+  },
+  "safety": [
+    "never advertise credentials",
+    "unverified nodes cannot become primary",
+    "stale heartbeat removes node from routing",
+    "high-risk work may require council across distinct nodes"
+  ]
+}
