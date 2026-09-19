@@ -1,0 +1,136 @@
+{
+  "version": "1.0",
+  "purpose": "Connect HARUM Swarm City capabilities to existing ecosystem components",
+  "adapters": [
+    {
+      "component": "HARUM Studio OS",
+      "path": "ecosystem/programs/source",
+      "capabilities": [
+        "asset_pipeline",
+        "scheduler",
+        "event_bus",
+        "review",
+        "provenance"
+      ]
+    },
+    {
+      "component": "CineBrain",
+      "path": "ecosystem/programs/source/cinebrain.py",
+      "capabilities": [
+        "scene_graph",
+        "shot_plan",
+        "cinematic_direction"
+      ]
+    },
+    {
+      "component": "Compute Router",
+      "path": "ecosystem/programs/source/harum_router.py",
+      "capabilities": [
+        "compute_route",
+        "vram_match",
+        "provider_policy"
+      ]
+    },
+    {
+      "component": "Review",
+      "path": "ecosystem/programs/source/harum_review.py",
+      "capabilities": [
+        "video_qc",
+        "review"
+      ]
+    },
+    {
+      "component": "Edit",
+      "path": "ecosystem/programs/source/harum_edit.py",
+      "capabilities": [
+        "edit",
+        "compile"
+      ]
+    },
+    {
+      "component": "Audio Master",
+      "path": "ecosystem/programs/source/harum_audio_master.py",
+      "capabilities": [
+        "audio",
+        "master"
+      ]
+    },
+    {
+      "component": "Parallax",
+      "path": "ecosystem/programs/source/harum_parallax.py",
+      "capabilities": [
+        "still_motion",
+        "parallax"
+      ]
+    },
+    {
+      "component": "Noir Engine",
+      "path": "ecosystem/programs/source/HARUM_NOIR_ENGINE.json",
+      "capabilities": [
+        "canon",
+        "noir_loop",
+        "voice_lock",
+        "publication_gate"
+      ]
+    },
+    {
+      "component": "Model Registry",
+      "path": "ecosystem/programs/source/HARUM_MODEL_REGISTRY_V3.json",
+      "capabilities": [
+        "engine_registry",
+        "license_policy",
+        "compute_metadata"
+      ]
+    },
+    {
+      "component": "Archive",
+      "path": "assets/harum-noir",
+      "capabilities": [
+        "inventory",
+        "manifest",
+        "versioning",
+        "restore"
+      ]
+    },
+    {
+      "component": "Products",
+      "path": "ecosystem/products-pdf",
+      "capabilities": [
+        "pdf_product",
+        "bundle",
+        "commerce_context"
+      ]
+    },
+    {
+      "component": "Docs",
+      "path": "ecosystem/docs",
+      "capabilities": [
+        "retrieve",
+        "cross_reference",
+        "context_pack"
+      ]
+    }
+  ],
+  "communication": {
+    "mode": "sqlite_event_bus",
+    "task_states": [
+      "BLOCKED",
+      "READY",
+      "RUNNING",
+      "WAITING_EXTERNAL",
+      "COMPLETED",
+      "DEAD"
+    ],
+    "topics": [
+      "task.created",
+      "router.assigned",
+      "agent.started",
+      "artifact.created",
+      "review.requested",
+      "gate.passed",
+      "gate.failed",
+      "task.completed",
+      "task.failed"
+    ]
+  }
+}
