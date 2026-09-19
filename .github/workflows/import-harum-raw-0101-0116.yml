@@ -1,0 +1,33 @@
+name: Import HARUM raw 0101-0116
+on:
+  push:
+    branches: [harum-archive]
+    paths: ['.github/workflows/import-harum-raw-0101-0116.yml']
+permissions:
+  contents: write
+jobs:
+  import-assets:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+          fetch-depth: 0
+      - name: Download and unpack batch
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/harum-noir/raw
+          curl -fL --retry 3 'https://at.adobe.com/wjS8BDT4WF0cFR44' -o /tmp/harum-batch.zip
+          unzip -q /tmp/harum-batch.zip -d assets/harum-noir/raw
+      - name: Commit imported images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'harum-archive-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add assets/harum-noir/raw
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Import HARUM raw archive 0101-0116'
+          git push origin HEAD:harum-archive
