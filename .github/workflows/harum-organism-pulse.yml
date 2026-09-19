@@ -1,4 +1,4 @@
-name: HARUM Organism Pulse v5
+name: HARUM Organism Pulse v6
 
 on:
   push:
@@ -13,13 +13,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: harum-organism-pulse-v5
+  group: harum-organism-pulse-v6
   cancel-in-progress: false
 
 jobs:
   pulse:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     env:
       SUPABASE_URL: ${{ secrets.HARUM_SUPABASE_URL }}
       SUPABASE_SECRET_KEY: ${{ secrets.HARUM_SUPABASE_SECRET_KEY }}
@@ -40,23 +40,26 @@ jobs:
         uses: actions/cache@v4
         with:
           path: runtime
-          key: harum-organism-v5-${{ runner.os }}-${{ github.run_id }}
+          key: harum-organism-v6-${{ runner.os }}-${{ github.run_id }}
           restore-keys: |
+            harum-organism-v6-${{ runner.os }}-
             harum-organism-v5-${{ runner.os }}-
             harum-organism-v4-${{ runner.os }}-
-            harum-organism-v3-${{ runner.os }}-
 
-      - name: Validate organism and cortex DNA
+      - name: Validate organism, cortex and browser DNA
         run: |
-          for f in ecosystem/swarm/config/*.json ecosystem/cortex/config/*.json; do
+          for f in ecosystem/swarm/config/*.json ecosystem/cortex/config/*.json ecosystem/browser-fabric/config/*.json; do
             python -m json.tool "$f" >/dev/null
           done
           python -m py_compile ecosystem/swarm/*.py
           python -m py_compile ecosystem/cortex/*.py
+          for f in ecosystem/browser-fabric/src/*.js ecosystem/browser-fabric/sw.js; do
+            node --check "$f"
+          done
 
-      - name: Execute organism cycle v5
+      - name: Execute organism cycle v6
         run: |
-          python ecosystem/swarm/organism_cycle_v5.py             --db runtime/harum_organism.db             --output runtime/organism-v5.json
+          python ecosystem/swarm/organism_cycle_v6.py             --db runtime/harum_organism.db             --output runtime/organism-v6.json
 
       - name: Swarm regression tests
         run: python -m unittest discover -s ecosystem/swarm/tests -v
@@ -69,9 +72,9 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p ecosystem/runtime
-          cp runtime/organism-v5.json ecosystem/runtime/organism-v5-latest.json
-          cp runtime/digital-twin-v2.json ecosystem/runtime/digital-twin-v2-latest.json
-          cp runtime/cortex-status.json ecosystem/runtime/cortex-status-latest.json
+          cp runtime/organism-v6.json ecosystem/runtime/organism-v6-latest.json
+          cp runtime/digital-twin-v3.json ecosystem/runtime/digital-twin-v3-latest.json
+          cp runtime/browser-fabric-status.json ecosystem/runtime/browser-fabric-status-latest.json
           if [ -f runtime/journal/snapshot.json ]; then
             cp runtime/journal/snapshot.json ecosystem/runtime/journal-snapshot-latest.json
           fi
@@ -82,17 +85,17 @@ jobs:
             echo 'No persistent state changes.'
             exit 0
           fi
-          git commit -m 'Update HARUM organism v5 cognitive state'
+          git commit -m 'Update HARUM organism v6 browser state'
           git push origin HEAD:harum-archive
 
       - name: Preserve short-lived telemetry
         uses: actions/upload-artifact@v4
         with:
-          name: harum-organism-v5-${{ github.run_id }}
+          name: harum-organism-v6-${{ github.run_id }}
           path: |
-            runtime/organism-v5.json
-            runtime/digital-twin-v2.json
-            runtime/cortex-status.json
+            runtime/organism-v6.json
+            runtime/digital-twin-v3.json
+            runtime/browser-fabric-status.json
             runtime/journal/
           retention-days: 2
           if-no-files-found: error
