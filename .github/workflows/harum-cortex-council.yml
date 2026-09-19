@@ -1,0 +1,117 @@
+name: HARUM Cortex Council
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '11 6 * * 0,3'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: harum-cortex-council
+  cancel-in-progress: true
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        include:
+          - brain: smollm3_3b_scout
+            cache_key: smollm3-q4
+          - brain: phi4_mini_critic
+            cache_key: phi4mini-q4
+          - brain: qwen3_4b_planner
+            cache_key: qwen3-4b-q4
+    env:
+      LLAMA_CPP_TAG: b11053
+      HF_HUB_CACHE: /home/runner/.cache/huggingface/hub
+
+    steps:
+      - name: Checkout HARUM cortex
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+          fetch-depth: 0
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cache this brain
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface/hub
+          key: harum-cortex-${{ matrix.cache_key }}-v1
+
+      - name: Install pinned llama.cpp
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/llama
+          curl -fL --retry 3             "https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_CPP_TAG}/llama-${LLAMA_CPP_TAG}-bin-ubuntu-x64.tar.gz"             -o /tmp/llama.tar.gz
+          tar -xzf /tmp/llama.tar.gz -C /tmp/llama
+          LLAMA_CLI="$(find /tmp/llama -type f -name llama-cli -print -quit)"
+          test -n "$LLAMA_CLI"
+          chmod +x "$LLAMA_CLI"
+          echo "LLAMA_CLI=$LLAMA_CLI" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=$(dirname "$LLAMA_CLI"):${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+
+      - name: Benchmark independent brain
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p runtime/cortex-benchmark
+          python ecosystem/cortex/benchmark_brain.py             --brain "${{ matrix.brain }}"             --output "runtime/cortex-benchmark/${{ matrix.brain }}.json"
+
+      - name: Upload independent result
+        uses: actions/upload-artifact@v4
+        with:
+          name: cortex-benchmark-${{ matrix.brain }}
+          path: runtime/cortex-benchmark/${{ matrix.brain }}.json
+          retention-days: 3
+
+  council:
+    needs: benchmark
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout HARUM cortex
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+          fetch-depth: 0
+
+      - name: Download council results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: cortex-benchmark-*
+          path: runtime/cortex-benchmarks
+          merge-multiple: false
+
+      - name: Merge council
+        run: |
+          python ecosystem/cortex/merge_benchmarks.py             --input runtime/cortex-benchmarks             --output runtime/cortex-council-latest.json
+
+      - name: Run deterministic cortex tests
+        run: python -m unittest discover -s ecosystem/cortex/tests -v
+
+      - name: Persist council state
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ecosystem/runtime
+          cp runtime/cortex-council-latest.json ecosystem/runtime/cortex-council-latest.json
+          git config user.name 'harum-cortex-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add ecosystem/runtime/cortex-council-latest.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Update HARUM Cortex council benchmark'
+          git push origin HEAD:harum-archive
