@@ -1,0 +1,25 @@
+{
+  "version": "11.0",
+  "logical_cells": 384,
+  "organs": 16,
+  "physical_workers": 5,
+  "task_status": {
+    "complete": 384
+  },
+  "blackboard_entries": 19,
+  "events": 38,
+  "blackboard_root": "8d82596fff77733bda1a6dd5772a656080997b10dd15118aa1526f3111d21adb",
+  "event_root": "ec22de59744317f3060dd6fdbc36c3073e5716076527c93d441687c28b7db722",
+  "capability_root": "98a1c2ce46653062cdaad11d9451bde2169196aa74e01d6b6f809e76e3d7a639",
+  "holobus": {
+    "peers": 3,
+    "converged": true,
+    "root": "c89601c22a6d81573c7c2b2cee5bcba8d13ed8418fe49c9624f4322801d29d21",
+    "events_per_peer": [
+      3,
+      3,
+      3
+    ]
+  },
+  "truth": "384 logical cells are software roles executed over a bounded physical CPU pool; not 384 independent models or processors."
+}
