@@ -1,0 +1,18 @@
+name: Harum Cinematic Grid smoke test
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/harum-cinematic-grid/**'
+      - '.github/workflows/harum-cinematic-grid.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Validate Python compiler
+        run: python -m py_compile tools/harum-cinematic-grid/harum_cinematic.py
+      - name: Inspect FFmpeg
+        run: ffmpeg -version | head -n 2
