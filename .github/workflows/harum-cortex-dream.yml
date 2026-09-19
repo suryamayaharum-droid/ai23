@@ -1,0 +1,58 @@
+name: HARUM Cortex Dream and Memory
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '43 7 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: harum-cortex-dream
+  cancel-in-progress: true
+
+jobs:
+  dream:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout HARUM cortex
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+          fetch-depth: 0
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Rebuild local knowledge hippocampus
+        run: |
+          mkdir -p runtime
+          python ecosystem/cortex/knowledge_builder.py             --root .             --output runtime/harum-knowledge.jsonl
+
+      - name: Run bounded dream cycle
+        run: |
+          python ecosystem/cortex/dream_cycle_v2.py             --runtime ecosystem/runtime             --output runtime/cortex-dream-v2.json
+
+      - name: Cortex regression tests
+        run: python -m unittest discover -s ecosystem/cortex/tests -v
+
+      - name: Persist memory and dream state
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ecosystem/runtime
+          cp runtime/harum-knowledge.jsonl ecosystem/runtime/harum-knowledge.jsonl
+          cp runtime/harum-knowledge.manifest.json ecosystem/runtime/harum-knowledge.manifest.json
+          cp runtime/cortex-dream-v2.json ecosystem/runtime/cortex-dream-latest.json
+          git config user.name 'harum-cortex-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add ecosystem/runtime/harum-knowledge.jsonl                   ecosystem/runtime/harum-knowledge.manifest.json                   ecosystem/runtime/cortex-dream-latest.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Refresh HARUM Cortex memory and dream state'
+          git push origin HEAD:harum-archive
