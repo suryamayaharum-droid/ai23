@@ -1,0 +1,11 @@
+const DB='harum-seed-v13',VER=1;
+function openDB(){return new Promise((res,rej)=>{const r=indexedDB.open(DB,VER);r.onupgradeneeded=()=>{const d=r.result;if(!d.objectStoreNames.contains('kv'))d.createObjectStore('kv');if(!d.objectStoreNames.contains('events'))d.createObjectStore('events',{keyPath:'id'});};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});}
+async function put(store,key,val){const d=await openDB();return new Promise((res,rej)=>{const t=d.transaction(store,'readwrite');t.objectStore(store).put(val,key);t.oncomplete=res;t.onerror=()=>rej(t.error);});}
+async function all(store){const d=await openDB();return new Promise((res,rej)=>{const t=d.transaction(store);const r=t.objectStore(store).getAll();r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});}
+async function ev(topic,payload){const x=new TextEncoder().encode(topic+JSON.stringify(payload)+performance.now());const h=[...new Uint8Array(await crypto.subtle.digest('SHA-256',x))].map(b=>b.toString(16).padStart(2,'0')).join('');const d=await openDB();return new Promise((res,rej)=>{const t=d.transaction('events','readwrite');t.objectStore('events').put({id:h,ts:Date.now(),topic,payload});t.oncomplete=res;t.onerror=()=>rej(t.error);});}
+async function status(){const e=await all('events');document.querySelector('#status').textContent=JSON.stringify({online:navigator.onLine,events:e.length,storage:await navigator.storage?.estimate?.(),serviceWorker:'serviceWorker'in navigator},null,2);}
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
+document.querySelector('#pulse').onclick=async()=>{await ev('pulse/local',{ts:Date.now()});await status();};
+document.querySelector('#save').onclick=async()=>{const v=document.querySelector('#note').value;await put('kv','blackboard/latest',{text:v,ts:Date.now()});await ev('blackboard/write',{chars:v.length});await status();};
+document.querySelector('#export').onclick=async()=>{const b=new Blob([JSON.stringify({version:'harum.browser.snapshot.v1',events:await all('events'),ts:Date.now()},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='HARUM_BROWSER_SNAPSHOT.json';a.click();};
+status();
