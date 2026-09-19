@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "abstraction": "HARUM durable state backend",
+  "providers": [
+    {
+      "id": "sqlite_local",
+      "tier": 0,
+      "status": "active",
+      "protocol": "sqlite",
+      "capabilities": [
+        "transactions",
+        "wal",
+        "queue",
+        "event_log",
+        "checkpoint",
+        "offline"
+      ],
+      "role": "always-available local source of availability"
+    },
+    {
+      "id": "postgres_generic",
+      "tier": 1,
+      "status": "portable",
+      "protocol": "postgres",
+      "capabilities": [
+        "transactions",
+        "skip_locked",
+        "jsonb",
+        "listen_notify",
+        "durable_queue",
+        "event_log"
+      ],
+      "role": "vendor-neutral durable shared state"
+    },
+    {
+      "id": "supabase_postgres",
+      "tier": 2,
+      "status": "staged-no-project",
+      "protocol": "postgres+rest+realtime",
+      "capabilities": [
+        "postgres",
+        "rest",
+        "realtime_broadcast",
+        "edge_functions",
+        "auth"
+      ],
+      "role": "preferred online replica/control plane when available"
+    },
+    {
+      "id": "neon_postgres",
+      "tier": 2,
+      "status": "optional-plugin-not-connected",
+      "protocol": "postgres",
+      "capabilities": [
+        "postgres",
+        "branching",
+        "serverless_postgres"
+      ],
+      "role": "independent Postgres fallback candidate"
+    }
+  ],
+  "failover_order": [
+    "sqlite_local",
+    "postgres_generic",
+    "supabase_postgres",
+    "neon_postgres"
+  ],
+  "invariant": "The organism must remain operational at tier 0. Higher tiers add shared durability and realtime, never basic correctness."
+}
