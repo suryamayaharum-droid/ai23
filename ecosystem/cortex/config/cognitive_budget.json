@@ -1,0 +1,95 @@
+{
+  "version": "1.0",
+  "objective": "use the cheapest sufficient cognition and escalate only when uncertainty/risk justifies it",
+  "tiers": [
+    {
+      "id": "T0",
+      "engine": "deterministic",
+      "use_for": [
+        "hash",
+        "inventory",
+        "json",
+        "sqlite_read",
+        "manifest",
+        "exact_checks"
+      ],
+      "max_seconds": 10,
+      "external_model": false
+    },
+    {
+      "id": "T1",
+      "engine": "single_fast_brain",
+      "preferred_roles": [
+        "scout",
+        "summarizer",
+        "tool_agent"
+      ],
+      "use_for": [
+        "summarization",
+        "classification",
+        "simple_draft",
+        "retrieval_synthesis"
+      ],
+      "max_brains": 1
+    },
+    {
+      "id": "T2",
+      "engine": "planner_plus_critic",
+      "preferred_roles": [
+        "planner",
+        "critic"
+      ],
+      "use_for": [
+        "planning",
+        "code_review",
+        "architecture",
+        "multi_step_reasoning"
+      ],
+      "max_brains": 2
+    },
+    {
+      "id": "T3",
+      "engine": "council",
+      "preferred_roles": [
+        "scout",
+        "planner",
+        "critic"
+      ],
+      "use_for": [
+        "high_uncertainty",
+        "conflicting_evidence",
+        "important_internal_decision"
+      ],
+      "max_brains": 3
+    },
+    {
+      "id": "T4",
+      "engine": "deep_optional",
+      "preferred_roles": [
+        "deep_reasoner",
+        "critic",
+        "planner"
+      ],
+      "use_for": [
+        "difficult_synthesis",
+        "large_architecture_review"
+      ],
+      "max_brains": 3,
+      "minimum_ram_gb": 12
+    }
+  ],
+  "escalation_signals": [
+    "low_confidence",
+    "tool_failure",
+    "model_disagreement",
+    "missing_evidence",
+    "regression_risk",
+    "high_cost_of_error"
+  ],
+  "deescalation_signals": [
+    "deterministic_answer_available",
+    "cached_verified_answer",
+    "task_is_read_only",
+    "simple_format_transform"
+  ]
+}
