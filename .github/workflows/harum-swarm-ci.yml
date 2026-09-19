@@ -1,0 +1,34 @@
+name: HARUM Swarm CI
+
+on:
+  push:
+    branches: [harum-archive]
+    paths:
+      - 'ecosystem/swarm/**'
+      - '.github/workflows/harum-swarm-ci.yml'
+  pull_request:
+    paths:
+      - 'ecosystem/swarm/**'
+
+permissions:
+  contents: read
+
+jobs:
+  swarm-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate JSON
+        run: |
+          python -m json.tool ecosystem/swarm/config/agents.json >/dev/null
+          python -m json.tool ecosystem/swarm/config/workflows.json >/dev/null
+          python -m json.tool ecosystem/swarm/config/integration_map.json >/dev/null
+      - name: Compile Python
+        run: |
+          python -m py_compile ecosystem/swarm/harum_swarm.py
+          python -m py_compile ecosystem/swarm/capability_mesh.py
+      - name: Run tests
+        run: python -m unittest discover -s ecosystem/swarm/tests -v
