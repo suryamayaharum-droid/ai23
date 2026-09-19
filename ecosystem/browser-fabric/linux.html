@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>HARUM Linux Browser Cell</title>
+<style>
+body{margin:0;background:#090909;color:#eee8dc;font-family:ui-monospace,monospace}
+header{padding:14px;background:#151515;border-bottom:1px solid #3a3428}
+button{background:#b58a3a;color:#090909;border:0;padding:9px 13px;border-radius:7px;font-weight:700}
+#status{white-space:pre-wrap;padding:12px;color:#d5b66f}
+#screen_container{padding:12px}
+#screen_container>div{white-space:pre;font:14px monospace;line-height:14px}
+canvas{max-width:100%}
+</style>
+</head>
+<body>
+<header>
+  <b>HARUM Linux Browser Cell — Alpine/v86</b>
+  <button id="boot">Boot Linux</button>
+  <button id="pause">Pause</button>
+  <button id="resume">Resume</button>
+</header>
+<div id="status">Pronto. O Linux só inicia quando você tocar em Boot Linux.</div>
+<div id="screen_container"><div></div><canvas style="display:none"></canvas></div>
+<script type="module" src="./src/linux-page.js"></script>
+</body>
+</html>
