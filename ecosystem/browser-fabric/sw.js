@@ -1,9 +1,9 @@
-const CACHE="harum-browser-fabric-v3";
+const CACHE="harum-browser-fabric-v4";
 const CORE=[
   "./","./index.html","./manifest.webmanifest",
   "./src/app.js","./src/idb.js","./src/mesh.js","./src/provision.js",
   "./src/python.js","./src/py-worker.js","./src/webllm.js","./src/llm-worker.js",
-  "./src/semantic.js","./src/semantic-worker.js","./src/benchmark.js",
+  "./src/semantic.js","./src/semantic-worker.js","./src/benchmark.js","./src/autoprovision.js","./linux.html","./src/linux-page.js",
   "./src/task-runtime.js","./src/crdt.js","./src/p2p.js","./src/federation.js",
   "./src/scheduler.js","./src/linux.js"
 ];
