@@ -1,0 +1,27 @@
+name: Harum Cinematic v5 CI
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - harum-cinematic-v5
+    paths:
+      - 'tools/harum-cinematic-grid/v5/**'
+      - 'tools/harum-cinematic-grid/v5_1/**'
+      - '.github/workflows/harum-cinematic-v5-ci.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python syntax
+        run: python -m compileall -q tools/harum-cinematic-grid/v5 tools/harum-cinematic-grid/v5_1
+      - name: Optimizer smoke test
+        run: python tools/harum-cinematic-grid/v5_1/harum_optimizer.py --task video_i2v --vram 16 --gpus 2 --provider kaggle_t4x2
+      - name: Check plugin catalog
+        run: python - <<'PY'
+import json
+p=json.load(open('tools/harum-cinematic-grid/v5_1/plugin_catalog.json'))
+assert len(p['plugins']) >= 8
+assert any(x['id']=='cogvideox_2b' for x in p['plugins'])
+print('plugins:',len(p['plugins']))
+PY
