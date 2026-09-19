@@ -4,6 +4,7 @@ import {execute} from "./task-runtime.js";
 import {loadLocalAI} from "./webllm.js";
 import {BrowserFederation} from "./federation.js";
 import {BrowserScheduler} from "./scheduler.js";
+import {autoProvision} from "./autoprovision.js";
 
 const $=id=>document.getElementById(id);
 const fmt=x=>JSON.stringify(x,null,2);
@@ -99,4 +100,9 @@ $("publishState").onclick=async()=>{
 $("syncState").onclick=async()=>{
   await federation.syncAll();
   $("crdt").textContent=fmt(federation.crdt.snapshot());
+};
+$("provision").onclick=async()=>{
+  $("provisionOut").textContent="Detectando e provisionando…";
+  try{$("provisionOut").textContent=fmt(await autoProvision());}
+  catch(e){$("provisionOut").textContent=String(e);}
 };
