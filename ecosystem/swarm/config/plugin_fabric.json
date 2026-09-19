@@ -1,0 +1,104 @@
+{
+  "version": "1.0",
+  "rule": "No credentials or account identifiers in this registry. Chat connectors are invoked only by an authorized ChatGPT runtime; CI adapters use repository-safe mechanisms.",
+  "resources": [
+    {
+      "id": "github",
+      "class": "source_control_ci",
+      "mode": "chat_connector+github_actions",
+      "capabilities": [
+        "repository",
+        "branches",
+        "issues",
+        "ci",
+        "artifacts"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "vercel",
+      "class": "runtime_observability",
+      "mode": "chat_connector",
+      "capabilities": [
+        "deploy",
+        "functions",
+        "logs",
+        "agent_runs"
+      ],
+      "status": "available"
+    },
+    {
+      "id": "adobe",
+      "class": "asset_pipeline",
+      "mode": "chat_connector",
+      "capabilities": [
+        "asset_transfer",
+        "creative_assets"
+      ],
+      "status": "available"
+    },
+    {
+      "id": "airtable",
+      "class": "operations_database",
+      "mode": "chat_connector",
+      "capabilities": [
+        "tables",
+        "queues",
+        "metrics"
+      ],
+      "status": "available"
+    },
+    {
+      "id": "elevenlabs",
+      "class": "voice",
+      "mode": "chat_connector",
+      "capabilities": [
+        "tts",
+        "voice_agents",
+        "audio"
+      ],
+      "status": "available"
+    },
+    {
+      "id": "heygen",
+      "class": "video",
+      "mode": "chat_connector",
+      "capabilities": [
+        "avatar_video",
+        "translation",
+        "media"
+      ],
+      "status": "available"
+    },
+    {
+      "id": "windsor_ai",
+      "class": "analytics",
+      "mode": "chat_connector",
+      "capabilities": [
+        "marketing_data",
+        "reporting"
+      ],
+      "status": "available"
+    },
+    {
+      "id": "google_drive",
+      "class": "knowledge_store",
+      "mode": "chat_connector",
+      "capabilities": [
+        "documents",
+        "files"
+      ],
+      "status": "available"
+    },
+    {
+      "id": "canva",
+      "class": "design",
+      "mode": "chat_connector",
+      "capabilities": [
+        "design_assets",
+        "resize"
+      ],
+      "status": "available"
+    }
+  ]
+}
