@@ -1,0 +1,891 @@
+{
+  "version": "8.0-airtable-bridge",
+  "captured": "2026-09-19",
+  "architecture": "18 districts / 72 swarms",
+  "districts": [
+    {
+      "name": "Audio",
+      "governor": "Audio.governor",
+      "swarms": 4,
+      "mission": "Voz, música, foley, mix e QC.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Automacao",
+      "governor": "Automacao.governor",
+      "swarms": 4,
+      "mission": "Workflows, triggers, sync de estado e event bus.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Cinema",
+      "governor": "Cinema.governor",
+      "swarms": 4,
+      "mission": "Planos, render, edição e QC cinematográfico.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Comercio",
+      "governor": "Comercio.governor",
+      "swarms": 4,
+      "mission": "Ofertas, preços, checkout e operações de produto.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "CRM",
+      "governor": "CRM.governor",
+      "swarms": 4,
+      "mission": "Leads, follow-up, booking e comunicação.",
+      "autonomy": "Mista",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Governo",
+      "governor": "Governo.governor",
+      "swarms": 4,
+      "mission": "Priorizar portfólio, aplicar políticas e resolver bloqueios entre distritos.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Growth",
+      "governor": "Growth.governor",
+      "swarms": 4,
+      "mission": "SEO, analytics, experimentos e retenção.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Imagem",
+      "governor": "Imagem.governor",
+      "swarms": 4,
+      "mission": "Storyboards, prompts, geração e QC de imagem.",
+      "autonomy": "Mista",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Infraestrutura",
+      "governor": "Infraestrutura.governor",
+      "swarms": 4,
+      "mission": "Runtime, GitHub, compute e CI/CD.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Marca",
+      "governor": "Marca.governor",
+      "swarms": 4,
+      "mission": "Preservar identidade, semiótica, direção de arte e voz.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Memoria",
+      "governor": "Memoria.governor",
+      "swarms": 4,
+      "mission": "Manter contexto, ativos, decisões e grafo de conhecimento.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Narrativa",
+      "governor": "Narrativa.governor",
+      "swarms": 4,
+      "mission": "Construir arcos, episódios, continuidade e personagem.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Pesquisa",
+      "governor": "Pesquisa.governor",
+      "swarms": 4,
+      "mission": "Pesquisar tecnologia, repositórios, tendências e evidências atuais.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Publicacao",
+      "governor": "Publicacao.governor",
+      "swarms": 4,
+      "mission": "Instagram, YouTube, metadados e releases.",
+      "autonomy": "Mista",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Qualidade",
+      "governor": "Qualidade.governor",
+      "swarms": 4,
+      "mission": "Regressão, benchmarks, review visual e aceitação.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Recursos",
+      "governor": "Recursos.governor",
+      "swarms": 4,
+      "mission": "Custo zero, capacidade, orçamento e alocação.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Seguranca",
+      "governor": "Seguranca.governor",
+      "swarms": 4,
+      "mission": "Segredos, licenças, permissões e integridade.",
+      "autonomy": "Local automática",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "Web",
+      "governor": "Web.governor",
+      "swarms": 4,
+      "mission": "Site, Hotmart, Vercel e UX mobile.",
+      "autonomy": "Mista",
+      "state": "Online",
+      "last_mission": "city-state-of-art-v8"
+    }
+  ],
+  "swarms": [
+    {
+      "name": "audio.foley",
+      "district": "Audio",
+      "agents": 5,
+      "function": "foley — planejamento, operação, análise e QC dentro do distrito Audio.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "audio.mix_master",
+      "district": "Audio",
+      "agents": 5,
+      "function": "mix master — planejamento, operação, análise e QC dentro do distrito Audio.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "audio.music",
+      "district": "Audio",
+      "agents": 5,
+      "function": "music — planejamento, operação, análise e QC dentro do distrito Audio.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "audio.voice",
+      "district": "Audio",
+      "agents": 5,
+      "function": "voice — planejamento, operação, análise e QC dentro do distrito Audio.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "automacao.event_bus",
+      "district": "Automacao",
+      "agents": 5,
+      "function": "event bus — planejamento, operação, análise e QC dentro do distrito Automacao.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "automacao.state_sync",
+      "district": "Automacao",
+      "agents": 5,
+      "function": "state sync — planejamento, operação, análise e QC dentro do distrito Automacao.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "automacao.triggers",
+      "district": "Automacao",
+      "agents": 5,
+      "function": "triggers — planejamento, operação, análise e QC dentro do distrito Automacao.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "automacao.workflow",
+      "district": "Automacao",
+      "agents": 5,
+      "function": "workflow — planejamento, operação, análise e QC dentro do distrito Automacao.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "cinema.cinematic_qc",
+      "district": "Cinema",
+      "agents": 5,
+      "function": "cinematic qc — planejamento, operação, análise e QC dentro do distrito Cinema.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "cinema.editing",
+      "district": "Cinema",
+      "agents": 5,
+      "function": "editing — planejamento, operação, análise e QC dentro do distrito Cinema.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "cinema.render_farm",
+      "district": "Cinema",
+      "agents": 5,
+      "function": "render farm — planejamento, operação, análise e QC dentro do distrito Cinema.",
+      "runtime": "Misto",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "cinema.shot_design",
+      "district": "Cinema",
+      "agents": 5,
+      "function": "shot design — planejamento, operação, análise e QC dentro do distrito Cinema.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "comercio.checkout",
+      "district": "Comercio",
+      "agents": 5,
+      "function": "checkout — planejamento, operação, análise e QC dentro do distrito Comercio.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "comercio.offers",
+      "district": "Comercio",
+      "agents": 5,
+      "function": "offers — planejamento, operação, análise e QC dentro do distrito Comercio.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "comercio.pricing",
+      "district": "Comercio",
+      "agents": 5,
+      "function": "pricing — planejamento, operação, análise e QC dentro do distrito Comercio.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "comercio.product_ops",
+      "district": "Comercio",
+      "agents": 5,
+      "function": "product ops — planejamento, operação, análise e QC dentro do distrito Comercio.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "crm.booking",
+      "district": "CRM",
+      "agents": 5,
+      "function": "booking — planejamento, operação, análise e QC dentro do distrito CRM.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "crm.client_comms",
+      "district": "CRM",
+      "agents": 5,
+      "function": "client comms — planejamento, operação, análise e QC dentro do distrito CRM.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "crm.followup",
+      "district": "CRM",
+      "agents": 5,
+      "function": "followup — planejamento, operação, análise e QC dentro do distrito CRM.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "crm.lead_intake",
+      "district": "CRM",
+      "agents": 5,
+      "function": "lead intake — planejamento, operação, análise e QC dentro do distrito CRM.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "governo.executive",
+      "district": "Governo",
+      "agents": 5,
+      "function": "executive — planejamento, operação, análise e QC dentro do distrito Governo.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "governo.policy",
+      "district": "Governo",
+      "agents": 5,
+      "function": "policy — planejamento, operação, análise e QC dentro do distrito Governo.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "governo.portfolio",
+      "district": "Governo",
+      "agents": 5,
+      "function": "portfolio — planejamento, operação, análise e QC dentro do distrito Governo.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "governo.strategy",
+      "district": "Governo",
+      "agents": 5,
+      "function": "strategy — planejamento, operação, análise e QC dentro do distrito Governo.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "growth.analytics",
+      "district": "Growth",
+      "agents": 5,
+      "function": "analytics — planejamento, operação, análise e QC dentro do distrito Growth.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "growth.experiments",
+      "district": "Growth",
+      "agents": 5,
+      "function": "experiments — planejamento, operação, análise e QC dentro do distrito Growth.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "growth.retention",
+      "district": "Growth",
+      "agents": 5,
+      "function": "retention — planejamento, operação, análise e QC dentro do distrito Growth.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "growth.seo",
+      "district": "Growth",
+      "agents": 5,
+      "function": "seo — planejamento, operação, análise e QC dentro do distrito Growth.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "imagem.image_generation",
+      "district": "Imagem",
+      "agents": 5,
+      "function": "image generation — planejamento, operação, análise e QC dentro do distrito Imagem.",
+      "runtime": "Misto",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "imagem.image_qc",
+      "district": "Imagem",
+      "agents": 5,
+      "function": "image qc — planejamento, operação, análise e QC dentro do distrito Imagem.",
+      "runtime": "Misto",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "imagem.prompt_lab",
+      "district": "Imagem",
+      "agents": 5,
+      "function": "prompt lab — planejamento, operação, análise e QC dentro do distrito Imagem.",
+      "runtime": "Misto",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "imagem.storyboard",
+      "district": "Imagem",
+      "agents": 5,
+      "function": "storyboard — planejamento, operação, análise e QC dentro do distrito Imagem.",
+      "runtime": "Misto",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "infraestrutura.ci_cd",
+      "district": "Infraestrutura",
+      "agents": 5,
+      "function": "ci cd — planejamento, operação, análise e QC dentro do distrito Infraestrutura.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "infraestrutura.compute",
+      "district": "Infraestrutura",
+      "agents": 5,
+      "function": "compute — planejamento, operação, análise e QC dentro do distrito Infraestrutura.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "infraestrutura.github",
+      "district": "Infraestrutura",
+      "agents": 5,
+      "function": "github — planejamento, operação, análise e QC dentro do distrito Infraestrutura.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "infraestrutura.runtime",
+      "district": "Infraestrutura",
+      "agents": 5,
+      "function": "runtime — planejamento, operação, análise e QC dentro do distrito Infraestrutura.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "marca.art_direction",
+      "district": "Marca",
+      "agents": 5,
+      "function": "art direction — planejamento, operação, análise e QC dentro do distrito Marca.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "marca.brand_system",
+      "district": "Marca",
+      "agents": 5,
+      "function": "brand system — planejamento, operação, análise e QC dentro do distrito Marca.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "marca.copy_voice",
+      "district": "Marca",
+      "agents": 5,
+      "function": "copy voice — planejamento, operação, análise e QC dentro do distrito Marca.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "marca.semiotics",
+      "district": "Marca",
+      "agents": 5,
+      "function": "semiotics — planejamento, operação, análise e QC dentro do distrito Marca.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "memoria.asset_memory",
+      "district": "Memoria",
+      "agents": 5,
+      "function": "asset memory — planejamento, operação, análise e QC dentro do distrito Memoria.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "memoria.context_index",
+      "district": "Memoria",
+      "agents": 5,
+      "function": "context index — planejamento, operação, análise e QC dentro do distrito Memoria.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "memoria.decision_memory",
+      "district": "Memoria",
+      "agents": 5,
+      "function": "decision memory — planejamento, operação, análise e QC dentro do distrito Memoria.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "memoria.knowledge_graph",
+      "district": "Memoria",
+      "agents": 5,
+      "function": "knowledge graph — planejamento, operação, análise e QC dentro do distrito Memoria.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "narrativa.character_room",
+      "district": "Narrativa",
+      "agents": 5,
+      "function": "character room — planejamento, operação, análise e QC dentro do distrito Narrativa.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "narrativa.continuity",
+      "district": "Narrativa",
+      "agents": 5,
+      "function": "continuity — planejamento, operação, análise e QC dentro do distrito Narrativa.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "narrativa.episode_room",
+      "district": "Narrativa",
+      "agents": 5,
+      "function": "episode room — planejamento, operação, análise e QC dentro do distrito Narrativa.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "narrativa.story_architecture",
+      "district": "Narrativa",
+      "agents": 5,
+      "function": "story architecture — planejamento, operação, análise e QC dentro do distrito Narrativa.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "pesquisa.repo_scout",
+      "district": "Pesquisa",
+      "agents": 5,
+      "function": "repo scout — planejamento, operação, análise e QC dentro do distrito Pesquisa.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "pesquisa.research_synthesis",
+      "district": "Pesquisa",
+      "agents": 5,
+      "function": "research synthesis — planejamento, operação, análise e QC dentro do distrito Pesquisa.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "pesquisa.tech_radar",
+      "district": "Pesquisa",
+      "agents": 5,
+      "function": "tech radar — planejamento, operação, análise e QC dentro do distrito Pesquisa.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "pesquisa.web_intelligence",
+      "district": "Pesquisa",
+      "agents": 5,
+      "function": "web intelligence — planejamento, operação, análise e QC dentro do distrito Pesquisa.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "publicacao.instagram",
+      "district": "Publicacao",
+      "agents": 5,
+      "function": "instagram — planejamento, operação, análise e QC dentro do distrito Publicacao.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "publicacao.metadata",
+      "district": "Publicacao",
+      "agents": 5,
+      "function": "metadata — planejamento, operação, análise e QC dentro do distrito Publicacao.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "publicacao.release_ops",
+      "district": "Publicacao",
+      "agents": 5,
+      "function": "release ops — planejamento, operação, análise e QC dentro do distrito Publicacao.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "publicacao.youtube",
+      "district": "Publicacao",
+      "agents": 5,
+      "function": "youtube — planejamento, operação, análise e QC dentro do distrito Publicacao.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "qualidade.acceptance",
+      "district": "Qualidade",
+      "agents": 5,
+      "function": "acceptance — planejamento, operação, análise e QC dentro do distrito Qualidade.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "qualidade.benchmarks",
+      "district": "Qualidade",
+      "agents": 5,
+      "function": "benchmarks — planejamento, operação, análise e QC dentro do distrito Qualidade.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "qualidade.regression",
+      "district": "Qualidade",
+      "agents": 5,
+      "function": "regression — planejamento, operação, análise e QC dentro do distrito Qualidade.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "qualidade.visual_review",
+      "district": "Qualidade",
+      "agents": 5,
+      "function": "visual review — planejamento, operação, análise e QC dentro do distrito Qualidade.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "recursos.budget",
+      "district": "Recursos",
+      "agents": 5,
+      "function": "budget — planejamento, operação, análise e QC dentro do distrito Recursos.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "recursos.capacity",
+      "district": "Recursos",
+      "agents": 5,
+      "function": "capacity — planejamento, operação, análise e QC dentro do distrito Recursos.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "recursos.resource_allocator",
+      "district": "Recursos",
+      "agents": 5,
+      "function": "resource allocator — planejamento, operação, análise e QC dentro do distrito Recursos.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "recursos.zero_cost",
+      "district": "Recursos",
+      "agents": 5,
+      "function": "zero cost — planejamento, operação, análise e QC dentro do distrito Recursos.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "seguranca.integrity",
+      "district": "Seguranca",
+      "agents": 5,
+      "function": "integrity — planejamento, operação, análise e QC dentro do distrito Seguranca.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "seguranca.licenses",
+      "district": "Seguranca",
+      "agents": 5,
+      "function": "licenses — planejamento, operação, análise e QC dentro do distrito Seguranca.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "seguranca.permissions",
+      "district": "Seguranca",
+      "agents": 5,
+      "function": "permissions — planejamento, operação, análise e QC dentro do distrito Seguranca.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "seguranca.secrets",
+      "district": "Seguranca",
+      "agents": 5,
+      "function": "secrets — planejamento, operação, análise e QC dentro do distrito Seguranca.",
+      "runtime": "ChatGPT CPU Runtime",
+      "state": "Idle",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "web.hotmart",
+      "district": "Web",
+      "agents": 5,
+      "function": "hotmart — planejamento, operação, análise e QC dentro do distrito Web.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "web.site",
+      "district": "Web",
+      "agents": 5,
+      "function": "site — planejamento, operação, análise e QC dentro do distrito Web.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "web.ux_mobile",
+      "district": "Web",
+      "agents": 5,
+      "function": "ux mobile — planejamento, operação, análise e QC dentro do distrito Web.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    },
+    {
+      "name": "web.vercel",
+      "district": "Web",
+      "agents": 5,
+      "function": "vercel — planejamento, operação, análise e QC dentro do distrito Web.",
+      "runtime": "Connector Dispatch",
+      "state": "Waiting external",
+      "circuit_breaker": "Closed",
+      "last_mission": "city-state-of-art-v8"
+    }
+  ]
+}
