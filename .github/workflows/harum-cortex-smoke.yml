@@ -1,0 +1,114 @@
+name: HARUM Cortex Local Smoke
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/harum-cortex-smoke.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '37 5 * * 1,4'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: harum-cortex-local-smoke
+  cancel-in-progress: true
+
+jobs:
+  local-brain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      LLAMA_CPP_TAG: b11053
+      HF_HUB_CACHE: /home/runner/.cache/huggingface/hub
+
+    steps:
+      - name: Checkout HARUM cortex
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+          fetch-depth: 0
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Architecture tests
+        run: python -m unittest discover -s ecosystem/cortex/tests -v
+
+      - name: Cache quantized weights
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface/hub
+          key: harum-cortex-smollm3-q4-v1
+          restore-keys: |
+            harum-cortex-smollm3-
+
+      - name: Install pinned llama.cpp CPU runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/llama
+          curl -fL --retry 3             "https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_CPP_TAG}/llama-${LLAMA_CPP_TAG}-bin-ubuntu-x64.tar.gz"             -o /tmp/llama.tar.gz
+          tar -xzf /tmp/llama.tar.gz -C /tmp/llama
+          LLAMA_CLI="$(find /tmp/llama -type f -name llama-cli -print -quit)"
+          test -n "$LLAMA_CLI"
+          chmod +x "$LLAMA_CLI"
+          echo "LLAMA_CLI=$LLAMA_CLI" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=$(dirname "$LLAMA_CLI"):${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+          "$LLAMA_CLI" --version
+
+      - name: Prove local quantized inference
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p runtime
+          START="$(date +%s)"
+          OUTPUT="$("$LLAMA_CLI"             -hf ggml-org/SmolLM3-3B-GGUF:Q4_K_M             -p 'Return exactly this token and nothing else: HARUM_LOCAL_OK'             -n 24             --temp 0             --seed 42             --no-display-prompt 2>&1)"
+          END="$(date +%s)"
+          printf '%s\n' "$OUTPUT" > runtime/cortex-local-smoke.txt
+          echo "$OUTPUT" | grep -q 'HARUM_LOCAL_OK'
+          python - <<'PY'
+          import json, os, pathlib, time
+          text=pathlib.Path("runtime/cortex-local-smoke.txt").read_text(errors="replace")
+          payload={
+            "schema":"harum.cortex.local-smoke.v1",
+            "runtime":"llama.cpp",
+            "llama_cpp_tag":os.environ["LLAMA_CPP_TAG"],
+            "brain":"smollm3_3b_scout",
+            "repo":"ggml-org/SmolLM3-3B-GGUF",
+            "quant":"Q4_K_M",
+            "proof_token_present":"HARUM_LOCAL_OK" in text,
+            "external_inference_api_used":False,
+            "timestamp":int(time.time())
+          }
+          pathlib.Path("runtime/cortex-local-smoke.json").write_text(
+              json.dumps(payload,indent=2),encoding="utf-8")
+          PY
+
+      - name: Persist proof snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ecosystem/runtime
+          cp runtime/cortex-local-smoke.json ecosystem/runtime/cortex-local-smoke-latest.json
+          git config user.name 'harum-cortex-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add ecosystem/runtime/cortex-local-smoke-latest.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Update HARUM local cortex smoke proof'
+          git push origin HEAD:harum-archive
+
+      - name: Preserve diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: harum-cortex-local-smoke-${{ github.run_id }}
+          path: runtime/
+          retention-days: 2
+          if-no-files-found: ignore
