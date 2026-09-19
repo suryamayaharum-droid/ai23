@@ -1,0 +1,13 @@
+{
+  "scene": "Espelho II",
+  "premise": "O reflexo devolve tudo ao contrário, mas parece mais honesto.",
+  "target_vram_gb": 16,
+  "global_publish": true,
+  "shots": [
+    {"id":"01-anchor","task":"still_motion","duration":2.2,"engine":"FFmpeg CPU","reason":"deterministic, zero GPU, preserves approved identity"},
+    {"id":"02-reflection","task":"portrait_motion","duration":3.0,"engine":"LivePortrait","reason":"purpose-built portrait animation; identity-first"},
+    {"id":"03-gesture","task":"i2v","duration":3.2,"engine":"Wan2.2 5B / HunyuanVideo-1.5 offload","reason":"balanced consumer-GPU tier"},
+    {"id":"04-paper","task":"object_motion","duration":3.0,"engine":"Wan2.2 5B / HunyuanVideo-1.5 offload","reason":"balanced consumer-GPU tier"},
+    {"id":"05-residue","task":"still_motion","duration":2.0,"engine":"FFmpeg CPU","reason":"deterministic, zero GPU, preserves approved identity"}
+  ]
+}
