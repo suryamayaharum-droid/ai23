@@ -1,18 +1,93 @@
-name: Harum Cinematic Grid smoke test
+name: Harum Cinematic Grid integration test
 on:
   workflow_dispatch:
   push:
     paths:
       - 'tools/harum-cinematic-grid/**'
       - '.github/workflows/harum-cinematic-grid.yml'
+
 jobs:
-  validate:
+  render-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Install FFmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Validate Python compiler
+
+      - name: Validate compiler
         run: python -m py_compile tools/harum-cinematic-grid/harum_cinematic.py
-      - name: Inspect FFmpeg
-        run: ffmpeg -version | head -n 2
+
+      - name: Build synthetic vertical test asset and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd tools/harum-cinematic-grid
+          mkdir -p ci/assets
+          ffmpeg -y -f lavfi -i "color=c=0x171717:s=360x640:d=1" -frames:v 1 ci/assets/frame.png
+          cat > ci/project.json <<'JSON'
+          {
+            "project": "Harum Cinematic Grid CI",
+            "render": "ci_master.mp4",
+            "output": {
+              "width": 360,
+              "height": 640,
+              "fps": 24,
+              "crf": 24,
+              "preset": "veryfast",
+              "grade": {
+                "contrast": 1.02,
+                "brightness": -0.01,
+                "saturation": 0.82
+              }
+            },
+            "audio": {
+              "room_tone": true,
+              "room_level": 0.015,
+              "voice": null,
+              "music": null
+            },
+            "shots": [
+              {
+                "id": "opening",
+                "type": "image",
+                "src": "assets/frame.png",
+                "duration": 0.75,
+                "motion": "drift_left",
+                "zoom_start": 1.0,
+                "zoom_end": 1.025
+              },
+              {
+                "id": "residue",
+                "type": "image",
+                "src": "assets/frame.png",
+                "duration": 0.75,
+                "motion": "push",
+                "zoom_start": 1.0,
+                "zoom_end": 1.03
+              }
+            ]
+          }
+          JSON
+
+      - name: Render scene end to end
+        run: |
+          cd tools/harum-cinematic-grid
+          python harum_cinematic.py ci/project.json
+
+      - name: Verify output with ffprobe
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd tools/harum-cinematic-grid/ci
+          test -s ci_master.mp4
+          ffprobe -v error             -select_streams v:0             -show_entries stream=codec_name,width,height,r_frame_rate             -of json ci_master.mp4 | tee probe.json
+          python - <<'PY'
+          import json
+          p=json.load(open("probe.json"))
+          s=p["streams"][0]
+          assert s["codec_name"]=="h264", s
+          assert s["width"]==360 and s["height"]==640, s
+          assert s["r_frame_rate"]=="24/1", s
+          print("HARUM_CINEMATIC_GRID_CI_OK")
+          PY
