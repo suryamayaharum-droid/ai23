@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "provider_id": "harum-cortex",
+  "api_style": "openai-compatible",
+  "base_url": "http://127.0.0.1:8899/v1",
+  "models": [
+    "harum-cortex:auto",
+    "harum-cortex:council",
+    "smollm3_3b_scout",
+    "phi4_mini_critic",
+    "qwen3_4b_planner"
+  ],
+  "security": {
+    "default_bind": "localhost",
+    "external_bind_requires_env_key": "HARUM_CORTEX_API_KEY",
+    "arbitrary_shell_tools": false,
+    "local_tool_kernel_allowlisted": true
+  },
+  "consumers": [
+    "HARUM Swarm City",
+    "portable workers",
+    "OpenAI-compatible agents",
+    "OpenClaw-compatible custom provider"
+  ]
+}
