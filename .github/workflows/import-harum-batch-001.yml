@@ -1,0 +1,48 @@
+name: Import HARUM assets batch 001
+
+on:
+  push:
+    branches:
+      - harum-archive
+    paths:
+      - '.github/workflows/import-harum-batch-001.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-assets:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout archive branch
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+          fetch-depth: 0
+
+      - name: Download HARUM assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/harum-noir/identity assets/harum-noir/editorial assets/harum-noir/charcoal
+          curl -fL --retry 3 'https://at.adobe.com/ng6VVqYrOodRzbOQ' -o 'assets/harum-noir/identity/HARUM_NOIR_FACE_LOCK_CLEAN_v1.jpg'
+          curl -fL --retry 3 'https://at.adobe.com/DYywnTLiQnV03E2O' -o 'assets/harum-noir/editorial/HARUM_NOIR_CANONICA_STORIES.jpg'
+          curl -fL --retry 3 'https://at.adobe.com/Eq8tVMdHBpYtr62H' -o 'assets/harum-noir/editorial/Diario_Visual_Harum_Noir.jpg'
+          curl -fL --retry 3 'https://at.adobe.com/R1KIAaCDEabtE6F4' -o 'assets/harum-noir/charcoal/Estudo_de_maos_em_carvao.jpg'
+          curl -fL --retry 3 'https://at.adobe.com/Rdm7hiUHaV4ZEzl0' -o 'assets/harum-noir/charcoal/Retrato_introspectivo_em_carvao.jpg'
+          file assets/harum-noir/identity/* assets/harum-noir/editorial/* assets/harum-noir/charcoal/*
+
+      - name: Commit imported images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'harum-archive-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add assets/harum-noir
+          if git diff --cached --quiet; then
+            echo 'No new assets to commit.'
+            exit 0
+          fi
+          git commit -m 'Import HARUM visual archive batch 001'
+          git push origin HEAD:harum-archive
