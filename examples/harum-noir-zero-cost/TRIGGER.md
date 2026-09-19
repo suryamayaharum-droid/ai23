@@ -1,3 +1,3 @@
-# HARUM NOIR ZERO COST — RUN 01
+# HARUM NOIR ZERO COST — RUN 02
 
-Trigger automático para validar o renderer CPU 23:17.
+Validação do renderer CPU 23:17 com voz feminina pt-BR Kokoro `pf_dora`.
