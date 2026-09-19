@@ -1,0 +1,44 @@
+name: Import HARUM ecosystem docs
+
+on:
+  push:
+    branches:
+      - harum-archive
+    paths:
+      - '.github/workflows/import-harum-ecosystem-docs.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-docs:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout archive branch
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+          fetch-depth: 0
+
+      - name: Download and unpack docs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ecosystem/docs
+          curl -fL --retry 3 'https://at.adobe.com/j8HzoTgGWqGWp5GB' -o /tmp/harum-docs.zip
+          unzip -q -o /tmp/harum-docs.zip -d ecosystem/docs
+
+      - name: Commit docs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'harum-archive-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add ecosystem/docs
+          if git diff --cached --quiet; then
+            echo 'No new docs to commit.'
+            exit 0
+          fi
+          git commit -m 'Import HARUM ecosystem documentation'
+          git push origin HEAD:harum-archive
