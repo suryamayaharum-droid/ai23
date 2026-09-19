@@ -1,0 +1,29 @@
+{
+  "last_by_topic": {
+    "organism.cycle.started": {
+      "correlation_id": null,
+      "id": "04c317e51e2e9d7226790a2857cc3e521910a7a6096dde26f2a2c7ad411cbb9f",
+      "payload": {
+        "version": "v2"
+      },
+      "source": "cycle_v2",
+      "topic": "organism.cycle.started",
+      "ts": 1789841007
+    },
+    "organism.cycle.completed": {
+      "correlation_id": null,
+      "id": "ac7dbee787c818b14c595de87d931fabea789dac39928ebd8bb01d00fdf6e55e",
+      "payload": {
+        "cycle_event": "04c317e51e2e9d7226790a2857cc3e521910a7a6096dde26f2a2c7ad411cbb9f",
+        "health": "healthy",
+        "proposal_count": 0,
+        "redundancy_score": 0.5,
+        "resource_fabric_complete": true
+      },
+      "source": "cycle_v2",
+      "topic": "organism.cycle.completed",
+      "ts": 1789841007
+    }
+  },
+  "event_count": 2
+}

@@ -1,0 +1,1355 @@
+{
+  "schema": "harum.organism.cycle.v2",
+  "timestamp": 1789841007,
+  "cycle_event": "04c317e51e2e9d7226790a2857cc3e521910a7a6096dde26f2a2c7ad411cbb9f",
+  "pulse": {
+    "schema": "harum.organism.pulse.v1",
+    "timestamp": 1789841007,
+    "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+    "vector_clock": {
+      "mayor": 1,
+      "dispatcher": 1,
+      "health_guard": 1
+    },
+    "city": {
+      "db": "runtime/harum_organism.db",
+      "agents_online": 22,
+      "districts": {
+        "atelier": 3,
+        "cinema": 4,
+        "control_tower": 3,
+        "distribution": 2,
+        "governance": 3,
+        "memory_archive": 2,
+        "noir_editorial": 3,
+        "products": 2
+      },
+      "tasks": {},
+      "events": 0,
+      "dead_letters": 0
+    },
+    "macro": {
+      "districts": 18,
+      "swarms": 72,
+      "declared_agent_roles": 360
+    },
+    "micro_cells": 22,
+    "resource_count": 9,
+    "mission_plans": [
+      {
+        "id": "archive_visual_collection",
+        "objective": "complete the HARUM NOIR visual archive and manifest every asset",
+        "status": "active",
+        "team": [
+          {
+            "agent": "archivist",
+            "district": "memory_archive",
+            "role": "archive",
+            "covers": [
+              "dedupe",
+              "hash",
+              "inventory",
+              "manifest"
+            ]
+          },
+          {
+            "agent": "license_guard",
+            "district": "governance",
+            "role": "rights",
+            "covers": [
+              "license"
+            ]
+          },
+          {
+            "agent": "atelier_curator",
+            "district": "atelier",
+            "role": "visual_curator",
+            "covers": [
+              "visual_taxonomy"
+            ]
+          }
+        ],
+        "gaps": [],
+        "complete": true
+      },
+      {
+        "id": "integrate_programs_and_pdfs",
+        "objective": "version programs, PDFs, docs and release packages under the ecosystem tree",
+        "status": "active",
+        "team": [
+          {
+            "agent": "archivist",
+            "district": "memory_archive",
+            "role": "archive",
+            "covers": [
+              "inventory",
+              "versioning"
+            ]
+          },
+          {
+            "agent": "license_guard",
+            "district": "governance",
+            "role": "rights",
+            "covers": [
+              "provenance"
+            ]
+          },
+          {
+            "agent": "product_architect",
+            "district": "products",
+            "role": "product",
+            "covers": [
+              "pdf_product"
+            ]
+          },
+          {
+            "agent": "channel_router",
+            "district": "distribution",
+            "role": "distribution",
+            "covers": [
+              "github"
+            ]
+          }
+        ],
+        "gaps": [],
+        "complete": true
+      },
+      {
+        "id": "swarm_city_runtime",
+        "objective": "validate runtime, event bus, capability mesh, subagents and recovery",
+        "status": "active",
+        "team": [
+          {
+            "agent": "health_guard",
+            "district": "control_tower",
+            "role": "resilience",
+            "covers": [
+              "dead_letter",
+              "healthcheck",
+              "loop_detection"
+            ]
+          },
+          {
+            "agent": "mayor",
+            "district": "control_tower",
+            "role": "orchestrator",
+            "covers": [
+              "coordinate"
+            ]
+          },
+          {
+            "agent": "dispatcher",
+            "district": "control_tower",
+            "role": "scheduler",
+            "covers": [
+              "schedule"
+            ]
+          }
+        ],
+        "gaps": [],
+        "complete": true
+      },
+      {
+        "id": "noir_content_pipeline",
+        "objective": "connect canonical narrative to scene planning, media production, QC and release gates",
+        "status": "ready",
+        "team": [
+          {
+            "agent": "canon_guard",
+            "district": "noir_editorial",
+            "role": "character_guard",
+            "covers": [
+              "canon"
+            ]
+          },
+          {
+            "agent": "truth_guard",
+            "district": "governance",
+            "role": "truth",
+            "covers": [
+              "truth"
+            ]
+          },
+          {
+            "agent": "publication_guard",
+            "district": "governance",
+            "role": "release",
+            "covers": [
+              "publish_gate"
+            ]
+          },
+          {
+            "agent": "cinema_qc",
+            "district": "cinema",
+            "role": "quality_control",
+            "covers": [
+              "video_qc"
+            ]
+          },
+          {
+            "agent": "cinebrain",
+            "district": "cinema",
+            "role": "director",
+            "covers": [
+              "scene_graph"
+            ]
+          },
+          {
+            "agent": "compute_broker",
+            "district": "cinema",
+            "role": "compute_router",
+            "covers": [
+              "compute_route"
+            ]
+          },
+          {
+            "agent": "noir_writer",
+            "district": "noir_editorial",
+            "role": "narrative",
+            "covers": [
+              "story"
+            ]
+          }
+        ],
+        "gaps": [],
+        "complete": true
+      },
+      {
+        "id": "studio23_sync",
+        "objective": "keep site, portfolio, catalog and product claims synchronized with verified assets",
+        "status": "ready",
+        "team": [
+          {
+            "agent": "site_integrator",
+            "district": "distribution",
+            "role": "web",
+            "covers": [
+              "gallery",
+              "metadata",
+              "seo",
+              "site"
+            ]
+          },
+          {
+            "agent": "truth_guard",
+            "district": "governance",
+            "role": "truth",
+            "covers": [
+              "truth"
+            ]
+          },
+          {
+            "agent": "archivist",
+            "district": "memory_archive",
+            "role": "archive",
+            "covers": [
+              "manifest"
+            ]
+          }
+        ],
+        "gaps": [],
+        "complete": true
+      }
+    ],
+    "health": {
+      "status": "healthy",
+      "signals": [],
+      "task_counts": {},
+      "dead_letters": 0,
+      "checked_at": 1789841007
+    },
+    "synapses": {
+      "PENDING": 2
+    },
+    "pulse_event": {
+      "event_id": "da538023-a23d-4a3f-997b-8775008bb489",
+      "correlation_id": "4d41e4ab-ee67-47a8-ad59-ff1ec2023ca5",
+      "topic": "health.pulse",
+      "delivered": [
+        "mayor"
+      ]
+    },
+    "cell_holograms": {
+      "canon_guard": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "canon_guard",
+          "district": "noir_editorial",
+          "role": "character_guard",
+          "priority": 100,
+          "capabilities": [
+            "canon",
+            "continuity",
+            "face_lock",
+            "voice_lock",
+            "wardrobe_lock"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "commerce_guard": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "commerce_guard",
+          "district": "products",
+          "role": "commerce_truth",
+          "priority": 100,
+          "capabilities": [
+            "availability_check",
+            "checkout_gate",
+            "claim_check",
+            "consumer_clarity"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "license_guard": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "license_guard",
+          "district": "governance",
+          "role": "rights",
+          "priority": 100,
+          "capabilities": [
+            "attribution",
+            "license",
+            "provenance",
+            "usage_rights"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "mayor": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "mayor",
+          "district": "control_tower",
+          "role": "orchestrator",
+          "priority": 100,
+          "capabilities": [
+            "coordinate",
+            "decompose",
+            "plan",
+            "prioritize",
+            "recover",
+            "route"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "publication_guard": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "publication_guard",
+          "district": "governance",
+          "role": "release",
+          "priority": 100,
+          "capabilities": [
+            "human_review",
+            "publish_gate",
+            "release_checklist"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "truth_guard": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "truth_guard",
+          "district": "governance",
+          "role": "truth",
+          "priority": 100,
+          "capabilities": [
+            "claim_gate",
+            "evidence",
+            "fiction_label",
+            "truth"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "cinema_qc": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "cinema_qc",
+          "district": "cinema",
+          "role": "quality_control",
+          "priority": 95,
+          "capabilities": [
+            "continuity_qc",
+            "encode_qc",
+            "identity_qc",
+            "video_qc"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "dispatcher": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "dispatcher",
+          "district": "control_tower",
+          "role": "scheduler",
+          "priority": 95,
+          "capabilities": [
+            "dependency_resolution",
+            "load_balance",
+            "queue",
+            "retry",
+            "schedule"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "archivist": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "archivist",
+          "district": "memory_archive",
+          "role": "archive",
+          "priority": 90,
+          "capabilities": [
+            "dedupe",
+            "hash",
+            "inventory",
+            "manifest",
+            "restore",
+            "versioning"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "cinebrain": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "cinebrain",
+          "district": "cinema",
+          "role": "director",
+          "priority": 90,
+          "capabilities": [
+            "camera",
+            "cinematic_direction",
+            "scene_graph",
+            "shot_plan"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "compute_broker": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "compute_broker",
+          "district": "cinema",
+          "role": "compute_router",
+          "priority": 90,
+          "capabilities": [
+            "compute_route",
+            "cpu_gpu_split",
+            "provider_policy",
+            "vram_match"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "health_guard": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "health_guard",
+          "district": "control_tower",
+          "role": "resilience",
+          "priority": 90,
+          "capabilities": [
+            "dead_letter",
+            "healthcheck",
+            "loop_detection",
+            "recovery"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "memory_librarian": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "memory_librarian",
+          "district": "memory_archive",
+          "role": "knowledge",
+          "priority": 85,
+          "capabilities": [
+            "context_pack",
+            "cross_reference",
+            "index",
+            "retrieve"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "noir_writer": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "noir_writer",
+          "district": "noir_editorial",
+          "role": "narrative",
+          "priority": 85,
+          "capabilities": [
+            "caption",
+            "cta",
+            "noir_loop",
+            "serial_narrative",
+            "story"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "atelier_curator": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "atelier_curator",
+          "district": "atelier",
+          "role": "visual_curator",
+          "priority": 80,
+          "capabilities": [
+            "collection_structure",
+            "image_curate",
+            "novelty_check",
+            "visual_taxonomy"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "charcoal_master": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "charcoal_master",
+          "district": "atelier",
+          "role": "drawing_specialist",
+          "priority": 80,
+          "capabilities": [
+            "anatomy",
+            "charcoal",
+            "composition",
+            "figure",
+            "gesture"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "post_master": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "post_master",
+          "district": "cinema",
+          "role": "post",
+          "priority": 80,
+          "capabilities": [
+            "audio",
+            "edit",
+            "grade",
+            "master",
+            "subtitles"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "product_architect": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "product_architect",
+          "district": "products",
+          "role": "product",
+          "priority": 80,
+          "capabilities": [
+            "bundle",
+            "course_structure",
+            "offer_structure",
+            "pdf_product"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "site_integrator": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "site_integrator",
+          "district": "distribution",
+          "role": "web",
+          "priority": 80,
+          "capabilities": [
+            "deployment_brief",
+            "gallery",
+            "metadata",
+            "seo",
+            "site"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "tattoo_architect": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "tattoo_architect",
+          "district": "atelier",
+          "role": "tattoo_design",
+          "priority": 80,
+          "capabilities": [
+            "body_flow",
+            "flash",
+            "negative_space",
+            "placement",
+            "tattoo"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "channel_router": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "channel_router",
+          "district": "distribution",
+          "role": "distribution",
+          "priority": 75,
+          "capabilities": [
+            "format_delivery",
+            "github",
+            "instagram",
+            "youtube"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      },
+      "editorial_planner": {
+        "schema": "harum.cell.hologram.v1",
+        "cell": {
+          "id": "editorial_planner",
+          "district": "noir_editorial",
+          "role": "calendar",
+          "priority": 75,
+          "capabilities": [
+            "content_calendar",
+            "format_adaptation",
+            "sequence"
+          ]
+        },
+        "organism_digest": "209c02dc1fc778218f9281a3cd3eca3612c4261a5413d5d0978d38704cca5225",
+        "macro_summary": {
+          "districts": 18,
+          "swarms": 72,
+          "declared_agent_roles": 360
+        },
+        "resources": [
+          "github",
+          "vercel",
+          "adobe",
+          "airtable",
+          "elevenlabs",
+          "heygen",
+          "windsor_ai",
+          "google_drive",
+          "canva"
+        ],
+        "active_missions": [
+          "archive_visual_collection",
+          "integrate_programs_and_pdfs",
+          "swarm_city_runtime",
+          "noir_content_pipeline",
+          "studio23_sync"
+        ]
+      }
+    }
+  },
+  "reconciliation": {
+    "schema": "harum.reconcile.v1",
+    "desired": {
+      "state": "healthy",
+      "minimum_resources": [
+        "python",
+        "git_history",
+        "shared_state",
+        "checkpoint"
+      ],
+      "minimum_active_missions": 1,
+      "max_dead_letters": 0,
+      "max_waiting_external": 10
+    },
+    "actual": {
+      "dead_letters": 0,
+      "waiting_external": 0,
+      "mission_count": 5
+    },
+    "resource_plan": {
+      "complete": true,
+      "fabric": [
+        {
+          "resource": "airtable_blackboard",
+          "covers": [
+            "shared_state"
+          ],
+          "status": "active"
+        },
+        {
+          "resource": "github_actions_standard",
+          "covers": [
+            "python"
+          ],
+          "status": "active"
+        },
+        {
+          "resource": "github_repository",
+          "covers": [
+            "git_history"
+          ],
+          "status": "active"
+        },
+        {
+          "resource": "local_sqlite",
+          "covers": [
+            "checkpoint"
+          ],
+          "status": "active"
+        }
+      ],
+      "gaps": []
+    },
+    "actions": [],
+    "timestamp": 1789841007
+  },
+  "redundancy": {
+    "schema": "harum.redundancy.audit.v1",
+    "score": 0.5,
+    "findings": [
+      {
+        "domain": "state",
+        "routes": [
+          "airtable_blackboard",
+          "github_repository",
+          "local_sqlite"
+        ],
+        "route_count": 3,
+        "capabilities": {
+          "shared_state": [
+            "airtable_blackboard"
+          ],
+          "transactions": [
+            "local_sqlite"
+          ],
+          "event_store": [
+            "local_sqlite"
+          ],
+          "git_history": [
+            "github_repository"
+          ]
+        },
+        "status": "REDUNDANT"
+      },
+      {
+        "domain": "compute",
+        "routes": [
+          "github_actions_standard"
+        ],
+        "route_count": 1,
+        "capabilities": {
+          "python": [
+            "github_actions_standard"
+          ],
+          "parallel_cpu": [
+            "github_actions_standard"
+          ]
+        },
+        "status": "SINGLE_POINT"
+      },
+      {
+        "domain": "archive",
+        "routes": [
+          "github_repository"
+        ],
+        "route_count": 1,
+        "capabilities": {
+          "git_history": [
+            "github_repository"
+          ],
+          "manifests": [
+            "github_repository"
+          ]
+        },
+        "status": "SINGLE_POINT"
+      },
+      {
+        "domain": "coordination",
+        "routes": [
+          "agent:dispatcher",
+          "airtable_blackboard",
+          "local_sqlite"
+        ],
+        "route_count": 3,
+        "capabilities": {
+          "shared_state": [
+            "airtable_blackboard"
+          ],
+          "queue": [
+            "agent:dispatcher",
+            "local_sqlite"
+          ],
+          "event_store": [
+            "local_sqlite"
+          ]
+        },
+        "status": "REDUNDANT"
+      },
+      {
+        "domain": "publication_control",
+        "routes": [
+          "agent:publication_guard"
+        ],
+        "route_count": 1,
+        "capabilities": {
+          "publish_gate": [
+            "agent:publication_guard"
+          ],
+          "human_review": [
+            "agent:publication_guard"
+          ]
+        },
+        "status": "SINGLE_POINT"
+      },
+      {
+        "domain": "recovery",
+        "routes": [
+          "github_repository",
+          "local_sqlite"
+        ],
+        "route_count": 2,
+        "capabilities": {
+          "checkpoint": [
+            "local_sqlite"
+          ],
+          "event_store": [
+            "local_sqlite"
+          ],
+          "git_history": [
+            "github_repository"
+          ]
+        },
+        "status": "REDUNDANT"
+      }
+    ]
+  },
+  "resource_fabric": {
+    "complete": true,
+    "fabric": [
+      {
+        "resource": "airtable_blackboard",
+        "covers": [
+          "shared_state"
+        ],
+        "status": "active"
+      },
+      {
+        "resource": "github_actions_standard",
+        "covers": [
+          "python"
+        ],
+        "status": "active"
+      },
+      {
+        "resource": "github_repository",
+        "covers": [
+          "git_history"
+        ],
+        "status": "active"
+      },
+      {
+        "resource": "local_sqlite",
+        "covers": [
+          "checkpoint"
+        ],
+        "status": "active"
+      }
+    ],
+    "gaps": []
+  },
+  "evolution": {
+    "proposals": []
+  }
+}
