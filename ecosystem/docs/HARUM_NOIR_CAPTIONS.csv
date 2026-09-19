@@ -1,7 +1,6 @@
-<PARSED TEXT FOR SHEET: 1 / 1 TABS
-TAB NAME: HARUM_NOIR_CAPTIONS.csv>index,asset_name,format,theme,caption,cta
-0,noir_reflexo_01,stories,Reflexo,Tem noite que eu começo pelo espelho. Não para me ver bonita. Para entender o que ainda não virou linha.,acompanha o próximo capítulo
-1,noir_maos_sujas_01,reel,Mãos sujas,O carvão suja a mão antes de dizer qualquer coisa. É nessa parte que eu gosto de ficar.,vê o próximo
-2,noir_parede_01,stories,Folha na parede,Tem desenho que só faz sentido quando sai da mesa.,estou reunindo isso num caderno
-3,noir_2317_01,stories,23:17,A cidade já está mais baixa. O papel não.,amanhã eu continuo
-4,noir_caderno_01,reel,O caderno,"Eu comecei a organizar o que costumo deixar solto: exercícios, erros, decisões, perguntas.","quando estiver pronto de verdade, eu aviso"
+asset_name,format,theme,caption,cta
+noir_reflexo_01,stories,Reflexo,Tem noite que eu começo pelo espelho. Não para me ver bonita. Para entender o que ainda não virou linha.,acompanha o próximo capítulo
+noir_maos_sujas_01,reel,Mãos sujas,O carvão suja a mão antes de dizer qualquer coisa. É nessa parte que eu gosto de ficar.,vê o próximo
+noir_parede_01,stories,Folha na parede,Tem desenho que só faz sentido quando sai da mesa.,estou reunindo isso num caderno
+noir_2317_01,stories,23:17,A cidade já está mais baixa. O papel não.,amanhã eu continuo
+noir_caderno_01,reel,O caderno,"Eu comecei a organizar o que costumo deixar solto: exercícios, erros, decisões, perguntas.","quando estiver pronto de verdade, eu aviso"

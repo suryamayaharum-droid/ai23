@@ -1,0 +1,362 @@
+{
+  "version": "3.0",
+  "updated": "2026-09-19",
+  "policy": {
+    "global_commercial_default": true,
+    "license_rule": "Only engines marked approved_for_global_output are auto-routable for a globally published master. Others require explicit review.",
+    "compute_rule": "Never bypass provider quotas or pool accounts. Split work by shot and use each allowed runtime independently."
+  },
+  "engines": [
+    {
+      "id": "ffmpeg_motion",
+      "name": "FFmpeg Motion/Grade/Edit",
+      "kind": "cpu",
+      "capabilities": [
+        "still_motion",
+        "edit",
+        "compile",
+        "grade",
+        "audio",
+        "subtitles",
+        "qc"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Deterministic identity-safe baseline."
+    },
+    {
+      "id": "comfyui",
+      "name": "ComfyUI",
+      "kind": "orchestrator",
+      "capabilities": [
+        "image",
+        "video",
+        "audio",
+        "graph_api"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Backend/orchestrator; model licenses remain separate."
+    },
+    {
+      "id": "framepack",
+      "name": "FramePack",
+      "kind": "video",
+      "capabilities": [
+        "i2v",
+        "long_video",
+        "progressive_generation"
+      ],
+      "min_vram_gb": 6,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Low-VRAM progressive video; checkpoint/license review required."
+    },
+    {
+      "id": "liveportrait",
+      "name": "LivePortrait",
+      "kind": "portrait",
+      "capabilities": [
+        "portrait_motion",
+        "microexpression"
+      ],
+      "min_vram_gb": 6,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Code/model dependency licensing must be checked for the chosen stack."
+    },
+    {
+      "id": "musetalk15",
+      "name": "MuseTalk 1.5",
+      "kind": "lipsync",
+      "capabilities": [
+        "lipsync",
+        "talking_video"
+      ],
+      "min_vram_gb": 8,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Use only after model/dependency license review."
+    },
+    {
+      "id": "wan22",
+      "name": "Wan 2.2",
+      "kind": "video",
+      "capabilities": [
+        "i2v",
+        "t2v",
+        "cinematic_motion"
+      ],
+      "min_vram_gb": 8,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Prefer distilled/quantized variants via LightX2V/WanGP when compute is limited."
+    },
+    {
+      "id": "hunyuan15",
+      "name": "HunyuanVideo 1.5",
+      "kind": "video",
+      "capabilities": [
+        "i2v",
+        "t2v",
+        "sr"
+      ],
+      "min_vram_gb": 14,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Step-distilled 480p route is attractive; review community license before publishing."
+    },
+    {
+      "id": "ltx2",
+      "name": "LTX-2",
+      "kind": "audiovideo",
+      "capabilities": [
+        "i2v",
+        "t2v",
+        "native_audio_video",
+        "multi_keyframe",
+        "extend"
+      ],
+      "min_vram_gb": 16,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Powerful multimodal route; review exact checkpoint license."
+    },
+    {
+      "id": "skyreelsv3",
+      "name": "SkyReels V3",
+      "kind": "video",
+      "capabilities": [
+        "multi_reference",
+        "audio_guided",
+        "v2v",
+        "i2v"
+      ],
+      "min_vram_gb": 24,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Best reserved for reference-heavy hero shots."
+    },
+    {
+      "id": "lightx2v",
+      "name": "LightX2V",
+      "kind": "inference",
+      "capabilities": [
+        "quantization",
+        "offload",
+        "cache",
+        "distillation",
+        "multi_gpu"
+      ],
+      "min_vram_gb": 8,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Inference framework; inherited checkpoint license still applies."
+    },
+    {
+      "id": "wangp",
+      "name": "WanGP",
+      "kind": "inference",
+      "capabilities": [
+        "low_vram",
+        "offload",
+        "queue",
+        "quantization"
+      ],
+      "min_vram_gb": 6,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Inference wrapper; inherited model license still applies."
+    },
+    {
+      "id": "video_depth_anything",
+      "name": "Video Depth Anything",
+      "kind": "analysis",
+      "capabilities": [
+        "depth",
+        "parallax",
+        "camera_motion"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Use small model for fast consistent depth; verify checkpoint variant."
+    },
+    {
+      "id": "sam2",
+      "name": "SAM 2",
+      "kind": "analysis",
+      "capabilities": [
+        "segmentation",
+        "mask_tracking"
+      ],
+      "min_vram_gb": 6,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Useful for layer separation, rotoscoping and selective grade."
+    },
+    {
+      "id": "cotracker3",
+      "name": "CoTracker3",
+      "kind": "analysis",
+      "capabilities": [
+        "point_tracking",
+        "motion_tracking"
+      ],
+      "min_vram_gb": 6,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Camera/object track extraction."
+    },
+    {
+      "id": "rife",
+      "name": "RIFE",
+      "kind": "post",
+      "capabilities": [
+        "interpolate",
+        "fps_up"
+      ],
+      "min_vram_gb": 2,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Check exact implementation/model license."
+    },
+    {
+      "id": "realesrgan",
+      "name": "Real-ESRGAN",
+      "kind": "post",
+      "capabilities": [
+        "upscale",
+        "restore"
+      ],
+      "min_vram_gb": 2,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Post-process only; verify checkpoint/license."
+    },
+    {
+      "id": "pyscenedetect",
+      "name": "PySceneDetect",
+      "kind": "analysis",
+      "capabilities": [
+        "shot_detection",
+        "ingest"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Shot boundary detection."
+    },
+    {
+      "id": "whisperx",
+      "name": "WhisperX",
+      "kind": "audio",
+      "capabilities": [
+        "transcript",
+        "word_timestamps",
+        "diarization"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Transcription helper; dependencies/models have their own terms."
+    },
+    {
+      "id": "dinov2",
+      "name": "DINOv2",
+      "kind": "analysis",
+      "capabilities": [
+        "visual_embedding",
+        "reference_similarity",
+        "continuity_qc"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Apache-2.0 model family; use for heuristic visual consistency, not identity claims."
+    },
+    {
+      "id": "vmaf",
+      "name": "Netflix VMAF",
+      "kind": "analysis",
+      "capabilities": [
+        "quality_metric",
+        "encode_qc"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Objective perceptual encode comparison."
+    },
+    {
+      "id": "opencolorio",
+      "name": "OpenColorIO / ACES",
+      "kind": "color",
+      "capabilities": [
+        "color_management",
+        "aces",
+        "lut"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Normalize color across heterogeneous generators."
+    },
+    {
+      "id": "opentimelineio",
+      "name": "OpenTimelineIO",
+      "kind": "editorial",
+      "capabilities": [
+        "timeline",
+        "nle_interchange"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Cut metadata and NLE interchange."
+    },
+    {
+      "id": "prefect",
+      "name": "Prefect Core",
+      "kind": "orchestration",
+      "capabilities": [
+        "retries",
+        "caching",
+        "state",
+        "scheduling"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": true,
+      "cost": "free",
+      "notes": "Optional self-hosted orchestration layer."
+    },
+    {
+      "id": "chatterbox",
+      "name": "Chatterbox Multilingual",
+      "kind": "tts",
+      "capabilities": [
+        "tts",
+        "voice_reference",
+        "emotion"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Use only voices owned/authorized; verify current model/output terms."
+    },
+    {
+      "id": "kokoro",
+      "name": "Kokoro",
+      "kind": "tts",
+      "capabilities": [
+        "tts"
+      ],
+      "min_vram_gb": 0,
+      "approved_for_global_output": false,
+      "cost": "free",
+      "notes": "Lightweight fallback; verify language/voice asset licensing."
+    }
+  ]
+}

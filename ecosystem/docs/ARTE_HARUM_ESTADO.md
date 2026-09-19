@@ -351,3 +351,4 @@ Aplicar `STUDIO23_SITE_PATCH_06.md` diretamente no site existente assim que o ed
 - Site Studio 23: PUBLICADO na versão 4.
 - Página de vendas e fluxo de contato: atualizados no site existente.
 - Hotmart / Ritual do Carvão pode voltar à fila após conferência pública do novo domínio e, quando houver fotos autorizadas disponíveis, ampliação da galeria.
+
