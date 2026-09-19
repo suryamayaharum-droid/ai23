@@ -1,4 +1,4 @@
-name: HARUM Organism Pulse v4
+name: HARUM Organism Pulse v5
 
 on:
   push:
@@ -13,16 +13,17 @@ permissions:
   contents: write
 
 concurrency:
-  group: harum-organism-pulse-v4
+  group: harum-organism-pulse-v5
   cancel-in-progress: false
 
 jobs:
   pulse:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     env:
       SUPABASE_URL: ${{ secrets.HARUM_SUPABASE_URL }}
       SUPABASE_SECRET_KEY: ${{ secrets.HARUM_SUPABASE_SECRET_KEY }}
+
     steps:
       - name: Checkout HARUM organism DNA
         uses: actions/checkout@v4
@@ -39,33 +40,38 @@ jobs:
         uses: actions/cache@v4
         with:
           path: runtime
-          key: harum-organism-v4-${{ runner.os }}-${{ github.run_id }}
+          key: harum-organism-v5-${{ runner.os }}-${{ github.run_id }}
           restore-keys: |
+            harum-organism-v5-${{ runner.os }}-
             harum-organism-v4-${{ runner.os }}-
             harum-organism-v3-${{ runner.os }}-
-            harum-organism-v2-${{ runner.os }}-
 
-      - name: Validate organism DNA
+      - name: Validate organism and cortex DNA
         run: |
-          for f in ecosystem/swarm/config/*.json; do
+          for f in ecosystem/swarm/config/*.json ecosystem/cortex/config/*.json; do
             python -m json.tool "$f" >/dev/null
           done
           python -m py_compile ecosystem/swarm/*.py
+          python -m py_compile ecosystem/cortex/*.py
 
-      - name: Execute organism cycle v4
+      - name: Execute organism cycle v5
         run: |
-          python ecosystem/swarm/organism_cycle_v4.py             --db runtime/harum_organism.db             --output runtime/organism-v4.json
+          python ecosystem/swarm/organism_cycle_v5.py             --db runtime/harum_organism.db             --output runtime/organism-v5.json
 
-      - name: Regression tests
+      - name: Swarm regression tests
         run: python -m unittest discover -s ecosystem/swarm/tests -v
+
+      - name: Cortex deterministic tests
+        run: python -m unittest discover -s ecosystem/cortex/tests -v
 
       - name: Persist compact organism state
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p ecosystem/runtime
-          cp runtime/organism-v4.json ecosystem/runtime/organism-v4-latest.json
-          cp runtime/digital-twin.json ecosystem/runtime/digital-twin-latest.json
+          cp runtime/organism-v5.json ecosystem/runtime/organism-v5-latest.json
+          cp runtime/digital-twin-v2.json ecosystem/runtime/digital-twin-v2-latest.json
+          cp runtime/cortex-status.json ecosystem/runtime/cortex-status-latest.json
           if [ -f runtime/journal/snapshot.json ]; then
             cp runtime/journal/snapshot.json ecosystem/runtime/journal-snapshot-latest.json
           fi
@@ -76,16 +82,17 @@ jobs:
             echo 'No persistent state changes.'
             exit 0
           fi
-          git commit -m 'Update HARUM organism v4 state'
+          git commit -m 'Update HARUM organism v5 cognitive state'
           git push origin HEAD:harum-archive
 
       - name: Preserve short-lived telemetry
         uses: actions/upload-artifact@v4
         with:
-          name: harum-organism-v4-${{ github.run_id }}
+          name: harum-organism-v5-${{ github.run_id }}
           path: |
-            runtime/organism-v4.json
-            runtime/digital-twin.json
+            runtime/organism-v5.json
+            runtime/digital-twin-v2.json
+            runtime/cortex-status.json
             runtime/journal/
           retention-days: 2
           if-no-files-found: error
