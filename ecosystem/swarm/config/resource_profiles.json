@@ -1,0 +1,144 @@
+{
+  "version": "2.0",
+  "principle": "capability-first, provider-agnostic, zero-extra-spend by default",
+  "resources": [
+    {
+      "id": "github_actions_standard",
+      "type": "ephemeral_compute",
+      "status": "active",
+      "cost_policy": "free_on_public_standard_runners",
+      "capabilities": [
+        "python",
+        "shell",
+        "git",
+        "network",
+        "parallel_cpu",
+        "artifact_output"
+      ],
+      "cpu": 4,
+      "memory_gb": 16,
+      "storage_gb": 14,
+      "persistent": false,
+      "max_parallel_policy": 4,
+      "constraints": [
+        "job_time_limit",
+        "rate_limits",
+        "ephemeral_filesystem"
+      ]
+    },
+    {
+      "id": "github_repository",
+      "type": "durable_versioned_store",
+      "status": "active",
+      "capabilities": [
+        "git_history",
+        "branches",
+        "manifests",
+        "source",
+        "durable_small_state"
+      ],
+      "persistent": true,
+      "constraints": [
+        "not_for_large_runtime_databases",
+        "api_rate_limits"
+      ]
+    },
+    {
+      "id": "airtable_blackboard",
+      "type": "shared_control_plane",
+      "status": "active",
+      "capabilities": [
+        "shared_state",
+        "queues",
+        "missions",
+        "human_readable_control",
+        "cross_session_memory"
+      ],
+      "persistent": true,
+      "constraints": [
+        "connector_required_for_chat_writes",
+        "not_a_compute_engine"
+      ]
+    },
+    {
+      "id": "chatgpt_connector_fabric",
+      "type": "authorized_tool_router",
+      "status": "active_when_session_runs",
+      "capabilities": [
+        "github",
+        "airtable",
+        "vercel",
+        "adobe",
+        "elevenlabs",
+        "heygen",
+        "windsor_ai",
+        "google_drive",
+        "canva"
+      ],
+      "persistent": false,
+      "constraints": [
+        "not_a_background_runtime",
+        "authorization_scoped"
+      ]
+    },
+    {
+      "id": "vercel",
+      "type": "serverless_runtime",
+      "status": "available_not_bound",
+      "capabilities": [
+        "deploy",
+        "functions",
+        "logs",
+        "agent_observability"
+      ],
+      "persistent": false,
+      "constraints": [
+        "project_binding_required",
+        "platform_limits"
+      ]
+    },
+    {
+      "id": "cloudflare_free_candidate",
+      "type": "optional_stateful_edge",
+      "status": "candidate_not_configured",
+      "capabilities": [
+        "workers",
+        "cron",
+        "sqlite_durable_objects",
+        "http_api",
+        "websockets"
+      ],
+      "persistent": true,
+      "constraints": [
+        "free_tier_limits",
+        "secure_deployment_required"
+      ]
+    },
+    {
+      "id": "local_sqlite",
+      "type": "portable_state_engine",
+      "status": "active",
+      "capabilities": [
+        "transactions",
+        "wal",
+        "event_store",
+        "queue",
+        "checkpoint",
+        "offline"
+      ],
+      "persistent": "when_backed_up",
+      "constraints": [
+        "single_host_unless_replicated"
+      ]
+    }
+  ],
+  "routing_policy": [
+    "prefer deterministic local CPU before external generation",
+    "prefer durable state before ephemeral state",
+    "checkpoint before expensive or external steps",
+    "never bypass quotas or permissions",
+    "degrade capability rather than fabricate completion",
+    "split independent work into bounded shards",
+    "keep provider adapters replaceable"
+  ]
+}
