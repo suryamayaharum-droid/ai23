@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "id": "harum_browser_fabric",
+  "type": "client_side_ephemeral_mesh",
+  "status": "staged-until-live-proof",
+  "capabilities": [
+    "browser_compute",
+    "wasm_python",
+    "semantic_wasm",
+    "webgpu_llm",
+    "indexeddb_state",
+    "offline_pwa",
+    "same_origin_mesh",
+    "webrtc_peer_mesh",
+    "crdt_sync",
+    "browser_task_scheduler",
+    "optional_linux_emulation"
+  ],
+  "cost_policy": "zero-extra-spend; uses client browser resources",
+  "persistence": "IndexedDB + Cache Storage + CRDT peer gossip",
+  "constraints": [
+    "browser must remain open for active compute",
+    "service workers may be suspended",
+    "WebGPU availability varies",
+    "WebRTC automatic internet discovery needs signaling; manual SDP pairing needs none",
+    "full v86 Linux is heavier and slower than WASM"
+  ],
+  "proof_path": "ecosystem/runtime/browser-fabric-proof.json",
+  "fallback": [
+    "deterministic_browser_cell",
+    "github_actions_standard",
+    "local_sqlite"
+  ]
+}
