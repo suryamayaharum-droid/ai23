@@ -34,9 +34,9 @@ jobs:
       - name: Install free render stack
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core espeak-ng
           python -m pip install --upgrade pip
-          pip install piper-tts
+          pip install "kokoro>=0.9.4" soundfile numpy
 
       - name: Prepare visual
         run: |
@@ -49,21 +49,20 @@ jobs:
               -frames:v 1 source.png
           fi
 
-      - name: Download free pt-BR voice
+      - name: Generate female pt-BR narration with Kokoro
         run: |
-          curl -L --fail \
-            https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx \
-            -o voice.onnx
-          curl -L --fail \
-            https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx.json \
-            -o voice.onnx.json
-
-      - name: Generate narration
-        run: |
-          printf '%s' "$SCRIPT" | piper \
-            --model voice.onnx \
-            --config voice.onnx.json \
-            --output_file voice.wav
+          python - <<'PY'
+          import os, numpy as np, soundfile as sf
+          from kokoro import KPipeline
+          pipeline = KPipeline(lang_code='p')
+          chunks = []
+          for _, _, audio in pipeline(os.environ["SCRIPT"], voice='pf_dora', speed=0.92):
+              chunks.append(audio)
+          if not chunks:
+              raise RuntimeError("Kokoro returned no audio")
+          sf.write("voice.wav", np.concatenate(chunks), 24000)
+          print("voice.wav generated with pt-BR female voice pf_dora")
+          PY
 
       - name: Render 9:16 NoirMotion
         run: |
