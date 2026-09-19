@@ -1,0 +1,15 @@
+{
+  "version":"8.1",
+  "policy":{"zero_extra_spend":true,"publication_requires_confirmation":true},
+  "missions":[
+    {"id":"p0-source-index","priority":100,"mode":"local","task":"index_project","title":"Consolidar índice fonte de verdade","deps":[]},
+    {"id":"p0-identity-audit","priority":98,"mode":"local","task":"audit_identity","title":"Auditar Face/Voice/Brand locks","deps":["p0-source-index"]},
+    {"id":"p0-runtime-census","priority":96,"mode":"local","task":"runtime_census","title":"Atualizar mapa real de capacidade de compute","deps":[]},
+    {"id":"p1-video-benchmark","priority":90,"mode":"external","task":"gpu_benchmark","title":"Benchmark Wan2.2 + DiffSynth / T4x2","deps":["p0-runtime-census"]},
+    {"id":"p1-youtube-sync","priority":88,"mode":"external","task":"youtube_publish_prepare","title":"Fechar pacote de publicação YouTube @arteharum","deps":["p0-identity-audit"]},
+    {"id":"p1-instagram-sync","priority":87,"mode":"external","task":"instagram_publish_prepare","title":"Sincronizar arco Harum Noir no Instagram","deps":["p0-identity-audit"]},
+    {"id":"p1-web-hotmart","priority":84,"mode":"external","task":"web_hotmart_audit","title":"Alinhar site/Hotmart ao ecossistema","deps":["p0-source-index"]},
+    {"id":"p2-commerce-gate","priority":80,"mode":"external","task":"commerce_validation","title":"Validar checkout, entrega e claims comerciais","deps":["p1-web-hotmart"]},
+    {"id":"p2-metrics-loop","priority":78,"mode":"local","task":"metrics_plan","title":"Consolidar learning loop de métricas + benchmarks","deps":["p0-source-index"]}
+  ]
+}
