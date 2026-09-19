@@ -1,0 +1,70 @@
+name: HARUM Postgres Contract CI
+
+on:
+  push:
+    branches: [harum-archive]
+    paths:
+      - 'ecosystem/postgres/**'
+      - 'ecosystem/supabase/**'
+      - 'ecosystem/swarm/hybrid_state.py'
+      - 'ecosystem/swarm/supabase_adapter.py'
+      - '.github/workflows/harum-postgres-contract-ci.yml'
+  pull_request:
+    paths:
+      - 'ecosystem/postgres/**'
+      - 'ecosystem/supabase/**'
+      - 'ecosystem/swarm/hybrid_state.py'
+      - 'ecosystem/swarm/supabase_adapter.py'
+
+permissions:
+  contents: read
+
+jobs:
+  postgres-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_DB: harum
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d harum"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      PGPASSWORD: postgres
+      PGHOST: 127.0.0.1
+      PGPORT: 5432
+      PGUSER: postgres
+      PGDATABASE: harum
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Postgres client if needed
+        shell: bash
+        run: |
+          if ! command -v psql >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y postgresql-client
+          fi
+
+      - name: Apply portable HARUM core
+        run: psql -v ON_ERROR_STOP=1 -f ecosystem/postgres/001_harum_portable_core.sql
+
+      - name: Run contract smoke tests
+        run: psql -v ON_ERROR_STOP=1 -f ecosystem/postgres/contract_smoke.sql
+
+      - name: Verify expected schema
+        shell: bash
+        run: |
+          psql -Atc "select count(*) from information_schema.tables where table_schema='harum';"
+          psql -Atc "select node_id,health from harum.nodes order by node_id;"
+          psql -Atc "select workflow,stage,status,lease_owner from harum.tasks order by created_at;"
