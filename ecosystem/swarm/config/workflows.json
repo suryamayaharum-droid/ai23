@@ -1,0 +1,233 @@
+{
+  "version": "1.0",
+  "workflows": {
+    "noir_chapter": [
+      {
+        "stage": "retrieve_context",
+        "requires": [
+          "retrieve",
+          "cross_reference"
+        ]
+      },
+      {
+        "stage": "write",
+        "requires": [
+          "story",
+          "noir_loop"
+        ]
+      },
+      {
+        "stage": "canon",
+        "requires": [
+          "canon",
+          "continuity"
+        ]
+      },
+      {
+        "stage": "shot_plan",
+        "requires": [
+          "scene_graph",
+          "shot_plan"
+        ]
+      },
+      {
+        "stage": "compute",
+        "requires": [
+          "compute_route"
+        ]
+      },
+      {
+        "stage": "post",
+        "requires": [
+          "edit",
+          "audio",
+          "grade"
+        ]
+      },
+      {
+        "stage": "qc",
+        "requires": [
+          "video_qc",
+          "identity_qc"
+        ]
+      },
+      {
+        "stage": "truth",
+        "requires": [
+          "truth",
+          "claim_gate"
+        ]
+      },
+      {
+        "stage": "release",
+        "requires": [
+          "publish_gate",
+          "human_review"
+        ]
+      }
+    ],
+    "tattoo_collection": [
+      {
+        "stage": "archive_scan",
+        "requires": [
+          "inventory",
+          "dedupe"
+        ]
+      },
+      {
+        "stage": "concept",
+        "requires": [
+          "composition",
+          "novelty_check"
+        ]
+      },
+      {
+        "stage": "body_design",
+        "requires": [
+          "tattoo",
+          "body_flow",
+          "negative_space"
+        ]
+      },
+      {
+        "stage": "canon_style",
+        "requires": [
+          "canon",
+          "continuity"
+        ]
+      },
+      {
+        "stage": "curate",
+        "requires": [
+          "image_curate",
+          "collection_structure"
+        ]
+      },
+      {
+        "stage": "release",
+        "requires": [
+          "publish_gate",
+          "human_review"
+        ]
+      }
+    ],
+    "pdf_product": [
+      {
+        "stage": "retrieve",
+        "requires": [
+          "retrieve",
+          "cross_reference"
+        ]
+      },
+      {
+        "stage": "structure",
+        "requires": [
+          "pdf_product",
+          "offer_structure"
+        ]
+      },
+      {
+        "stage": "truth",
+        "requires": [
+          "truth",
+          "claim_gate"
+        ]
+      },
+      {
+        "stage": "rights",
+        "requires": [
+          "license",
+          "provenance"
+        ]
+      },
+      {
+        "stage": "commerce",
+        "requires": [
+          "checkout_gate",
+          "consumer_clarity"
+        ]
+      },
+      {
+        "stage": "archive",
+        "requires": [
+          "manifest",
+          "versioning"
+        ]
+      },
+      {
+        "stage": "release",
+        "requires": [
+          "publish_gate",
+          "human_review"
+        ]
+      }
+    ],
+    "archive_ingest": [
+      {
+        "stage": "inventory",
+        "requires": [
+          "inventory",
+          "hash"
+        ]
+      },
+      {
+        "stage": "dedupe",
+        "requires": [
+          "dedupe",
+          "versioning"
+        ]
+      },
+      {
+        "stage": "taxonomy",
+        "requires": [
+          "visual_taxonomy",
+          "collection_structure"
+        ]
+      },
+      {
+        "stage": "manifest",
+        "requires": [
+          "manifest",
+          "cross_reference"
+        ]
+      }
+    ],
+    "site_sync": [
+      {
+        "stage": "retrieve",
+        "requires": [
+          "retrieve",
+          "cross_reference"
+        ]
+      },
+      {
+        "stage": "content",
+        "requires": [
+          "site",
+          "gallery"
+        ]
+      },
+      {
+        "stage": "seo",
+        "requires": [
+          "seo",
+          "metadata"
+        ]
+      },
+      {
+        "stage": "truth",
+        "requires": [
+          "truth",
+          "claim_gate"
+        ]
+      },
+      {
+        "stage": "release",
+        "requires": [
+          "publish_gate",
+          "human_review"
+        ]
+      }
+    ]
+  }
+}
