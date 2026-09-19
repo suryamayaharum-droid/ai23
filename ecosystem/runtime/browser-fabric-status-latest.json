@@ -1,0 +1,23 @@
+{
+  "schema": "harum.browser-fabric.status.v1",
+  "installed": true,
+  "state": "STAGED",
+  "live": false,
+  "fresh_heartbeat": false,
+  "proof": null,
+  "capabilities": [
+    "browser_compute",
+    "wasm_python",
+    "semantic_wasm",
+    "webgpu_llm",
+    "indexeddb_state",
+    "offline_pwa",
+    "same_origin_mesh",
+    "webrtc_peer_mesh",
+    "crdt_sync",
+    "browser_task_scheduler",
+    "optional_linux_emulation"
+  ],
+  "cost_policy": "zero-extra-spend; uses client browser resources",
+  "constraint": "browser compute exists only while an eligible browser/runtime is active"
+}
