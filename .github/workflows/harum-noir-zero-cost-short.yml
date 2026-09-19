@@ -15,60 +15,79 @@ on:
         description: "Output base name"
         required: true
         default: "HARUM_NOIR_2317"
+  push:
+    paths:
+      - "examples/harum-noir-zero-cost/TRIGGER.md"
 
 jobs:
   render:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      SCRIPT: ${{ github.event.inputs.script || 'Eu quase nunca sei quando um desenho terminou. Às vezes eu só paro antes de estragar.' }}
+      IMAGE_URL: ${{ github.event.inputs.image_url || '' }}
+      ARTIFACT_NAME: ${{ github.event.inputs.artifact_name || 'HARUM_NOIR_2317' }}
     steps:
       - uses: actions/checkout@v4
 
       - name: Install free render stack
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
           python -m pip install --upgrade pip
           pip install piper-tts
 
       - name: Prepare visual
-        env:
-          IMAGE_URL: ${{ inputs.image_url }}
         run: |
           set -e
           if [ -n "$IMAGE_URL" ]; then
             curl -L --fail "$IMAGE_URL" -o source.jpg
           else
-            ffmpeg -y -f lavfi -i "color=c=#0B0B0B:s=1080x1920:d=1"               -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf:text='23\:17':fontcolor=#EEE8DC:fontsize=150:x=80:y=160,drawbox=x=84:y=350:w=150:h=3:color=#B58A3A@0.85:t=fill,noise=alls=3:allf=t+u,vignette=PI/5"               -frames:v 1 source.png
+            ffmpeg -y -f lavfi -i "color=c=#0B0B0B:s=1080x1920:d=1" \
+              -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf:text='23\:17':fontcolor=#EEE8DC:fontsize=150:x=80:y=160,drawbox=x=84:y=350:w=150:h=3:color=#B58A3A@0.85:t=fill,noise=alls=3:allf=t+u,vignette=PI/5" \
+              -frames:v 1 source.png
           fi
 
       - name: Download free pt-BR voice
         run: |
-          curl -L --fail             https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx             -o voice.onnx
-          curl -L --fail             https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx.json             -o voice.onnx.json
+          curl -L --fail \
+            https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx \
+            -o voice.onnx
+          curl -L --fail \
+            https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx.json \
+            -o voice.onnx.json
 
       - name: Generate narration
-        env:
-          SCRIPT: ${{ inputs.script }}
         run: |
-          printf '%s' "$SCRIPT" | piper             --model voice.onnx             --config voice.onnx.json             --output_file voice.wav
+          printf '%s' "$SCRIPT" | piper \
+            --model voice.onnx \
+            --config voice.onnx.json \
+            --output_file voice.wav
 
       - name: Render 9:16 NoirMotion
         run: |
           INPUT="source.jpg"
           [ -f source.png ] && INPUT="source.png"
 
-          ffmpeg -y -loop 1 -i "$INPUT" -t 9 -r 30             -vf "scale=1200:2134:force_original_aspect_ratio=increase,crop=1200:2134,crop=1080:1920:x='(iw-ow)/2+20*sin(t*0.22)':y='(ih-oh)/2+12*sin(t*0.17)',eq=contrast=1.04:saturation=0.88:brightness=-0.015,vignette=PI/5,noise=alls=2:allf=t+u,fade=t=in:st=0:d=0.35,fade=t=out:st=8.5:d=0.5"             -an -c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p silent.mp4
+          ffmpeg -y -loop 1 -i "$INPUT" -t 9 -r 30 \
+            -vf "scale=1200:2134:force_original_aspect_ratio=increase,crop=1200:2134,crop=1080:1920:x='(iw-ow)/2+20*sin(t*0.22)':y='(ih-oh)/2+12*sin(t*0.17)',eq=contrast=1.04:saturation=0.88:brightness=-0.015,vignette=PI/5,noise=alls=2:allf=t+u,fade=t=in:st=0:d=0.35,fade=t=out:st=8.5:d=0.5" \
+            -an -c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p silent.mp4
 
-          ffmpeg -y -i silent.mp4 -i voice.wav             -filter_complex "[1:a]volume=1.0,apad[a]"             -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k             -shortest -movflags +faststart "${{ inputs.artifact_name }}.mp4"
+          ffmpeg -y -i silent.mp4 -i voice.wav \
+            -filter_complex "[1:a]volume=1.0,apad[a]" \
+            -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k \
+            -shortest -movflags +faststart "$ARTIFACT_NAME.mp4"
 
       - name: Verify output
         run: |
-          ffprobe -v error -show_entries format=duration,size             -show_entries stream=codec_name,width,height             -of json "${{ inputs.artifact_name }}.mp4"
+          ffprobe -v error -show_entries format=duration,size \
+            -show_entries stream=codec_name,width,height \
+            -of json "$ARTIFACT_NAME.mp4"
 
       - name: Upload rendered Short
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.artifact_name }}
-          path: ${{ inputs.artifact_name }}.mp4
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ${{ env.ARTIFACT_NAME }}.mp4
           retention-days: 7
