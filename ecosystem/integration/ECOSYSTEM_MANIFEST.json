@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "project": "HARUM / HARUM NOIR",
+  "branch": "harum-archive",
+  "updated": "2026-09-19",
+  "layers": {
+    "brand": {
+      "path": "ecosystem/docs",
+      "canonical": [
+        "CONTEXTO_MESTRE_ARTE_HARUM.md",
+        "HARUM_NOIR_BIBLIA_CANONICA.md"
+      ]
+    },
+    "visual_archive": {
+      "path": "assets/harum-noir",
+      "areas": [
+        "identity",
+        "editorial",
+        "charcoal",
+        "raw"
+      ]
+    },
+    "programs": {
+      "source": "ecosystem/programs/source",
+      "releases": "ecosystem/programs/releases",
+      "main_components": [
+        "cinebrain.py",
+        "harum_cinematic.py",
+        "harum_director.py",
+        "harum_router.py",
+        "harum_edit.py",
+        "harum_parallax.py",
+        "harum_review.py",
+        "harum_audio_master.py",
+        "noir_motion.py",
+        "HARUM_MODEL_REGISTRY_V3.json",
+        "HARUM_NOIR_ENGINE.json",
+        "HARUM_NOIR_COLAB_VIDEO_LAB.ipynb",
+        "HARUM_NOIR_FREE_VIDEO_LAB.ipynb"
+      ]
+    },
+    "products": {
+      "path": "ecosystem/products-pdf",
+      "status": "binary-import-queue"
+    },
+    "operations": {
+      "docs": "ecosystem/docs",
+      "publication": [
+        "HARUM_NOIR_FILA_PUBLICACAO.md",
+        "HARUM_NOIR_PUBLICATION_PACK_01.md"
+      ],
+      "commerce": [
+        "HARUM_NOIR_COMMERCE_MAP.md",
+        "INVENTARIO_HOTMART_01.md"
+      ],
+      "studio23": [
+        "STUDIO23_DEPLOYMENT_PACKAGE_10.md",
+        "STUDIO23_SITE_PATCH_06.md"
+      ]
+    }
+  },
+  "pipeline": [
+    "canonical_identity",
+    "editorial_brief",
+    "scene_graph",
+    "routing",
+    "render",
+    "qc",
+    "edit",
+    "audio",
+    "master",
+    "publication_gate",
+    "distribution",
+    "metrics",
+    "memory"
+  ],
+  "gates": [
+    "identity",
+    "truth",
+    "license",
+    "quality",
+    "checkout",
+    "human_review"
+  ],
+  "binary_imports": {
+    "images_confirmed": 116,
+    "pdfs_queued": 10,
+    "large_program_releases_pending": true
+  }
+}
