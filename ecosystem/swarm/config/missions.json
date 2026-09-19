@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+  "board": "HARUM ecosystem expansion",
+  "policy": "advance_existing_work_before_opening_new_fronts",
+  "missions": [
+    {
+      "id": "archive_visual_collection",
+      "owner_district": "memory_archive",
+      "supporting_districts": [
+        "atelier",
+        "governance"
+      ],
+      "objective": "complete the HARUM NOIR visual archive and manifest every asset",
+      "capabilities": [
+        "inventory",
+        "hash",
+        "dedupe",
+        "visual_taxonomy",
+        "manifest",
+        "license"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "integrate_programs_and_pdfs",
+      "owner_district": "memory_archive",
+      "supporting_districts": [
+        "products",
+        "distribution",
+        "governance"
+      ],
+      "objective": "version programs, PDFs, docs and release packages under the ecosystem tree",
+      "capabilities": [
+        "inventory",
+        "versioning",
+        "pdf_product",
+        "github",
+        "provenance"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "swarm_city_runtime",
+      "owner_district": "control_tower",
+      "supporting_districts": [
+        "memory_archive",
+        "governance"
+      ],
+      "objective": "validate runtime, event bus, capability mesh, subagents and recovery",
+      "capabilities": [
+        "coordinate",
+        "schedule",
+        "healthcheck",
+        "dead_letter",
+        "loop_detection"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "noir_content_pipeline",
+      "owner_district": "noir_editorial",
+      "supporting_districts": [
+        "cinema",
+        "distribution",
+        "governance"
+      ],
+      "objective": "connect canonical narrative to scene planning, media production, QC and release gates",
+      "capabilities": [
+        "story",
+        "canon",
+        "scene_graph",
+        "compute_route",
+        "video_qc",
+        "truth",
+        "publish_gate"
+      ],
+      "status": "ready"
+    },
+    {
+      "id": "studio23_sync",
+      "owner_district": "distribution",
+      "supporting_districts": [
+        "products",
+        "memory_archive",
+        "governance"
+      ],
+      "objective": "keep site, portfolio, catalog and product claims synchronized with verified assets",
+      "capabilities": [
+        "site",
+        "gallery",
+        "seo",
+        "metadata",
+        "truth",
+        "manifest"
+      ],
+      "status": "ready"
+    }
+  ]
+}
