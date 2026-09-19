@@ -1,0 +1,44 @@
+name: HARUM Organism Bootstrap
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/harum-organism-bootstrap.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout HARUM organism DNA
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate DNA
+        run: |
+          python -m json.tool ecosystem/swarm/config/agents.json >/dev/null
+          python -m json.tool ecosystem/swarm/config/workflows.json >/dev/null
+          python -m json.tool ecosystem/swarm/config/missions.json >/dev/null
+          python -m json.tool ecosystem/swarm/config/plugin_fabric.json >/dev/null
+          python -m json.tool ecosystem/swarm/config/synapses.json >/dev/null
+          python -m json.tool ecosystem/swarm/config/city_v8_airtable_snapshot.json >/dev/null
+          python -m py_compile ecosystem/swarm/*.py
+      - name: Initial organism pulse
+        run: |
+          python ecosystem/swarm/organism_cycle.py             --db runtime/harum_organism.db             --output runtime/organism-pulse.json
+      - name: Regression tests
+        run: python -m unittest discover -s ecosystem/swarm/tests -v
+      - name: Upload bootstrap telemetry
+        uses: actions/upload-artifact@v4
+        with:
+          name: harum-organism-bootstrap-${{ github.run_id }}
+          path: runtime/organism-pulse.json
+          retention-days: 7
