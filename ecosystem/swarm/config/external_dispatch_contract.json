@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "adapters": {
+    "github": {
+      "capabilities": [
+        "repository_write",
+        "branch",
+        "ci",
+        "issue"
+      ],
+      "background_native": true
+    },
+    "airtable": {
+      "capabilities": [
+        "blackboard_write",
+        "records",
+        "schema"
+      ],
+      "background_native": false
+    },
+    "vercel": {
+      "capabilities": [
+        "deploy",
+        "logs",
+        "agent_runs"
+      ],
+      "background_native": false
+    },
+    "adobe": {
+      "capabilities": [
+        "asset_transfer",
+        "creative_assets"
+      ],
+      "background_native": false
+    },
+    "elevenlabs": {
+      "capabilities": [
+        "tts",
+        "voice"
+      ],
+      "background_native": false
+    },
+    "heygen": {
+      "capabilities": [
+        "video",
+        "avatar"
+      ],
+      "background_native": false
+    },
+    "windsor_ai": {
+      "capabilities": [
+        "marketing_analytics"
+      ],
+      "background_native": false
+    },
+    "google_drive": {
+      "capabilities": [
+        "documents",
+        "files"
+      ],
+      "background_native": false
+    },
+    "canva": {
+      "capabilities": [
+        "design_assets"
+      ],
+      "background_native": false
+    }
+  },
+  "envelope": {
+    "required": [
+      "id",
+      "adapter",
+      "capability",
+      "intent",
+      "payload",
+      "idempotency_key",
+      "created_at"
+    ],
+    "forbidden": [
+      "password",
+      "token",
+      "cookie",
+      "api_key",
+      "secret"
+    ]
+  }
+}
