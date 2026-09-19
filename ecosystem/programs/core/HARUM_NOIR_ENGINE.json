@@ -1,0 +1,164 @@
+{
+  "version": "1.3",
+  "status": "canonical",
+  "ecosystem": "Arte Harum",
+  "persona": {
+    "name": "Harum Noir",
+    "role": "persona_editorial_feminina",
+    "face_lock": {
+      "adult": true,
+      "hair": "black chin-length bob/chanel with soft irregular fringe",
+      "eyes": "dark, calm, observant",
+      "face": "delicate, slightly oval, natural skin texture",
+      "expression": "introspective, curious, quiet",
+      "forbid": [
+        "generic influencer",
+        "corporate presenter",
+        "pin-up",
+        "bright glamour makeup",
+        "face drift"
+      ],
+      "canonical_asset": "/HARUM NOIR/HARUM_NOIR_FACE_LOCK_CLEAN_v1.png",
+      "world_reference": "/HARUM NOIR/HARUM_NOIR_CANONICA_STORIES.png",
+      "immutability": "official_content_must_preserve_exact_identity"
+    },
+    "wardrobe_lock": {
+      "top": "matte black boat-neck or low turtleneck",
+      "bottom": "high-waisted graphite/black trousers",
+      "atelier_optional": "graphite apron",
+      "accessory": "one small aged-gold detail",
+      "forbid": [
+        "prints",
+        "saturated colors",
+        "sportswear",
+        "obvious corporate tailoring",
+        "large jewelry"
+      ]
+    },
+    "palette": {
+      "carbon": "#0B0B0B",
+      "graphite": "#242424",
+      "ivory": "#EEE8DC",
+      "aged_gold": "#B58A3A",
+      "rare_oxblood": "#3A171B",
+      "distribution": "80/15/5"
+    }
+  },
+  "voice": {
+    "language": "pt-BR",
+    "delivery": "young adult female, warm, intimate, restrained, sophisticated, non-advertising",
+    "tempo": "natural-slow; punctuation-led rather than fixed speed",
+    "sentence_words": "4-12",
+    "locked_elevenlabs": {
+      "name": "Fabi | Portuguese (BR) | Female",
+      "voice_id": "e06XicPETIbfUaeHM9zH",
+      "model_id": "eleven_v3",
+      "status": "generation_verified_2026-09-19",
+      "test_duration_secs": 13.6
+    },
+    "status": "locked_for_next_tests",
+    "note": "Do not switch voice between official Harum Noir clips unless an explicit editorial re-lock is made after listening comparison."
+  },
+  "prompt_order": [
+    "IDENTITY_LOCK",
+    "WARDROBE_LOCK",
+    "SCENE",
+    "ENVIRONMENT",
+    "LIGHT_CAMERA",
+    "BEHAVIOR",
+    "PALETTE",
+    "NEGATIVE_LOCK"
+  ],
+  "narrative_engine": {
+    "name": "NOIR_LOOP",
+    "sequence": [
+      "anchor",
+      "fragment",
+      "process",
+      "partial_reveal",
+      "residue"
+    ],
+    "formula": "object -> thought -> gesture -> transformation -> residue",
+    "open_loop_payoff_window": "1-3 chapters",
+    "allowed_attention_mechanics": [
+      "curiosity",
+      "continuity",
+      "recognition",
+      "symbol recurrence",
+      "aesthetic reward",
+      "real process",
+      "payoff"
+    ],
+    "forbidden_attention_mechanics": [
+      "false urgency",
+      "invented scarcity",
+      "deliberate emotional dependency",
+      "vulnerability exploitation",
+      "fake biography",
+      "fake social proof"
+    ]
+  },
+  "series": [
+    "Diario do Espelho",
+    "Maos Sujas",
+    "23:17",
+    "O que eu vi nela",
+    "Uma coisa que ficou",
+    "Do papel a pele"
+  ],
+  "publishing_gate": {
+    "must_pass": [
+      "face_match",
+      "hair_match",
+      "wardrobe_match",
+      "palette_match",
+      "voice_match",
+      "truthfulness",
+      "narrative_novelty"
+    ],
+    "if_fail": "do_not_publish_as_Harum_Noir"
+  },
+  "truth_rule": "First-person editorial character voice is allowed; concrete biographical events, clients, relationships, travel, trauma, dates and real-world claims must not be fabricated.",
+  "updated_at": "2026-09-19",
+  "video_ecosystem": {
+    "invideo_agent_url": "https://ai.invideo.io/workspace/7be995f1-be5d-4d44-b3a2-99bdf551b499/v45-copilot/agents-models/09e21c86-2b88-41d2-8ce4-d956d72bcfb9/agent/f64dd3ae-6e06-45a6-b7ad-c62cad86e253",
+    "invideo_status": "external_reference_registered_no_native_plugin_in_current_chat",
+    "crew": [
+      "producer",
+      "writer",
+      "storyboard",
+      "character_guard",
+      "dop",
+      "sound",
+      "editor",
+      "checker"
+    ],
+    "pilot_video": "/HARUM NOIR/HARUM_NOIR_PILOTO_FACE_LOCK_01.mp4",
+    "gemini": {
+      "url": "https://gemini.google.com/app?hl=pt-BR",
+      "role": "multimodal_video_generation_and_editing",
+      "identity_rule": "attach_face_lock_every_official_generation",
+      "status": "prompt_pack_ready_auth_browser_needed"
+    },
+    "colab": {
+      "notebook": "/HARUM NOIR/HARUM_NOIR_COLAB_VIDEO_LAB.ipynb",
+      "primary_engine": "LTX-Video 2B distilled",
+      "face_engine": "LivePortrait",
+      "fallback": "Stable Video Diffusion XT",
+      "advanced": "ComfyUI + Wan2.2 Animate/VACE"
+    },
+    "router": {
+      "close_or_speaking": "LivePortrait",
+      "routine_or_atelier": "Gemini Omni or LTX-Video",
+      "full_body_control": "Wan2.2 Animate/VACE",
+      "editorial_assembly": "InVideo Agent",
+      "publish": "Instagram after gate"
+    }
+  },
+  "commerce_role": {
+    "noir": "editorial_front_door_and_narrator",
+    "authorship": "Arte Harum / Mauricio Harum",
+    "truth_gate": "do_not_claim_availability_until_checkout_delivery_and_policy_are_validated",
+    "instagram": "@a_maior_maravilha_da_natureza"
+  }
+}
