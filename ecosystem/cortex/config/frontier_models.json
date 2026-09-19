@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "tracks": [
+    {
+      "id": "qwen35_4b_frontier",
+      "repo": "unsloth/Qwen3.5-4B-GGUF",
+      "quant": "UD-Q4_K_XL",
+      "upstream": "Qwen/Qwen3.5-4B",
+      "license": "Apache-2.0",
+      "modality": [
+        "text",
+        "vision-with-mmproj"
+      ],
+      "status": "experimental",
+      "role": [
+        "frontier_reasoner",
+        "vision_candidate",
+        "future_core"
+      ],
+      "promotion_gate": [
+        "local_inference_smoke",
+        "harum_regression_suite",
+        "memory_budget",
+        "latency_budget",
+        "license_verified",
+        "rollback_ready"
+      ]
+    }
+  ]
+}
