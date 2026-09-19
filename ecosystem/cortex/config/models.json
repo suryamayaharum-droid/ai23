@@ -1,0 +1,110 @@
+{
+  "version": "1.0",
+  "policy": {
+    "weights_in_git": false,
+    "local_first": true,
+    "external_api_required": false,
+    "default_quant": "Q4_K_M",
+    "max_concurrent_large_models": 1,
+    "consensus_min_brains": 2,
+    "promotion_requires_eval": true
+  },
+  "brains": [
+    {
+      "id": "qwen3_4b_planner",
+      "family": "Qwen3",
+      "repo": "Qwen/Qwen3-4B-GGUF",
+      "quant": "Q4_K_M",
+      "role": [
+        "planner",
+        "reasoner",
+        "tool_planner",
+        "synthesizer"
+      ],
+      "license": "Apache-2.0",
+      "class": "core",
+      "min_ram_gb": 6,
+      "priority": 100
+    },
+    {
+      "id": "phi4_mini_critic",
+      "family": "Phi-4-mini",
+      "repo": "gaianet/Phi-4-mini-instruct-GGUF",
+      "quant": "Q4_K_M",
+      "role": [
+        "critic",
+        "code_review",
+        "logic_check",
+        "judge"
+      ],
+      "license": "MIT",
+      "class": "core",
+      "min_ram_gb": 6,
+      "approximate_gguf_gb": 2.49,
+      "priority": 95
+    },
+    {
+      "id": "smollm3_3b_scout",
+      "family": "SmolLM3",
+      "repo": "ggml-org/SmolLM3-3B-GGUF",
+      "quant": "Q4_K_M",
+      "role": [
+        "scout",
+        "summarizer",
+        "draft",
+        "fast_agent"
+      ],
+      "license": "Apache-2.0",
+      "class": "core",
+      "min_ram_gb": 5,
+      "approximate_gguf_gb": 1.92,
+      "priority": 90
+    },
+    {
+      "id": "qwen3_8b_deep",
+      "family": "Qwen3",
+      "repo": "Qwen/Qwen3-8B-GGUF",
+      "quant": "Q4_K_M",
+      "role": [
+        "deep_reasoner",
+        "difficult_synthesis",
+        "architecture"
+      ],
+      "license": "Apache-2.0",
+      "class": "optional",
+      "min_ram_gb": 12,
+      "priority": 110
+    },
+    {
+      "id": "nomic_embed_memory",
+      "family": "Nomic Embed Text v1.5",
+      "repo": "nomic-ai/nomic-embed-text-v1.5-GGUF",
+      "quant": "Q4_K_M",
+      "role": [
+        "embedding",
+        "semantic_memory",
+        "retrieval"
+      ],
+      "license": "Apache-2.0",
+      "class": "memory",
+      "min_ram_gb": 2,
+      "priority": 80
+    }
+  ],
+  "assembly_roles": {
+    "default": [
+      "smollm3_3b_scout",
+      "qwen3_4b_planner",
+      "phi4_mini_critic"
+    ],
+    "low_ram": [
+      "smollm3_3b_scout",
+      "phi4_mini_critic"
+    ],
+    "deep": [
+      "qwen3_4b_planner",
+      "phi4_mini_critic",
+      "qwen3_8b_deep"
+    ]
+  }
+}
