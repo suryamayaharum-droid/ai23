@@ -1,0 +1,68 @@
+name: HARUM Browser Fabric Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/harum-browser-fabric-pages.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '23 8 * * 2'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: harum-browser-fabric-pages
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout HARUM Browser Fabric
+        uses: actions/checkout@v4
+        with:
+          ref: harum-archive
+
+      - name: Validate static DNA
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd ecosystem/browser-fabric
+          python -m json.tool manifest.webmanifest >/dev/null
+          python -m json.tool config/linux_modes.json >/dev/null
+          for f in src/*.js sw.js; do
+            node --check "$f"
+          done
+
+      - name: Static HTTP smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd ecosystem/browser-fabric
+          python -m http.server 8765 >/tmp/harum-browser-http.log 2>&1 &
+          PID=$!
+          trap 'kill $PID || true' EXIT
+          sleep 2
+          curl -fsS http://127.0.0.1:8765/ | grep -q 'HARUM Browser Fabric'
+          curl -fsS http://127.0.0.1:8765/src/app.js >/dev/null
+          curl -fsS http://127.0.0.1:8765/sw.js >/dev/null
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ecosystem/browser-fabric
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - name: Deploy Browser Fabric
+        id: deployment
+        uses: actions/deploy-pages@v4
