@@ -1,0 +1,79 @@
+{
+  "schema": "harum.resource.fabric.v2",
+  "timestamp": 1789851491,
+  "shards": [
+    {
+      "shard": 0,
+      "count": 4,
+      "tasks": []
+    },
+    {
+      "shard": 1,
+      "count": 4,
+      "tasks": [
+        {
+          "id": "archive-index",
+          "kind": "inventory",
+          "files": 121,
+          "bytes": 371327068
+        },
+        {
+          "id": "program-index",
+          "kind": "inventory",
+          "files": 32,
+          "bytes": 912565
+        },
+        {
+          "id": "product-index",
+          "kind": "inventory",
+          "files": 10,
+          "bytes": 45533675
+        }
+      ]
+    },
+    {
+      "shard": 2,
+      "count": 4,
+      "tasks": [
+        {
+          "id": "dna-audit",
+          "kind": "audit",
+          "files": 61,
+          "bytes": 183420
+        },
+        {
+          "id": "manifest-audit",
+          "kind": "audit",
+          "files": 5,
+          "bytes": 6595
+        },
+        {
+          "id": "docs-index",
+          "kind": "inventory",
+          "files": 43,
+          "bytes": 182652
+        }
+      ]
+    },
+    {
+      "shard": 3,
+      "count": 4,
+      "tasks": [
+        {
+          "id": "mission-plan",
+          "kind": "control",
+          "files": 1,
+          "bytes": 2449
+        },
+        {
+          "id": "resource-plan",
+          "kind": "control",
+          "files": 1,
+          "bytes": 3446
+        }
+      ]
+    }
+  ],
+  "task_count": 8,
+  "digest": "b57ec3ca60a0ba7c0c823427c228c6ab50143db68dd1105c21872694cfca34ef"
+}
