@@ -1,0 +1,166 @@
+{
+  "version": "1.0",
+  "subscriptions": [
+    {
+      "cell": "mayor",
+      "topics": [
+        "health.*",
+        "mission.*",
+        "gate.failed",
+        "capability.gap"
+      ]
+    },
+    {
+      "cell": "dispatcher",
+      "topics": [
+        "task.created",
+        "task.completed",
+        "task.failed",
+        "cell.heartbeat"
+      ]
+    },
+    {
+      "cell": "health_guard",
+      "topics": [
+        "*"
+      ]
+    },
+    {
+      "cell": "archivist",
+      "topics": [
+        "artifact.created",
+        "task.completed",
+        "provenance.created"
+      ]
+    },
+    {
+      "cell": "memory_librarian",
+      "topics": [
+        "artifact.created",
+        "fact.published",
+        "mission.completed"
+      ]
+    },
+    {
+      "cell": "canon_guard",
+      "topics": [
+        "creative.draft",
+        "artifact.visual",
+        "artifact.video"
+      ]
+    },
+    {
+      "cell": "truth_guard",
+      "topics": [
+        "claim.created",
+        "commerce.draft",
+        "publication.requested"
+      ]
+    },
+    {
+      "cell": "license_guard",
+      "topics": [
+        "artifact.created",
+        "publication.requested"
+      ]
+    },
+    {
+      "cell": "publication_guard",
+      "topics": [
+        "gate.passed",
+        "publication.requested"
+      ]
+    },
+    {
+      "cell": "cinebrain",
+      "topics": [
+        "story.approved",
+        "scene.requested"
+      ]
+    },
+    {
+      "cell": "compute_broker",
+      "topics": [
+        "shot.ready",
+        "render.requested"
+      ]
+    },
+    {
+      "cell": "cinema_qc",
+      "topics": [
+        "render.completed",
+        "master.created"
+      ]
+    },
+    {
+      "cell": "post_master",
+      "topics": [
+        "render.approved",
+        "audio.ready"
+      ]
+    },
+    {
+      "cell": "product_architect",
+      "topics": [
+        "product.requested",
+        "archive.product_ready"
+      ]
+    },
+    {
+      "cell": "commerce_guard",
+      "topics": [
+        "product.draft",
+        "offer.draft"
+      ]
+    },
+    {
+      "cell": "site_integrator",
+      "topics": [
+        "publication.approved",
+        "gallery.changed"
+      ]
+    },
+    {
+      "cell": "channel_router",
+      "topics": [
+        "publication.approved",
+        "master.approved"
+      ]
+    },
+    {
+      "cell": "atelier_curator",
+      "topics": [
+        "archive.visual_ingested",
+        "collection.requested"
+      ]
+    },
+    {
+      "cell": "charcoal_master",
+      "topics": [
+        "drawing.requested",
+        "study.requested"
+      ]
+    },
+    {
+      "cell": "tattoo_architect",
+      "topics": [
+        "tattoo.requested",
+        "composition.approved"
+      ]
+    },
+    {
+      "cell": "noir_writer",
+      "topics": [
+        "chapter.requested",
+        "archive.story_seed"
+      ]
+    },
+    {
+      "cell": "editorial_planner",
+      "topics": [
+        "story.approved",
+        "calendar.changed"
+      ]
+    }
+  ]
+}
