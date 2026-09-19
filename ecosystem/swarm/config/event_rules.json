@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "rules": [
+    {
+      "on": "task.created",
+      "action": "route_by_capability"
+    },
+    {
+      "on": "router.assigned",
+      "action": "deliver_to_agent_inbox"
+    },
+    {
+      "on": "artifact.created",
+      "action": "register_provenance_and_request_review"
+    },
+    {
+      "on": "review.requested",
+      "action": "select_independent_guard"
+    },
+    {
+      "on": "gate.failed",
+      "action": "block_chain_and_emit_reason"
+    },
+    {
+      "on": "gate.passed",
+      "action": "unlock_next_dependency"
+    },
+    {
+      "on": "task.failed",
+      "action": "bounded_retry_or_dead_letter"
+    },
+    {
+      "on": "task.completed",
+      "action": "unlock_dependents_and_archive_result"
+    },
+    {
+      "on": "subagent.spawned",
+      "action": "register_scoped_worker"
+    },
+    {
+      "on": "subagent.retired",
+      "action": "release_scope_and_capacity"
+    }
+  ],
+  "invariants": [
+    "no_publish_without_publication_gate",
+    "no_commerce_claim_without_truth_and_checkout_gate",
+    "no_agent_capability_escalation",
+    "no_retry_loop_beyond_max_attempts",
+    "no_task_chain_beyond_max_hops",
+    "no_external_token_or_secret_in_event_payload"
+  ]
+}
