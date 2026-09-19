@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "objective": "work inside provider limits instead of relying on bypasses",
+  "strategies": [
+    {
+      "limit": "ephemeral compute",
+      "response": "checkpoint every bounded unit and replay from journal"
+    },
+    {
+      "limit": "concurrency cap",
+      "response": "adaptive shard count with max-parallel policy"
+    },
+    {
+      "limit": "storage cap",
+      "response": "compact snapshots; Git for small state; external asset store for media"
+    },
+    {
+      "limit": "API rate limit",
+      "response": "batch, cache, dedupe, backoff, and circuit breaker"
+    },
+    {
+      "limit": "connector unavailable",
+      "response": "WAITING_EXTERNAL + persistent queue + alternate deterministic route"
+    },
+    {
+      "limit": "GPU unavailable",
+      "response": "CPU deterministic baseline; defer only GPU-exclusive stages"
+    },
+    {
+      "limit": "single provider outage",
+      "response": "resource broker selects alternate adapter"
+    },
+    {
+      "limit": "session-bound ChatGPT tools",
+      "response": "persist intent/state in Airtable/GitHub for next authorized pulse"
+    },
+    {
+      "limit": "large files",
+      "response": "content-addressed manifests and external asset references instead of duplicating blobs"
+    },
+    {
+      "limit": "scheduled runtime inactivity",
+      "response": "event-driven triggers plus portable worker protocol"
+    }
+  ],
+  "prohibited": [
+    "quota bypass",
+    "credential sharing between accounts",
+    "rate-limit evasion",
+    "unauthorized compute",
+    "false completion when a dependency is unavailable"
+  ]
+}
