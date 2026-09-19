@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "skills": [
+    {
+      "id": "archive_audit",
+      "description": "Inspect an archive subtree, count files and surface manifest gaps.",
+      "tools": [
+        "list_files",
+        "read_text",
+        "hash_file"
+      ],
+      "max_steps": 6,
+      "required_capabilities": [
+        "inventory",
+        "manifest",
+        "dedupe"
+      ],
+      "output_schema": [
+        "summary",
+        "gaps",
+        "next_actions"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "mission_decompose",
+      "description": "Turn one mission into bounded capability-scoped substeps.",
+      "tools": [
+        "read_text",
+        "json_get"
+      ],
+      "max_steps": 5,
+      "required_capabilities": [
+        "plan",
+        "decompose",
+        "route"
+      ],
+      "output_schema": [
+        "stages",
+        "capabilities",
+        "dependencies"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "local_code_review",
+      "description": "Inspect local source/config and identify deterministic risks without modifying files.",
+      "tools": [
+        "read_text",
+        "find_text",
+        "list_files"
+      ],
+      "max_steps": 7,
+      "required_capabilities": [
+        "code_review",
+        "truth"
+      ],
+      "output_schema": [
+        "findings",
+        "severity",
+        "checks"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "memory_recall",
+      "description": "Retrieve canonical local context from JSON/text/SQLite state.",
+      "tools": [
+        "find_text",
+        "read_text",
+        "json_get",
+        "sqlite_read"
+      ],
+      "max_steps": 6,
+      "required_capabilities": [
+        "retrieve",
+        "cross_reference"
+      ],
+      "output_schema": [
+        "facts",
+        "sources",
+        "uncertainty"
+      ],
+      "status": "active"
+    }
+  ]
+}
