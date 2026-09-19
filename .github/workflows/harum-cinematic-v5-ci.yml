@@ -8,6 +8,7 @@ on:
       - 'tools/harum-cinematic-grid/v5/**'
       - 'tools/harum-cinematic-grid/v5_1/**'
       - '.github/workflows/harum-cinematic-v5-ci.yml'
+
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -18,10 +19,4 @@ jobs:
       - name: Optimizer smoke test
         run: python tools/harum-cinematic-grid/v5_1/harum_optimizer.py --task video_i2v --vram 16 --gpus 2 --provider kaggle_t4x2
       - name: Check plugin catalog
-        run: python - <<'PY'
-import json
-p=json.load(open('tools/harum-cinematic-grid/v5_1/plugin_catalog.json'))
-assert len(p['plugins']) >= 8
-assert any(x['id']=='cogvideox_2b' for x in p['plugins'])
-print('plugins:',len(p['plugins']))
-PY
+        run: python -c "import json; p=json.load(open('tools/harum-cinematic-grid/v5_1/plugin_catalog.json')); assert len(p['plugins']) >= 8; assert any(x['id']=='cogvideox_2b' for x in p['plugins']); print('plugins:', len(p['plugins']))"
