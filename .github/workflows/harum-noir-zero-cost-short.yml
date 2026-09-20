@@ -116,6 +116,7 @@ jobs:
             echo "Verified media already published in repository."
           else
             git commit -m "media: publish verified $ARTIFACT_NAME"
+            git pull --rebase origin "${{ github.ref_name }}"
             git push origin HEAD:${{ github.ref_name }}
           fi
 
