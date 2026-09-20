@@ -1,0 +1,19 @@
+{
+  "version": "17.0",
+  "name": "HARUM Immune Mesh",
+  "purpose": "Cryptographic identity, capability-scoped authority and safe self-update for the decentralized organism.",
+  "principles": [
+    "Every peer has a cryptographic identity.",
+    "Events and update manifests can be signed and independently verified.",
+    "Capabilities are explicit, scoped and expiring.",
+    "Untrusted network data is data, never executable authority.",
+    "Self-improvement proposals enter quarantine before promotion.",
+    "Promotion requires signature, hash integrity, tests and rollback metadata."
+  ],
+  "research_assimilation": [
+    "libp2p PeerID + secure channel identity pattern",
+    "Willow Meadowcap capability-based access control",
+    "TUF compartmentalized trust and rollback/freeze defense",
+    "in-toto signed step/attestation chain"
+  ]
+}
