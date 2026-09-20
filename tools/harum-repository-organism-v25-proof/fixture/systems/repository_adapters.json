@@ -1,0 +1,29 @@
+{
+  "schema": "meaw.repository-adapters/v1",
+  "policy": {
+    "auto_execute_external": false,
+    "require_routable_component": true,
+    "require_explicit_adapter": true,
+    "index_only_fallback": true,
+    "arbitrary_shell": false
+  },
+  "adapters": [
+    {
+      "component": "organ-01",
+      "kind": "index-source",
+      "capabilities": [
+        "memory-search"
+      ],
+      "mode": "read-index"
+    },
+    {
+      "component": "organ-02",
+      "kind": "optional-cli",
+      "command": "definitely-not-installed-harum-proof-cli",
+      "capabilities": [
+        "cap-2"
+      ],
+      "mode": "explicit-dispatch"
+    }
+  ]
+}
