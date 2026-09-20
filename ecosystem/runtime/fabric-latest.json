@@ -1,6 +1,6 @@
 {
   "schema": "harum.resource.fabric.v2",
-  "timestamp": 1789851491,
+  "timestamp": 1789881720,
   "shards": [
     {
       "shard": 0,
@@ -38,8 +38,8 @@
         {
           "id": "dna-audit",
           "kind": "audit",
-          "files": 61,
-          "bytes": 183420
+          "files": 71,
+          "bytes": 198320
         },
         {
           "id": "manifest-audit",
@@ -75,5 +75,5 @@
     }
   ],
   "task_count": 8,
-  "digest": "b57ec3ca60a0ba7c0c823427c228c6ab50143db68dd1105c21872694cfca34ef"
+  "digest": "3acd7f3303191572cc68c7cb651e4a16052f1084e82fb4ef9b8c60b61fd6994f"
 }
