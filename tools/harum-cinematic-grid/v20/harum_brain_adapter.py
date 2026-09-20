@@ -2,7 +2,7 @@
 from __future__ import annotations
 import argparse,json,time,urllib.request
 
-def chat(base_url,role,task,max_tokens=180,temperature=0.1):
+def chat(base_url,role,task,max_tokens=256,temperature=0.1):
     url=base_url.rstrip("/")+"/v1/chat/completions"
     system={
       "router":"You are a local routing brain. Choose the smallest local-first path. Be terse.",
@@ -11,12 +11,20 @@ def chat(base_url,role,task,max_tokens=180,temperature=0.1):
       "coder":"You are a coding brain. Prefer minimal dependency-light changes with tests. Be terse.",
       "synthesizer":"You are a council synthesizer. Merge only supported ideas and preserve hard gates. Be terse."
     }.get(role,"You are a local Harum brain. Be terse and resource-honest.")
-    payload={"model":"local","messages":[{"role":"system","content":system},{"role":"user","content":task}],"temperature":temperature,"max_tokens":max_tokens}
+    payload={
+      "model":"local",
+      "messages":[{"role":"system","content":system},{"role":"user","content":task}],
+      "temperature":temperature,
+      "max_tokens":max_tokens
+    }
     req=urllib.request.Request(url,data=json.dumps(payload).encode(),headers={"Content-Type":"application/json"})
     started=time.perf_counter()
     with urllib.request.urlopen(req,timeout=300) as r:
         data=json.loads(r.read())
-    text=data["choices"][0]["message"]["content"]
+    msg=data["choices"][0]["message"]
+    text=(msg.get("content") or msg.get("reasoning_content") or "").strip()
+    if not text:
+        raise RuntimeError("local model returned empty content and reasoning_content")
     return {"role":role,"text":text,"elapsed_seconds":round(time.perf_counter()-started,3)}
 
 def council(base_url,task,roles=None):
