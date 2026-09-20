@@ -39,7 +39,10 @@ jobs:
           sleep 2
           curl --fail http://127.0.0.1:4173/ >/dev/null
       - name: Browser CPU inference and blocked-network replay
-        run: node browser-proof.mjs | tee /tmp/browser-proof.jsonl
+        shell: bash
+        run: |
+          set -o pipefail
+          node browser-proof.mjs | tee /tmp/browser-proof.jsonl
       - name: Stop origin
         if: always()
         run: kill "$(cat /tmp/browser-server.pid)" || true
