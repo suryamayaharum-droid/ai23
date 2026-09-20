@@ -1,0 +1,49 @@
+{
+  "schema": "harum.cortex.dream.v2",
+  "timestamp": 1789907810,
+  "inputs": {
+    "organism": true,
+    "council": false,
+    "smoke": false,
+    "knowledge": false
+  },
+  "proposals": [
+    {
+      "kind": "runtime_validation",
+      "patch": {
+        "action": "prove_local_quantized_inference",
+        "tier": "B"
+      },
+      "reason": "No persisted proof of local GGUF inference exists yet.",
+      "metrics": {},
+      "created_at": 1789907810,
+      "status": "PROPOSED",
+      "gates": [
+        "regression",
+        "license",
+        "resource_budget",
+        "rollback",
+        "no_secret_dependency"
+      ],
+      "id": "17035392b7c54120"
+    },
+    {
+      "kind": "benchmark",
+      "patch": {
+        "action": "run_distributed_cortex_council"
+      },
+      "reason": "No persisted multi-brain council benchmark exists yet.",
+      "metrics": {},
+      "created_at": 1789907810,
+      "status": "PROPOSED",
+      "gates": [
+        "regression",
+        "license",
+        "resource_budget",
+        "rollback",
+        "no_secret_dependency"
+      ],
+      "id": "8b42f3668e063f64"
+    }
+  ]
+}
