@@ -1,0 +1,27 @@
+{
+  "transport": {
+    "type": "TCP + X25519/HKDF-SHA256/ChaCha20-Poly1305",
+    "scope": "localhost",
+    "separate_processes": true,
+    "physical_hosts": 1,
+    "noise_wire_compatible": false
+  },
+  "mutual_authentication": {
+    "server_identity_pinned": true
+  },
+  "first_execution": {
+    "ok": true,
+    "replayed": false,
+    "receipt_valid": true,
+    "attestation_steps": 5
+  },
+  "restart_replay": {
+    "ok": true,
+    "replayed": true,
+    "same_signed_receipt": true
+  },
+  "aead_tamper_rejected": true,
+  "wrong_server_identity_rejected": true,
+  "cas_integrity": true,
+  "truth": "Executed locally with two separate processes on one physical host."
+}
