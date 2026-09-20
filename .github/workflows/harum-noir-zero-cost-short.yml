@@ -68,6 +68,8 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg fonts-dejavu-core espeak-ng
           python -m pip install --upgrade pip
+          # Force the CPU wheel first so pip does not pull multi-gigabyte NVIDIA/CUDA dependencies on hosted CPU runners.
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
           pip install "kokoro>=0.9.4" soundfile numpy
 
       - name: Fetch and validate real artwork
