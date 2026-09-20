@@ -64,7 +64,7 @@ jobs:
         run: |
           export PATH="$HOME/.local/bin:$PATH"
           nohup llama serve -hf ggml-org/Qwen3.5-0.8B-GGUF:Q4_0 \
-            --host 127.0.0.1 --port 8080 -c 2048 -np 1 -t 2 --no-webui \
+            --host 127.0.0.1 --port 8080 -c 2048 -np 1 -t 2 --no-webui --reasoning off \
             > llama-server.log 2>&1 &
           echo $! > llama.pid
           python - <<'PY'
@@ -89,6 +89,7 @@ jobs:
           import json
           p=json.load(open('brain-proof.json'))
           assert len(p['proposals']) >= 3
+          assert all(x['text'].strip() for x in p['proposals'])
           assert p['final']['text'].strip()
           print('quantized council proof ok')
           PY
