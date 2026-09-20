@@ -1,0 +1,25 @@
+name: Repository Read Index v25.3 Public Proof
+on:
+  pull_request:
+    branches: [harum-repository-adapters-v25-2-proof]
+    paths:
+      - "tools/harum-repository-organism-v25-proof/repository_index.py"
+      - "tools/harum-repository-organism-v25-proof/repository_runtime.py"
+      - "tools/harum-repository-organism-v25-proof/fixture/systems/repository_adapters.json"
+      - "tools/harum-repository-organism-v25-proof/test_read_index.py"
+      - ".github/workflows/harum-repository-read-index-v25-3-proof.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Route bus task through read-index organ
+        working-directory: tools/harum-repository-organism-v25-proof
+        run: python -m unittest test_read_index -v
