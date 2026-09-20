@@ -144,6 +144,23 @@ class RepositoryIndex:
         c.close()
         return rows
 
+    def search_component(self, component: str, query: str, limit: int = 20) -> list[dict]:
+        c = self._conn()
+        rows = [
+            dict(r)
+            for r in c.execute(
+                """SELECT f.uri,f.component,f.relpath,f.sha256,f.bytes,
+                          bm25(file_fts) AS rank
+                   FROM file_fts
+                   JOIN files f ON f.rowid=file_fts.rowid
+                   WHERE file_fts MATCH ? AND f.component=?
+                   ORDER BY rank LIMIT ?""",
+                (query, component, int(limit)),
+            )
+        ]
+        c.close()
+        return rows
+
     def stats(self) -> dict[str, int]:
         c = self._conn()
         files = c.execute("SELECT count(*) n FROM files").fetchone()["n"]
