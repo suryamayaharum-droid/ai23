@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tool": {
+            "type": "string",
+            "enum": [
+              "verify_hash",
+              "verify_signature",
+              "read_memory",
+              "append_memory",
+              "request_research",
+              "request_human_review"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "required": ["tool", "reason"]
+      }
+    },
+    "risks": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "maxLength": 120
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "required": ["actions", "risks", "confidence"]
+}
