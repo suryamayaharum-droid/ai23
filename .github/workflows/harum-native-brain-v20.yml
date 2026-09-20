@@ -1,0 +1,98 @@
+name: Harum Native Brain Fabric v20
+
+on:
+  pull_request:
+    branches:
+      - harum-secure-synapse-v19
+    paths:
+      - "tools/harum-cinematic-grid/v20/**"
+      - ".github/workflows/harum-native-brain-v20.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  libp2p-noise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.24.x'
+      - name: Resolve libp2p
+        run: |
+          go get github.com/libp2p/go-libp2p@latest
+          go mod tidy
+          go list -m github.com/libp2p/go-libp2p
+      - name: Run real libp2p Noise proof
+        run: |
+          go run ./libp2p_noise_proof.go | tee libp2p-proof.json
+          python - <<'PY'
+          import json
+          p=json.load(open('libp2p-proof.json'))
+          assert p['connected'] is True
+          assert p['noise_active'] is True
+          assert p['security'] == '/noise'
+          assert p['protocol'] == '/harum/synapse/20.0.0'
+          print('libp2p/noise proof ok')
+          PY
+
+  quantized-brain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install llama.cpp CPU
+        run: |
+          curl -LsSf https://llama.app/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Start Qwen3.5 0.8B Q4_0 local server
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          nohup llama-server -hf ggml-org/Qwen3.5-0.8B-GGUF:Q4_0 \
+            --host 127.0.0.1 --port 8080 -c 2048 -np 1 -t 2 --no-webui \
+            > llama-server.log 2>&1 &
+          echo $! > llama.pid
+          python - <<'PY'
+          import time,urllib.request
+          for _ in range(180):
+              try:
+                  with urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=2) as r:
+                      if r.status==200:
+                          print('llama server ready')
+                          raise SystemExit(0)
+              except Exception:
+                  time.sleep(2)
+          print(open('llama-server.log').read()[-10000:])
+          raise SystemExit('llama server did not become ready')
+          PY
+      - name: Run actual local quantized council
+        run: |
+          python harum_brain_adapter.py council \
+            "Return a very short plan to verify a signed artifact locally without paid APIs." \
+            --base-url http://127.0.0.1:8080 | tee brain-proof.json
+          python - <<'PY'
+          import json
+          p=json.load(open('brain-proof.json'))
+          assert len(p['proposals']) >= 3
+          assert p['final']['text'].strip()
+          print('quantized council proof ok')
+          PY
+      - name: Record model metadata
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          python - <<'PY'
+          import json,urllib.request
+          print(json.dumps(json.load(urllib.request.urlopen('http://127.0.0.1:8080/v1/models')),indent=2))
+          PY
