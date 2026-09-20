@@ -1,0 +1,11 @@
+{
+  "type":"object",
+  "additionalProperties":false,
+  "properties":{
+    "recipe":{
+      "type":"string",
+      "enum":["artifact_verify","safe_hash","memory_read","memory_append","research_only","human_review"]
+    }
+  },
+  "required":["recipe"]
+}

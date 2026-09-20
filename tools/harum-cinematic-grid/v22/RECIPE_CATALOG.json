@@ -1,0 +1,13 @@
+{
+  "version":"22.0",
+  "authority":"deterministic-recipes",
+  "recipes":{
+    "artifact_verify":{"required":["artifact_bytes","expected_sha256","signed_manifest"],"steps":["sha256_compare","signature_verify","manifest_scope_check","attestation_verify","cas_accept"],"effects":["read","cas_write_after_validation"]},
+    "safe_hash":{"required":["artifact_bytes"],"steps":["sha256_compute"],"effects":["read"]},
+    "memory_read":{"required":["memory_key"],"steps":["capability_check_read","memory_read"],"effects":["read"]},
+    "memory_append":{"required":["memory_key","value","capability"],"steps":["signature_verify","capability_check_append","append_memory"],"effects":["memory_write"]},
+    "research_only":{"required":["question"],"steps":["research_request","evidence_ledger_append_unverified"],"effects":["external_read_optional"]},
+    "human_review":{"required":["reason"],"steps":["queue_human_review"],"effects":[]}
+  },
+  "forbidden_direct_effects":["arbitrary_shell","install_unreviewed_code","network_scan_unknown_targets","credential_guessing","satellite_command","bypass_quota"]
+}
