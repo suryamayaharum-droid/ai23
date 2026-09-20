@@ -1,0 +1,42 @@
+{
+  "version": "2026-09-20",
+  "not_legal_advice": true,
+  "strategy": "Prefer RFCs/open protocols/basic independently designed primitives. Flag claim-specific optimizations before production.",
+  "watch": [
+    {
+      "publication": "US20250175339A1",
+      "area": "decentralized synchronization / braided CRDT conflict resolution",
+      "action": "avoid copying claim-specific braided authority/conflict mechanisms"
+    },
+    {
+      "publication": "US12254025B2 / US20230297588A1",
+      "area": "hybrid operation/state CRDT synchronization",
+      "action": "keep Harum sync architecture generic and independently implemented; review before hybrid CRDT productization"
+    },
+    {
+      "publication": "US12493587B2",
+      "area": "CRDTs in in-memory structures",
+      "action": "do not infer freedom-to-operate from generic CRDT literature alone"
+    },
+    {
+      "publication": "US12468682B2",
+      "area": "conflict-free graph synchronization",
+      "action": "review before implementing specialized graph CRDT mechanism"
+    },
+    {
+      "publication": "US20260012419A1",
+      "area": "edge synchronization mesh + CRDT routing table",
+      "action": "avoid copying claim-specific wrapped-packet/dynamic-routing arrangement"
+    },
+    {
+      "publication": "CN114679210A",
+      "area": "DTN routing over dual-layer satellite networks",
+      "action": "space layer remains read-only/public sensor; no autonomous satellite-routing deployment"
+    },
+    {
+      "publication": "WO2021163916A1 / related RaptorQ patents",
+      "area": "enhanced fountain coding",
+      "action": "core uses simple XOR parity/FEC-lite; RaptorQ adapter remains optional pending license/patent review"
+    }
+  ]
+}
