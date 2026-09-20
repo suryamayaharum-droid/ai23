@@ -1,0 +1,102 @@
+name: Harum Cognitive Cascade v22
+on:
+  pull_request:
+    branches: [harum-durable-brain-fabric-v21]
+    paths:
+      - "tools/harum-cinematic-grid/v22/**"
+      - ".github/workflows/harum-cognitive-cascade-v22.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cascade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/harum-fast
+          key: harum-qwen35-08b-q4-v1
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/harum-deep
+          key: harum-qwen3-17b-q8-v1
+      - name: Ensure models
+        run: |
+          mkdir -p ~/.cache/harum-fast ~/.cache/harum-deep
+          test -f ~/.cache/harum-fast/Qwen3.5-0.8B-Q4_0.gguf || curl -L --fail --retry 4 -o ~/.cache/harum-fast/Qwen3.5-0.8B-Q4_0.gguf https://huggingface.co/ggml-org/Qwen3.5-0.8B-GGUF/resolve/main/Qwen3.5-0.8B-Q4_0.gguf
+          test -f ~/.cache/harum-deep/Qwen3-1.7B-Q8_0.gguf || curl -L --fail --retry 4 -o ~/.cache/harum-deep/Qwen3-1.7B-Q8_0.gguf https://huggingface.co/Qwen/Qwen3-1.7B-GGUF/resolve/main/Qwen3-1.7B-Q8_0.gguf
+          test "$(sha256sum ~/.cache/harum-fast/Qwen3.5-0.8B-Q4_0.gguf | awk '{print $1}')" = "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+          test "$(sha256sum ~/.cache/harum-deep/Qwen3-1.7B-Q8_0.gguf | awk '{print $1}')" = "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a"
+      - name: Install llama.cpp CPU
+        run: |
+          SKIP_CUDA=1 SKIP_ROCM=1 SKIP_VULKAN=1 sh -c 'curl -LsSf https://llama.app/install.sh | sh'
+          "$HOME/.local/bin/llama" version
+      - name: Start fast brain
+        run: |
+          nohup "$HOME/.local/bin/llama" serve -m ~/.cache/harum-fast/Qwen3.5-0.8B-Q4_0.gguf --host 127.0.0.1 --port 8080 -c 2048 -np 1 -t 2 --no-webui --reasoning off >/tmp/fast.log 2>&1 &
+          echo $! >/tmp/fast.pid
+          python - <<'PY'
+          import time,urllib.request
+          for _ in range(120):
+              try:
+                  if urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=2).status==200: raise SystemExit(0)
+              except SystemExit: raise
+              except Exception: time.sleep(1)
+          print(open('/tmp/fast.log').read()[-8000:]);raise SystemExit(1)
+          PY
+      - name: Fast benchmark
+        run: |
+          python - <<'PY'
+          import json,subprocess,sys
+          b=json.load(open('BENCHMARKS.json'));rows=[]
+          for x in b:
+              cmd=[sys.executable,'harum_cognitive_cascade.py',x['task'],'--fast-url','http://127.0.0.1:8080','--deep-url','http://127.0.0.1:65534','--expected-tool',x['expected_tool']]
+              if x['high_risk']:cmd.append('--high-risk')
+              p=subprocess.run(cmd,text=True,capture_output=True)
+              data=json.loads(p.stdout) if p.returncode==0 else None
+              rows.append({'id':x['id'],'fast_pass':bool(data and data['selected']=='fast'),'data':data,'stderr':p.stderr[-400:]})
+          json.dump(rows,open('/tmp/fast.json','w'),indent=2);print(json.dumps(rows,indent=2))
+          PY
+          kill "$(cat /tmp/fast.pid)" || true
+      - name: Start deep brain
+        run: |
+          nohup "$HOME/.local/bin/llama" serve -m ~/.cache/harum-deep/Qwen3-1.7B-Q8_0.gguf --host 127.0.0.1 --port 8081 -c 2048 -np 1 -t 2 --no-webui --reasoning off >/tmp/deep.log 2>&1 &
+          echo $! >/tmp/deep.pid
+          python - <<'PY'
+          import time,urllib.request
+          for _ in range(180):
+              try:
+                  if urllib.request.urlopen('http://127.0.0.1:8081/health',timeout=2).status==200: raise SystemExit(0)
+              except SystemExit: raise
+              except Exception: time.sleep(1)
+          print(open('/tmp/deep.log').read()[-8000:]);raise SystemExit(1)
+          PY
+      - name: Fallback and lesson proof
+        run: |
+          python - <<'PY'
+          import json,subprocess,sys,sqlite3
+          b=json.load(open('BENCHMARKS.json'));fast=json.load(open('/tmp/fast.json'))
+          todo={'hash':next(x for x in b if x['id']=='hash')}
+          for row in fast:
+              if not row['fast_pass']:
+                  x=next(z for z in b if z['id']==row['id']);todo[x['id']]=x
+          deep=[]
+          for x in todo.values():
+              cmd=[sys.executable,'harum_cognitive_cascade.py',x['task'],'--fast-url','http://127.0.0.1:65533','--deep-url','http://127.0.0.1:8081','--expected-tool',x['expected_tool'],'--force-deep']
+              if x['high_risk']:cmd.append('--high-risk')
+              p=subprocess.run(cmd,text=True,capture_output=True,check=True);d=json.loads(p.stdout);assert d['selected']=='deep';deep.append({'id':x['id'],'data':d})
+          con=sqlite3.connect('runtime/lessons.db');n=con.execute('select count(*) from lessons where approved=1').fetchone()[0];con.close();assert n>=1
+          json.dump({'fast':fast,'deep':deep,'approved_lessons':n},open('/tmp/proof.json','w'),indent=2)
+          print(json.dumps({'approved_lessons':n,'deep_cases':[x['id'] for x in deep]},indent=2))
+          PY
+          kill "$(cat /tmp/deep.pid)" || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: harum-cognitive-cascade-v22-proof
+          path: /tmp/proof.json
+          retention-days: 1
