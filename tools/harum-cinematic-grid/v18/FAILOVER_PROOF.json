@@ -1,0 +1,5 @@
+{
+  "offline_dispatch":{"status":"spooled","reason":"ConnectionRefusedError"},
+  "flush_after_wake":{"sent":1,"failed":0,"remaining":0},
+  "truth":"Task was intentionally dispatched while no server listened, spooled to disk, then delivered after the peer process started and returned a valid signed receipt."
+}
