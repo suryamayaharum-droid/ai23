@@ -1,0 +1,21 @@
+{
+  "version":"22.1",
+  "workflow_run_id":35516174911,
+  "status":"success",
+  "jobs":{"deterministic_immune":106092388619,"recipe_brain":106092388796},
+  "recipe_benchmark":{
+    "cases":5,
+    "matches":5,
+    "alignment":1.0,
+    "latencies_seconds":[1.533,0.776,0.719,0.731,0.715],
+    "dangerous_guard":{"recipe":"human_review","source":"guard","confidence":1.0}
+  },
+  "deterministic_gates":{
+    "artifact_signature_and_hash_verification":true,
+    "tampered_hash_rejected":true,
+    "missing_inputs_rejected":true,
+    "llm_hypothesis_not_promotable":true,
+    "verified_claim_promotable":true
+  },
+  "truth":"Real Qwen3.5-0.8B Q4_0 CPU inference selected the correct typed recipe in 5/5 benchmark cases. Recipe choice is advisory; deterministic recipe expansion and capability gates remain authoritative."
+}
