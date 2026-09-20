@@ -1,0 +1,83 @@
+{
+  "version": "2026-09-20",
+  "status": "research map, not a claim of exhaustive global coverage",
+  "tiers": {
+    "default_patterns": [
+      {
+        "name": "Willow Drop Format",
+        "use": "asynchronous improvised-channel data drops",
+        "status": "proposal/spec"
+      },
+      {
+        "name": "Reticulum",
+        "use": "medium-agnostic low-bandwidth mesh",
+        "status": "optional adapter"
+      },
+      {
+        "name": "libp2p",
+        "use": "internet P2P, relay, NAT traversal",
+        "status": "optional adapter"
+      },
+      {
+        "name": "Earthstar v11",
+        "use": "browser/offline multiwriter data over Willow",
+        "status": "optional adapter"
+      },
+      {
+        "name": "Hypercore",
+        "use": "verified append-only sparse-replicated logs",
+        "status": "optional adapter"
+      },
+      {
+        "name": "Iroh 1.0",
+        "use": "QUIC direct connectivity, blobs/gossip/doc protocols",
+        "status": "optional adapter"
+      },
+      {
+        "name": "GNUnet CADET",
+        "use": "encrypted decentralized end-to-end overlay",
+        "status": "research adapter"
+      },
+      {
+        "name": "SCION",
+        "use": "path-aware, failure-isolated inter-domain transport",
+        "status": "research adapter"
+      },
+      {
+        "name": "NDN",
+        "use": "named content + in-network caching",
+        "status": "design pattern"
+      },
+      {
+        "name": "IPFS",
+        "use": "public content addressing",
+        "status": "optional immutable artifact carrier"
+      },
+      {
+        "name": "Freenet",
+        "use": "WASM-contract decentralized shared state",
+        "status": "experimental adapter"
+      }
+    ],
+    "privacy_transports": [
+      {
+        "name": "Tor",
+        "policy": "explicit known peers only; no hidden-service crawling"
+      },
+      {
+        "name": "I2P",
+        "policy": "explicit known peers only; no network-wide discovery crawling"
+      }
+    ],
+    "space": [
+      {
+        "name": "SatNOGS",
+        "use": "public satellites/TLE/telemetry/transmitters/observations; GET only by default"
+      },
+      {
+        "name": "CelesTrak",
+        "use": "public GP/OMM orbital data with usage-policy-aware caching"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "version": "16.0",
+  "canonical_default": true,
+  "name": "HARUM Nervous System",
+  "principle": "Local-first, transport-independent, content-addressed, event-sourced, CPU-first, paid-services-optional.",
+  "core": [
+    "Ouroboros gated cycle",
+    "HoloBus anti-entropy",
+    "Event Horizon durable DAG",
+    "CPU Mesh",
+    "CAS SHA-256",
+    "Quantized Brain Assembly hook",
+    "Browser/WASM Seed",
+    "Resilient store-carry-forward capsules"
+  ],
+  "default_transport_order": [
+    "local_file_drop",
+    "local_lan",
+    "reticulum_if_installed",
+    "libp2p_if_installed",
+    "iroh_if_installed",
+    "gnunet_if_installed",
+    "scion_if_installed",
+    "syncthing_for_artifacts",
+    "ipfs_for_public_immutable_artifacts",
+    "tor_or_i2p_for_explicit_authorized_peers_only"
+  ],
+  "space_default": {
+    "mode": "public_read_only_sensor",
+    "sources": [
+      "SatNOGS DB",
+      "CelesTrak GP"
+    ],
+    "minimum_refresh_seconds": {
+      "celestrak": 7200
+    },
+    "forbidden": [
+      "spacecraft command/control without operator authorization",
+      "credential guessing",
+      "uplink attempts",
+      "ground-station takeover"
+    ]
+  },
+  "self_improvement": {
+    "allowed": [
+      "prompt mutation",
+      "routing weights",
+      "retrieval strategy",
+      "cache policy",
+      "benchmark thresholds",
+      "adapter preference"
+    ],
+    "promotion_requires": [
+      "held-out tests",
+      "rollback snapshot",
+      "hard gates",
+      "measured improvement"
+    ],
+    "not_default": [
+      "model-weight rewriting",
+      "self-modifying executable code from untrusted network input"
+    ]
+  }
+}

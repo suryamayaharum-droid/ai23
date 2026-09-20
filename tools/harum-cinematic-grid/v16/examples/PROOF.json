@@ -1,0 +1,64 @@
+{
+  "nervous_system_boot": {
+    "events": 9,
+    "state_entries": 9,
+    "canonical_default": true,
+    "core_count": 8
+  },
+  "offline_route_top5": [
+    {
+      "carrier": "reticulum",
+      "score": 55
+    },
+    {
+      "carrier": "local_file_drop",
+      "score": 53
+    },
+    {
+      "carrier": "local_lan",
+      "score": 42
+    },
+    {
+      "carrier": "syncthing",
+      "score": 37
+    },
+    {
+      "carrier": "gnunet",
+      "score": 34
+    }
+  ],
+  "nat_route_top5": [
+    {
+      "carrier": "local_file_drop",
+      "score": 40
+    },
+    {
+      "carrier": "local_lan",
+      "score": 38
+    },
+    {
+      "carrier": "iroh",
+      "score": 38
+    },
+    {
+      "carrier": "libp2p",
+      "score": 36
+    },
+    {
+      "carrier": "syncthing",
+      "score": 36
+    }
+  ],
+  "fec_lite": {
+    "one_missing_chunk_recovered": true,
+    "parts": 8,
+    "bytes": 16393
+  },
+  "space_adapter": {
+    "satnogs_get_only": true,
+    "celestrak_cache_seconds": 7200,
+    "network_fetch_executed": false
+  },
+  "canonical_default": true,
+  "truth": "All local proofs executed. External optional protocols and public space HTTP feeds were researched/configured but not network-executed in this container."
+}
