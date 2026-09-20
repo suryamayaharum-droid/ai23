@@ -1,0 +1,8 @@
+{
+  "signed_event_valid": true,
+  "tampered_event_rejected": true,
+  "capability_append_allowed": true,
+  "capability_execute_denied": true,
+  "quarantined_update_test_passed": true,
+  "truth": "Cryptographic identity/capability/update-gate proof executed locally. External transports are not yet authenticated end-to-end until their adapters use these envelopes."
+}
