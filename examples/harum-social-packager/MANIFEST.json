@@ -1,0 +1,29 @@
+{
+  "schema": "harum.social-pack/v1",
+  "asset_code": "HN-I002",
+  "title": "Diário em Movimento",
+  "series": "HARUM NOIR — Interlúdios",
+  "source_video_path": "public/harum-noir/interludios/HARUM_NOIR_INTERLUDIO_II_REFLEXO.mp4",
+  "cover_offset_seconds": 4,
+  "cta_url": null,
+  "cta_state": "pending_verified_product_or_hub_link",
+  "platforms": {
+    "youtube_shorts": {
+      "title": "Diário em Movimento | HARUM NOIR #Shorts",
+      "description": "Entre o rosto, o carvão, a noite e as pequenas coisas que cercam o desenho, o diário começa a se mover. HARUM NOIR — um arquivo visual de carvão, processo e presença.\n\n#HarumNoir #DesenhoACarvao #ArteFigurativa #Shorts"
+    },
+    "tiktok": {
+      "caption": "Nem toda página precisa ficar parada. Um diário de carvão entre rosto, noite e processo. #HarumNoir #DesenhoACarvao #ProcessoCriativo"
+    },
+    "pinterest": {
+      "title": "Diário visual em carvão — HARUM NOIR",
+      "description": "Retrato, carvão, processo e atmosfera noturna em um estudo visual em movimento. Parte da série HARUM NOIR — Interlúdios."
+    },
+    "threads": {
+      "text": "Nem toda página precisa ficar parada. Entre o rosto, o carvão e a noite, o diário começa a se mover. — HARUM NOIR"
+    },
+    "facebook_reels": {
+      "caption": "HARUM NOIR — Diário em Movimento. Um fragmento de retrato, carvão, processo e noite transformado em movimento."
+    }
+  }
+}
