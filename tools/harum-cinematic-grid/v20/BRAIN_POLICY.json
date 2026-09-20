@@ -1,0 +1,26 @@
+{
+  "version": "20.0",
+  "default_model": {
+    "repo": "ggml-org/Qwen3.5-0.8B-GGUF",
+    "quant": "Q4_0",
+    "file": "Qwen3.5-0.8B-Q4_0.gguf",
+    "license": "Apache-2.0",
+    "expected_size_mb": 563,
+    "expected_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "execution": {
+    "backend": "llama.cpp OpenAI-compatible HTTP",
+    "core_paid_api_required": false,
+    "gpu_required": false,
+    "model_processes_default": 1,
+    "logical_brains_share_model": true
+  },
+  "gates": [
+    "authorization",
+    "truth",
+    "license",
+    "zero-extra-spend",
+    "rollback",
+    "benchmark-before-promotion"
+  ]
+}

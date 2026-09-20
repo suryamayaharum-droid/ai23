@@ -1,0 +1,49 @@
+{
+  "version": "20.1",
+  "workflow_run_id": 35485209568,
+  "status": "success",
+  "jobs": {
+    "libp2p_noise": {
+      "job_id": 106010194780,
+      "conclusion": "success",
+      "go_libp2p": "v0.49.0",
+      "security": "/noise",
+      "transport": "tcp",
+      "protocol": "/harum/synapse/20.0.0"
+    },
+    "quantized_brain": {
+      "job_id": 106010194656,
+      "conclusion": "success",
+      "runtime": "llama 0.4.1-dev build 11046",
+      "model": "ggml-org/Qwen3.5-0.8B-GGUF:Q4_0",
+      "params": 752393024,
+      "size_bytes": 552074496,
+      "quantization": "Q4_0",
+      "context": 2048,
+      "roles": [
+        "router",
+        "planner",
+        "critic",
+        "synthesizer"
+      ],
+      "role_elapsed_seconds": [
+        1.959,
+        1.779,
+        2.043,
+        1.374
+      ]
+    },
+    "cognitive_synapse": {
+      "job_id": 106010293423,
+      "conclusion": "success",
+      "security": "/noise",
+      "transport": "tcp",
+      "protocol": "/harum/brain-decision/20.1.0",
+      "payload_sha256": "a2f510ac9105fc03047da3279c6f9759cbccc310e67dedd4fe276a826679fec2",
+      "payload_bytes": 1243,
+      "verified": true
+    }
+  },
+  "truth": "Real Q4_0 GGUF inference ran on CPU in a GitHub-hosted runner. Real go-libp2p Noise transport ran and a real model-produced decision artifact was carried over a Noise-secured libp2p stream with SHA-256 verification. The cross-peer proof still used two libp2p hosts inside one CI runner; direct two-physical-host libp2p remains unproven.",
+  "quality_gate": "The 0.8B brain is advisory. Its prose may contain technical mistakes (for example confusing a SHA-256 digest with a digital signature), so it cannot directly authorize execution. Deterministic capability, signature, allowlist, test and attestation gates remain authoritative."
+}
