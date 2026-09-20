@@ -9,7 +9,7 @@ SCHEMA=json.loads((HERE/"DECISION_SCHEMA.json").read_text())
 ALLOWED={"verify_hash","verify_signature","read_memory","append_memory","request_research","request_human_review"}
 
 def validate(obj):
-    if not isinstance(obj,dict) or set(obj)!={"actions","risks","confidence"}: raise ValueError("top_level_shape")
+    if not isinstance(obj,dict) or set(obj)!={"actions","risks"}: raise ValueError("top_level_shape")
     acts=obj["actions"]
     if not isinstance(acts,list) or not 1<=len(acts)<=3: raise ValueError("actions")
     for a in acts:
@@ -17,8 +17,6 @@ def validate(obj):
         if a["tool"] not in ALLOWED or not isinstance(a["reason"],str) or len(a["reason"])>120: raise ValueError("action")
     if not isinstance(obj["risks"],list) or len(obj["risks"])>3: raise ValueError("risks")
     if not all(isinstance(x,str) and len(x)<=120 for x in obj["risks"]): raise ValueError("risk_item")
-    c=obj["confidence"]
-    if not isinstance(c,(int,float)) or not 0<=c<=1: raise ValueError("confidence")
     return True
 
 def ask(base_url,task,lessons=None,max_tokens=512):
