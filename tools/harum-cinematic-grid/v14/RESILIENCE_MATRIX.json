@@ -1,0 +1,28 @@
+{
+  "version": "14.0",
+  "core": [
+    "bundle_protocol_pattern",
+    "sneakernet_capsules",
+    "mergeable_state"
+  ],
+  "optional": [
+    "reticulum",
+    "libp2p",
+    "yggdrasil",
+    "syncthing",
+    "ipfs",
+    "freenet"
+  ],
+  "principles": [
+    "zero-paid-core",
+    "no-single-provider",
+    "offline-capable",
+    "intermittent-connectivity",
+    "transport-agnostic"
+  ],
+  "proof": {
+    "store_carry_forward": true,
+    "crdt_convergence": true,
+    "simultaneous_connectivity_required": false
+  }
+}
