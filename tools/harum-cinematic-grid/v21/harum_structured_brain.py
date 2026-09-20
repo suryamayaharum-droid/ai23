@@ -20,14 +20,14 @@ def call(base_url,mission,max_tokens=512):
     payload={
       "model":"local",
       "messages":[
-        {"role":"system","content":"You are a small local advisory planning brain. Output only the requested JSON schema. Choose only allowlisted tools. Keep reasons short. You do not decide execution authority."},
+        {"role":"system","content":"You are a small local advisory planning brain. Output only valid JSON matching the supplied grammar. Choose only allowlisted tools. Keep reasons short. You do not decide execution authority."},
         {"role":"user","content":mission}
       ],
       "temperature":0,
       "max_tokens":max_tokens,
       "reasoning_effort":"none",
       "chat_template_kwargs":{"enable_thinking":False},
-      "response_format":{"type":"json_schema","schema":SCHEMA}
+      "json_schema":SCHEMA
     }
     req=urllib.request.Request(base_url.rstrip("/")+"/v1/chat/completions",
         data=json.dumps(payload).encode(),headers={"Content-Type":"application/json"})
@@ -38,8 +38,11 @@ def call(base_url,mission,max_tokens=512):
     raw=(msg.get("content") or "").strip()
     if not raw:
         raw=(msg.get("reasoning_content") or "").strip()
-    obj=json.loads(raw)
-    validate(obj)
+    try:
+        obj=json.loads(raw)
+        validate(obj)
+    except Exception as e:
+        raise ValueError(f"{e}; raw={raw[:500]!r}") from e
     return {
       "decision":deterministic_decision(obj),
       "proposal":obj,
@@ -75,7 +78,7 @@ def reliable_call(base_url,mission):
             out["attempt"]=attempt
             return out
         except Exception as e:
-            errors.append(type(e).__name__+":"+str(e)[:240])
+            errors.append(type(e).__name__+":"+str(e)[:700])
     fallback={
       "actions":[{"tool":"request_human_review","reason":"Local structured model output unavailable"}],
       "risks":["structured_generation_failed"],
