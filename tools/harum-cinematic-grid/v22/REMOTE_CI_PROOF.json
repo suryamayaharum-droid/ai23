@@ -1,0 +1,58 @@
+{
+  "version": "22.1",
+  "workflow_run_id": 35517006766,
+  "job_id": 106094530701,
+  "status": "success",
+  "fast_brain": {
+    "model": "Qwen3.5-0.8B Q4_0",
+    "benchmarks": {
+      "hash": {
+        "pass": false,
+        "elapsed_seconds": 4.176,
+        "observed_tools": [
+          "verify_signature"
+        ]
+      },
+      "signature": {
+        "pass": true,
+        "elapsed_seconds": 5.435,
+        "observed_tools": [
+          "verify_signature"
+        ]
+      },
+      "memory": {
+        "pass": true,
+        "elapsed_seconds": 2.646,
+        "observed_tools": [
+          "read_memory"
+        ]
+      },
+      "research": {
+        "pass": false,
+        "elapsed_seconds": 2.697,
+        "observed_tools": [
+          "request_human_review"
+        ]
+      },
+      "publish": {
+        "pass": true,
+        "elapsed_seconds": 2.782,
+        "observed_tools": [
+          "request_human_review"
+        ]
+      }
+    },
+    "pass_count": 3,
+    "total": 5
+  },
+  "deep_brain": {
+    "model": "Qwen3-1.7B Q4_K_M",
+    "forced_cascade": "deep",
+    "passed": true
+  },
+  "lesson_store": {
+    "approved_lessons": 2
+  },
+  "authority": "deterministic judge",
+  "truth": "Real CPU inference executed for both local models. The fast model passed 3/5 semantic tool-routing gates; failures were not trusted and were eligible for deep fallback. A real forced deep fallback passed and two gate-approved lessons were stored. LLM outputs remain advisory."
+}
