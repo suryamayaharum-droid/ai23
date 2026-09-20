@@ -2,14 +2,6 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "decision": {
-      "type": "string",
-      "enum": [
-        "accept",
-        "revise",
-        "reject"
-      ]
-    },
     "actions": {
       "type": "array",
       "minItems": 1,
@@ -55,7 +47,6 @@
     }
   },
   "required": [
-    "decision",
     "actions",
     "risks",
     "confidence"
