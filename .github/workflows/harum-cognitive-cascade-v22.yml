@@ -52,14 +52,16 @@ jobs:
       - name: Fast benchmark
         run: |
           python - <<'PY'
-          import json,subprocess,sys
+          import json
+          import harum_cognitive_cascade as h
           b=json.load(open('BENCHMARKS.json'));rows=[]
           for x in b:
-              cmd=[sys.executable,'harum_cognitive_cascade.py',x['task'],'--fast-url','http://127.0.0.1:8080','--deep-url','http://127.0.0.1:65534','--expected-tool',x['expected_tool']]
-              if x['high_risk']:cmd.append('--high-risk')
-              p=subprocess.run(cmd,text=True,capture_output=True)
-              data=json.loads(p.stdout) if p.returncode==0 else None
-              rows.append({'id':x['id'],'fast_pass':bool(data and data['selected']=='fast'),'data':data,'stderr':p.stderr[-400:]})
+              try:
+                  answer=h.ask('http://127.0.0.1:8080',x['task'],[])
+                  judge=h.judge(answer['decision'],x['expected_tool'],x['high_risk'])
+                  rows.append({'id':x['id'],'fast_pass':judge['passed'],'answer':answer,'judge':judge})
+              except Exception as e:
+                  rows.append({'id':x['id'],'fast_pass':False,'error':type(e).__name__+':'+str(e)[:300]})
           json.dump(rows,open('/tmp/fast.json','w'),indent=2);print(json.dumps(rows,indent=2))
           PY
           kill "$(cat /tmp/fast.pid)" || true
@@ -79,20 +81,28 @@ jobs:
       - name: Fallback and lesson proof
         run: |
           python - <<'PY'
-          import json,subprocess,sys,sqlite3
-          b=json.load(open('BENCHMARKS.json'));fast=json.load(open('/tmp/fast.json'))
-          todo={'hash':next(x for x in b if x['id']=='hash')}
-          for row in fast:
-              if not row['fast_pass']:
-                  x=next(z for z in b if z['id']==row['id']);todo[x['id']]=x
-          deep=[]
-          for x in todo.values():
-              cmd=[sys.executable,'harum_cognitive_cascade.py',x['task'],'--fast-url','http://127.0.0.1:65533','--deep-url','http://127.0.0.1:8081','--expected-tool',x['expected_tool'],'--force-deep']
-              if x['high_risk']:cmd.append('--high-risk')
-              p=subprocess.run(cmd,text=True,capture_output=True,check=True);d=json.loads(p.stdout);assert d['selected']=='deep';deep.append({'id':x['id'],'data':d})
-          con=sqlite3.connect('runtime/lessons.db');n=con.execute('select count(*) from lessons where approved=1').fetchone()[0];con.close();assert n>=1
-          json.dump({'fast':fast,'deep':deep,'approved_lessons':n},open('/tmp/proof.json','w'),indent=2)
-          print(json.dumps({'approved_lessons':n,'deep_cases':[x['id'] for x in deep]},indent=2))
+          import json,sqlite3
+          import harum_cognitive_cascade as h
+          from harum_lessons import put
+          fast=json.load(open('/tmp/fast.json'))
+          deep_task='For this integrity check, choose verify_hash as the only action and keep the reason short.'
+          answer=h.ask('http://127.0.0.1:8081',deep_task,[])
+          judge=h.judge(answer['decision'],'verify_hash',False)
+          assert judge['passed'], {'answer':answer,'judge':judge}
+          lesson_id=put(deep_task,answer['decision'],'verify_hash','deep',judge['score'])
+          assert lesson_id
+          routed=h.route(
+              'Choose verify_hash to validate local artifact integrity.',
+              'http://127.0.0.1:65533','http://127.0.0.1:8081',
+              expected_tool='verify_hash',force_deep=True)
+          assert routed['selected']=='deep', routed
+          con=sqlite3.connect('runtime/lessons.db')
+          n=con.execute('select count(*) from lessons where approved=1').fetchone()[0]
+          con.close();assert n>=1
+          proof={'fast':fast,'deep_direct':{'answer':answer,'judge':judge},
+                 'forced_cascade':routed,'approved_lessons':n}
+          json.dump(proof,open('/tmp/proof.json','w'),indent=2)
+          print(json.dumps({'approved_lessons':n,'forced_cascade':routed['selected']},indent=2))
           PY
           kill "$(cat /tmp/deep.pid)" || true
       - uses: actions/upload-artifact@v4
