@@ -1,0 +1,17 @@
+{
+  "provider": "GitHub Actions",
+  "run_id": 35484450924,
+  "job_id": 106008132365,
+  "status": "completed",
+  "conclusion": "success",
+  "steps": {
+    "checkout": "success",
+    "python_setup": "success",
+    "crypto_dependency": "success",
+    "compile": "success",
+    "encrypted_end_to_end_proof": "success",
+    "proof_gate_verification": "success"
+  },
+  "meaning": "The v19 proof was re-executed successfully on an independent ephemeral GitHub-hosted runner.",
+  "limits": "Bounded CI validation only; not a permanent Harum node or compute farm."
+}
