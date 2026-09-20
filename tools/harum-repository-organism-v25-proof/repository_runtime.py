@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any
 
 from repository_bus import RepositorySynapticBus
+from repository_adapters import RepositoryAdapterRegistry
 from repository_index import RepositoryIndex
 from repository_organism import RepositoryOrganism
 from repository_workspace import RepositoryWorkspace
@@ -22,6 +23,7 @@ class RepositoryOrganismRuntime:
         self.state_root = Path(state_root).expanduser().resolve()
         self.state_root.mkdir(parents=True, exist_ok=True)
         self.organism = RepositoryOrganism.from_repo(self.repo_root)
+        self.adapters = RepositoryAdapterRegistry.from_repo(self.repo_root, self.organism)
         self.bus = RepositorySynapticBus(
             self.state_root / "repository_bus.db",
             self.organism,
@@ -40,6 +42,7 @@ class RepositoryOrganismRuntime:
             "bus": self.bus.status(),
             "index": self.index.stats(),
             "workspace_root": str(self.workspace.root),
+            "adapters": self.adapters.doctor(),
         }
 
     def submit(self, source: str, capability: str, payload: Any) -> dict[str, Any]:
@@ -64,6 +67,38 @@ class RepositoryOrganismRuntime:
         return {
             "materialized": materialized,
             "indexed": indexed,
+            "component_code_executed": False,
+        }
+
+    def process_index_tasks(self, component: str, limit: int = 10) -> dict[str, Any]:
+        spec = self.adapters.get(component)
+        if spec is None or spec.kind != "index-source":
+            raise PermissionError(f"component has no read-index adapter: {component}")
+        claimed = self.bus.claim(component, limit=limit)
+        completed = []
+        rejected = []
+        for item in claimed:
+            payload = item.get("payload")
+            if not isinstance(payload, dict) or not isinstance(payload.get("q"), str):
+                rejected.append({"id": item["id"], "reason": "query_payload_required"})
+                continue
+            hits = self.index.search_component(
+                component,
+                payload["q"],
+                limit=int(payload.get("limit", 10)),
+            )
+            receipt = self.bus.ack(
+                item["id"],
+                component,
+                item["claim_token"],
+                {"hits": hits, "adapter": "read-index"},
+            )
+            completed.append({"id": item["id"], "hits": len(hits), "receipt": receipt})
+        return {
+            "component": component,
+            "claimed": len(claimed),
+            "completed": completed,
+            "rejected": rejected,
             "component_code_executed": False,
         }
 
