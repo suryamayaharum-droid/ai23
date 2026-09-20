@@ -1,28 +1,42 @@
 {
-  "version": "14.0",
+  "version": "14.1",
   "core": [
     "bundle_protocol_pattern",
     "sneakernet_capsules",
     "mergeable_state"
   ],
-  "optional": [
+  "high_priority_optional": [
+    "willow",
     "reticulum",
-    "libp2p",
+    "earthstar_v11",
+    "libp2p"
+  ],
+  "optional": [
     "yggdrasil",
     "syncthing",
     "ipfs",
-    "freenet"
+    "iroh",
+    "freenet",
+    "named_data_networking",
+    "raptorq"
   ],
   "principles": [
     "zero-paid-core",
     "no-single-provider",
     "offline-capable",
     "intermittent-connectivity",
-    "transport-agnostic"
+    "transport-agnostic",
+    "store-carry-forward",
+    "content-addressed"
   ],
   "proof": {
     "store_carry_forward": true,
     "crdt_convergence": true,
     "simultaneous_connectivity_required": false
+  },
+  "guards": {
+    "willow_wire_compatible": false,
+    "bpv7_wire_compatible": false,
+    "optional_adapters_executed": false
   }
 }
