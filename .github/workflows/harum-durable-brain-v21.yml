@@ -1,0 +1,147 @@
+name: Harum Durable Brain Fabric v21
+
+on:
+  pull_request:
+    branches: [harum-native-brain-fabric-v20]
+    paths:
+      - "tools/harum-cinematic-grid/v21/**"
+      - ".github/workflows/harum-durable-brain-v21.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  model-seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      model_sha: ${{ steps.hash.outputs.model_sha }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        id: model-cache
+        with:
+          path: ~/.cache/harum-models
+          key: harum-qwen35-08b-q4-v1
+      - name: Download model if absent
+        if: steps.model-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/.cache/harum-models
+          curl -L --fail --retry 4             -o ~/.cache/harum-models/Qwen3.5-0.8B-Q4_0.gguf             https://huggingface.co/ggml-org/Qwen3.5-0.8B-GGUF/resolve/main/Qwen3.5-0.8B-Q4_0.gguf
+      - id: hash
+        name: Hash model
+        run: |
+          SHA=$(sha256sum ~/.cache/harum-models/Qwen3.5-0.8B-Q4_0.gguf | awk '{print $1}')
+          test "$(stat -c%s ~/.cache/harum-models/Qwen3.5-0.8B-Q4_0.gguf)" -gt 500000000
+          echo "model_sha=$SHA" >> "$GITHUB_OUTPUT"
+
+  structured-brain:
+    needs: model-seed
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v21
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache/restore@v4
+        with:
+          path: ~/.cache/harum-models
+          key: harum-qwen35-08b-q4-v1
+          fail-on-cache-miss: true
+      - name: Verify model persisted across VM jobs
+        run: |
+          SHA=$(sha256sum ~/.cache/harum-models/Qwen3.5-0.8B-Q4_0.gguf | awk '{print $1}')
+          test "$SHA" = "${{ needs.model-seed.outputs.model_sha }}"
+          echo "portable model vault restore verified: $SHA"
+      - name: Install llama.cpp CPU
+        run: |
+          curl -LsSf https://llama.app/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Start local model
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          nohup llama-server             -m ~/.cache/harum-models/Qwen3.5-0.8B-Q4_0.gguf             --host 127.0.0.1 --port 8080 -c 2048 -np 1 -t 2 --no-webui             > /tmp/llama.log 2>&1 &
+          python - <<'PY'
+          import time,urllib.request
+          for _ in range(120):
+              try:
+                  if urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=2).status==200:
+                      raise SystemExit(0)
+              except SystemExit:
+                  raise
+              except Exception:
+                  time.sleep(1)
+          print(open('/tmp/llama.log').read()[-10000:])
+          raise SystemExit(1)
+          PY
+      - name: Structured output proof
+        run: |
+          python harum_structured_brain.py             "A signed artifact arrived from an authorized peer. Plan only local verification; do not request arbitrary shell execution."             --base-url http://127.0.0.1:8080 | tee /tmp/structured.json
+          python - <<'PY'
+          import json
+          p=json.load(open('/tmp/structured.json'))
+          d=p['decision']
+          assert 1 <= len(d['actions']) <= 3
+          allowed={'verify_hash','verify_signature','read_memory','append_memory','request_research','request_human_review'}
+          assert all(a['tool'] in allowed for a in d['actions'])
+          assert 0 <= d['confidence'] <= 1
+          print('structured brain valid', json.dumps(d))
+          PY
+
+  dtn-sender:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v21
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q cryptography
+      - name: Produce signed offline bundle
+        run: python harum_cross_runner_bundle.py sender /tmp/out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: harum-v21-dtn-task
+          path: /tmp/out
+          retention-days: 1
+
+  dtn-receiver:
+    needs: dtn-sender
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v21
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q cryptography
+      - uses: actions/download-artifact@v4
+        with:
+          name: harum-v21-dtn-task
+          path: /tmp/in
+      - name: Verify on fresh VM and execute allowlisted task
+        run: python harum_cross_runner_bundle.py receiver /tmp/in /tmp/out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: harum-v21-dtn-receipt
+          path: /tmp/out
+          retention-days: 1
+
+  dtn-verifier:
+    needs: dtn-receiver
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v21
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q cryptography
+      - uses: actions/download-artifact@v4
+        with:
+          name: harum-v21-dtn-receipt
+          path: /tmp/in
+      - name: Verify signed receipt on third fresh VM
+        run: python harum_cross_runner_bundle.py verify /tmp/in
