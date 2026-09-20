@@ -1,0 +1,49 @@
+name: Harum Connectivity Fabric v23
+
+on:
+  pull_request:
+    branches: [harum-semantic-immune-v22]
+    paths:
+      - "tools/harum-cinematic-grid/v23/**"
+      - ".github/workflows/harum-connectivity-v23.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  relay-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v23
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24.x"
+      - name: Resolve pinned libp2p
+        run: |
+          go get github.com/libp2p/go-libp2p@v0.49.0
+          go mod tidy
+      - name: Build connectivity profile
+        run: go test ./...
+      - name: Run Circuit Relay v2 proof
+        run: |
+          go run ./relay_proof.go | tee /tmp/relay-proof.json
+          python - <<'PY'
+          import json
+          p=json.load(open('/tmp/relay-proof.json'))
+          assert p['ReservationOK'] is True
+          assert p['Relayed'] is True
+          assert p['NoiseActive'] is True
+          assert p['Protocol']=='/harum/relay-proof/23.0.0'
+          assert p['Response']=='relay-ack:harum-v23'
+          print('relay v2 + noise proof passed')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: harum-v23-relay-proof
+          path: /tmp/relay-proof.json
+          retention-days: 1
