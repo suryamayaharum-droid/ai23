@@ -1,0 +1,29 @@
+{
+  "schema": "meaw.federation-link/v1",
+  "organism": "HARUM-MEAW",
+  "component": "ai23",
+  "repository": "suryamayaharum-droid/ai23",
+  "role": "research-and-cognitive-lab",
+  "organ": "cortex-rd",
+  "capabilities": [
+    "cpu-cinema",
+    "holographic-organism",
+    "quantized-brains",
+    "resilient-mesh",
+    "secure-synapse",
+    "crystal-cortex",
+    "research"
+  ],
+  "lifecycle": "active",
+  "trust": "owned",
+  "authority": "suryamayaharum-droid/SARASWATI-HIVE-MIND",
+  "authority_manifest": "ecosystem/repository_organism.json",
+  "nervous_system": "suryamayaharum-droid/ai23",
+  "memory_authority": "MemoryCastle@suryamayaharum-droid/SARASWATI-HIVE-MIND",
+  "policy": {
+    "discovery_executes_commands": false,
+    "manifest_grants_execution": false,
+    "explicit_adapter_required": true,
+    "secrets_allowed": false
+  }
+}
