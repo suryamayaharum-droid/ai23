@@ -1,0 +1,9 @@
+{
+  "transport":{"type":"TCP","scope":"localhost","separate_processes":true,"physical_hosts":1},
+  "first_execution":{"ok":true,"replayed":false,"receipt_signature_valid":true,"cas_integrity":true},
+  "restart_replay":{"ok":true,"replayed":true,"receipt_signature_valid":true,"same_receipt":true},
+  "tamper_rejected":{"ok":false,"error":"bad_task_signature"},
+  "unauthorized_kind_rejected":{"ok":false,"error":"capability_denied"},
+  "quorum_update":{"two_of_three":{"accepted":true,"count":2,"threshold":2},"one_of_three":{"accepted":false,"count":1,"threshold":2}},
+  "truth":"Real TCP transport used between separate processes on one physical host. No claim of multi-machine deployment."
+}
