@@ -1,0 +1,19 @@
+{
+  "version": "24.0",
+  "crystallization": {
+    "active_rule": true,
+    "contradiction_quarantined": true,
+    "exact_task_bypasses_llm": true,
+    "unseen_same_class_bypasses_llm": true
+  },
+  "drop_sync": {"converged": true},
+  "large_reconciliation": {
+    "peerA_items": 9995,
+    "peerB_items": 9997,
+    "symmetric_difference": 12,
+    "wire_bytes_estimate": 27532,
+    "full_inventory_bytes": 639744,
+    "reduction_ratio": 0.956964
+  },
+  "truth": "Local proof validates signed crystal promotion/quarantine, LLM bypass for proven knowledge, exact set reconciliation, and asynchronous Drop convergence. It does not claim live Internet NAT traversal was executed in this container."
+}

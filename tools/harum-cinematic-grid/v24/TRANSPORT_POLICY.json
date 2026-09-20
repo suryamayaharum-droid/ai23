@@ -1,0 +1,23 @@
+{
+  "version": "24.0",
+  "principle": "Hot path for real-time connectivity; cold path for eventual convergence. Relays are disposable coordination, never trusted state.",
+  "hot_path": [
+    {"step":1,"action":"reuse_persisted_peer_store"},
+    {"step":2,"action":"local_mdns_or_known_multiaddr"},
+    {"step":3,"action":"libp2p_autonat"},
+    {"step":4,"action":"reserve_multiple_circuit_v2_relays","target":2},
+    {"step":5,"action":"dcutr_hole_punch"},
+    {"step":6,"action":"keep_end_to_end_encrypted_relay_path"}
+  ],
+  "discovery_options": [
+    {"name":"Kademlia/DHT/bootstrap","status":"optional"},
+    {"name":"Pkarr over BitTorrent mainline DHT","status":"optional","privacy":"opt-in address publication"},
+    {"name":"manual QR/file invite","status":"core fallback"}
+  ],
+  "cold_path": [
+    {"step":1,"action":"prefix_merkle_reconcile"},
+    {"step":2,"action":"signed_drop_bundle"},
+    {"step":3,"action":"store_carry_forward"}
+  ],
+  "hard_truth": "Guaranteed real-time connection between arbitrary peers behind restrictive NAT/CGNAT is impossible without some reachable rendezvous/relay or an out-of-band carrier. v24 removes single-provider dependence by combining multiple hot-path relays with an asynchronous cold path."
+}

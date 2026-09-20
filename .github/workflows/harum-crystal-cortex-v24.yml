@@ -1,0 +1,44 @@
+name: Harum Crystal Cortex v24
+
+on:
+  pull_request:
+    branches: [harum-browser-brain-v23]
+    paths:
+      - "tools/harum-cinematic-grid/v24/**"
+      - ".github/workflows/harum-crystal-cortex-v24.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  crystal-cortex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install signature runtime
+        run: pip install -q cryptography
+      - name: Compile
+        run: python -m compileall -q .
+      - name: Run crystallization and reconciliation proof
+        run: python proof_v24.py
+      - name: Enforce proof gates
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('CI_PROOF.json'))
+          assert p['active_rule'] is True
+          assert p['contradiction_quarantined'] is True
+          assert p['drop_converged'] is True
+          r=p['large_reconciliation']
+          assert r['reduction_ratio'] > 0.90
+          assert r['wire_bytes_estimate'] < r['full_inventory_bytes']
+          print('v24 proof gates passed', json.dumps(r))
+          PY
