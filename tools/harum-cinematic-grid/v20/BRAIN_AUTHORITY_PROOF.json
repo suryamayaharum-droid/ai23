@@ -1,0 +1,5 @@
+{
+  "dangerous_action_denied": true,
+  "safe_action_allowed": true,
+  "principle": "LLM output is advisory and never grants execution authority; deterministic identity/capability/resource/test gates do."
+}
