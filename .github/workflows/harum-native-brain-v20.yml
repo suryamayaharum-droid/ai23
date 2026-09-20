@@ -99,3 +99,45 @@ jobs:
           import json,urllib.request
           print(json.dumps(json.load(urllib.request.urlopen('http://127.0.0.1:8080/v1/models')),indent=2))
           PY
+      - name: Export brain decision artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: harum-v20-brain-proof
+          path: tools/harum-cinematic-grid/v20/brain-proof.json
+          retention-days: 1
+
+  cognitive-synapse:
+    needs:
+      - libp2p-noise
+      - quantized-brain
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.24.x'
+      - uses: actions/download-artifact@v4
+        with:
+          name: harum-v20-brain-proof
+          path: tools/harum-cinematic-grid/v20/ci-input
+      - name: Resolve libp2p
+        run: |
+          go get github.com/libp2p/go-libp2p@latest
+          go mod tidy
+      - name: Carry real brain output over real libp2p Noise
+        run: |
+          go run ./brain_payload_proof.go ./ci-input/brain-proof.json | tee cognitive-synapse-proof.json
+          python - <<'PY'
+          import json
+          p=json.load(open('cognitive-synapse-proof.json'))
+          assert p['verified'] is True
+          assert p['noise_active'] is True
+          assert p['security'] == '/noise'
+          assert p['protocol'] == '/harum/brain-decision/20.1.0'
+          assert p['payload_bytes'] > 0
+          print('cognitive synapse proof ok')
+          PY
