@@ -4,17 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       image_url:
-        description: "Public image URL (optional). Leave empty for generated noir background."
-        required: false
-        default: ""
+        description: "Public image URL"
+        required: true
       script:
         description: "Portuguese narration"
         required: true
-        default: "Eu quase nunca sei quando um desenho terminou. Às vezes eu só paro antes de estragar."
       artifact_name:
         description: "Output base name"
         required: true
-        default: "HARUM_NOIR_2317"
+        default: "HARUM_NOIR_DISCOVERY"
   push:
     paths:
       - "examples/harum-noir-zero-cost/TRIGGER.md"
@@ -24,12 +22,46 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    env:
-      SCRIPT: ${{ github.event.inputs.script || 'Eu quase nunca sei quando um desenho terminou. Às vezes eu só paro antes de estragar.' }}
-      IMAGE_URL: ${{ github.event.inputs.image_url || '' }}
-      ARTIFACT_NAME: ${{ github.event.inputs.artifact_name || 'HARUM_NOIR_2317' }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Resolve render inputs
+        shell: bash
+        env:
+          DISPATCH_IMAGE_URL: ${{ github.event.inputs.image_url || '' }}
+          DISPATCH_SCRIPT: ${{ github.event.inputs.script || '' }}
+          DISPATCH_ARTIFACT: ${{ github.event.inputs.artifact_name || '' }}
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "push" ]; then
+            python - <<'PY' >> "$GITHUB_ENV"
+          from pathlib import Path
+          import base64
+          p=Path("examples/harum-noir-zero-cost/TRIGGER.md").read_text()
+          vals={}
+          for line in p.splitlines():
+              if ": " in line and line.split(": ",1)[0] in {"image_url","script","artifact_name"}:
+                  k,v=line.split(": ",1); vals[k]=v.strip()
+          for k in ("image_url","script","artifact_name"):
+              if not vals.get(k):
+                  raise SystemExit(f"Missing {k} in TRIGGER.md")
+          print("IMAGE_URL="+vals["image_url"])
+          print("SCRIPT_B64="+base64.b64encode(vals["script"].encode()).decode())
+          print("ARTIFACT_NAME="+vals["artifact_name"])
+          PY
+          else
+            python - <<'PY' >> "$GITHUB_ENV"
+          import os,base64
+          image=os.environ["DISPATCH_IMAGE_URL"].strip()
+          script=os.environ["DISPATCH_SCRIPT"].strip()
+          artifact=os.environ["DISPATCH_ARTIFACT"].strip() or "HARUM_NOIR_DISCOVERY"
+          if not image or not script:
+              raise SystemExit("image_url and script are required; placeholder rendering is disabled")
+          print("IMAGE_URL="+image)
+          print("SCRIPT_B64="+base64.b64encode(script.encode()).decode())
+          print("ARTIFACT_NAME="+artifact)
+          PY
+          fi
 
       - name: Install free render stack
         run: |
@@ -38,55 +70,43 @@ jobs:
           python -m pip install --upgrade pip
           pip install "kokoro>=0.9.4" soundfile numpy
 
-      - name: Prepare visual
+      - name: Fetch and validate real artwork
         run: |
-          set -e
-          if [ -n "$IMAGE_URL" ]; then
-            curl -L --fail "$IMAGE_URL" -o source.jpg
-          else
-            ffmpeg -y -f lavfi -i "color=c=#0B0B0B:s=1080x1920:d=1" \
-              -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf:text='23\:17':fontcolor=#EEE8DC:fontsize=150:x=80:y=160,drawbox=x=84:y=350:w=150:h=3:color=#B58A3A@0.85:t=fill,noise=alls=3:allf=t+u,vignette=PI/5" \
-              -frames:v 1 source.png
-          fi
+          set -euo pipefail
+          curl -L --fail --retry 3 "$IMAGE_URL" -o source.jpg
+          test -s source.jpg
+          ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 source.jpg
 
-      - name: Generate female pt-BR narration with Kokoro
+      - name: Generate female pt-BR narration
         run: |
           python - <<'PY'
-          import os, numpy as np, soundfile as sf
+          import os,base64,numpy as np,soundfile as sf
           from kokoro import KPipeline
-          pipeline = KPipeline(lang_code='p')
-          chunks = []
-          for _, _, audio in pipeline(os.environ["SCRIPT"], voice='pf_dora', speed=0.92):
-              chunks.append(audio)
-          if not chunks:
-              raise RuntimeError("Kokoro returned no audio")
-          sf.write("voice.wav", np.concatenate(chunks), 24000)
-          print("voice.wav generated with pt-BR female voice pf_dora")
+          script=base64.b64decode(os.environ["SCRIPT_B64"]).decode()
+          pipeline=KPipeline(lang_code='p')
+          chunks=[audio for _,_,audio in pipeline(script,voice='pf_dora',speed=0.92)]
+          if not chunks: raise RuntimeError("Kokoro returned no audio")
+          sf.write("voice.wav",np.concatenate(chunks),24000)
           PY
 
-      - name: Render 9:16 NoirMotion
+      - name: Render discovery Reel
         run: |
-          INPUT="source.jpg"
-          [ -f source.png ] && INPUT="source.png"
+          set -euo pipefail
+          ffmpeg -y -loop 1 -i source.jpg -t 9 -r 30             -vf "scale=1200:2134:force_original_aspect_ratio=increase,crop=1200:2134,crop=1080:1920:x='(iw-ow)/2+20*sin(t*0.22)':y='(ih-oh)/2+12*sin(t*0.17)',eq=contrast=1.04:saturation=0.88:brightness=-0.015,vignette=PI/5,noise=alls=2:allf=t+u,fade=t=in:st=0:d=0.35,fade=t=out:st=8.5:d=0.5"             -an -c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p silent.mp4
+          ffmpeg -y -i silent.mp4 -i voice.wav             -filter_complex "[1:a]volume=1.0,apad[a]"             -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k             -shortest -movflags +faststart "$ARTIFACT_NAME.mp4"
 
-          ffmpeg -y -loop 1 -i "$INPUT" -t 9 -r 30 \
-            -vf "scale=1200:2134:force_original_aspect_ratio=increase,crop=1200:2134,crop=1080:1920:x='(iw-ow)/2+20*sin(t*0.22)':y='(ih-oh)/2+12*sin(t*0.17)',eq=contrast=1.04:saturation=0.88:brightness=-0.015,vignette=PI/5,noise=alls=2:allf=t+u,fade=t=in:st=0:d=0.35,fade=t=out:st=8.5:d=0.5" \
-            -an -c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p silent.mp4
-
-          ffmpeg -y -i silent.mp4 -i voice.wav \
-            -filter_complex "[1:a]volume=1.0,apad[a]" \
-            -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k \
-            -shortest -movflags +faststart "$ARTIFACT_NAME.mp4"
-
-      - name: Verify output
+      - name: QC gate
         run: |
-          ffprobe -v error -show_entries format=duration,size \
-            -show_entries stream=codec_name,width,height \
-            -of json "$ARTIFACT_NAME.mp4"
+          set -euo pipefail
+          test -s "$ARTIFACT_NAME.mp4"
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,r_frame_rate -of json "$ARTIFACT_NAME.mp4" | tee qc.json
+          ffmpeg -v error -i "$ARTIFACT_NAME.mp4" -f null -
 
-      - name: Upload rendered Short
+      - name: Upload rendered Reel
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ARTIFACT_NAME }}
-          path: ${{ env.ARTIFACT_NAME }}.mp4
+          path: |
+            ${{ env.ARTIFACT_NAME }}.mp4
+            qc.json
           retention-days: 7
