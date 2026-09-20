@@ -1,0 +1,9 @@
+{
+  "name": "harum-browser-brain-v23",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@wllama/wllama": "3.6.1",
+    "@playwright/test": "1.60.0"
+  }
+}
