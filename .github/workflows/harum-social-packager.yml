@@ -1,0 +1,56 @@
+name: HARUM — Social Packager
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "examples/harum-social-packager/MANIFEST.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg jq
+      - name: Validate and package
+        shell: bash
+        run: |
+          set -euo pipefail
+          M="examples/harum-social-packager/MANIFEST.json"
+          CODE="$(jq -r '.asset_code' "$M")"
+          VIDEO="$(jq -r '.source_video_path' "$M")"
+          OFFSET="$(jq -r '.cover_offset_seconds // 4' "$M")"
+          test -s "$VIDEO"
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,r_frame_rate -of json "$VIDEO" > /tmp/probe.json
+          OUT="public/social-packs/$CODE"
+          mkdir -p "$OUT"
+          cp "$M" "$OUT/metadata.json"
+          ffmpeg -y -ss "$OFFSET" -i "$VIDEO" -frames:v 1 -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2" -q:v 2 "$OUT/cover_9x16.jpg"
+          ffmpeg -y -ss "$OFFSET" -i "$VIDEO" -frames:v 1 -vf "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2" -q:v 2 "$OUT/youtube_thumbnail_16x9.jpg"
+          jq -r '.platforms.youtube_shorts.title' "$M" > "$OUT/youtube_title.txt"
+          jq -r '.platforms.youtube_shorts.description' "$M" > "$OUT/youtube_description.txt"
+          jq -r '.platforms.tiktok.caption' "$M" > "$OUT/tiktok_caption.txt"
+          jq -r '.platforms.pinterest.title' "$M" > "$OUT/pinterest_title.txt"
+          jq -r '.platforms.pinterest.description' "$M" > "$OUT/pinterest_description.txt"
+          jq -r '.platforms.threads.text' "$M" > "$OUT/threads_post.txt"
+          jq -r '.platforms.facebook_reels.caption' "$M" > "$OUT/facebook_reel_caption.txt"
+          cp /tmp/probe.json "$OUT/video_probe.json"
+      - name: Commit package
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/social-packs
+          if git diff --cached --quiet; then
+            echo "No social package changes."
+          else
+            git commit -m "social: build cross-platform package"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
