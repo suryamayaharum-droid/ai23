@@ -4,6 +4,7 @@ from pathlib import Path
 HERE=Path(__file__).resolve().parent
 DB=HERE/"runtime"/"lessons.db"
 def conn():
+    DB.parent.mkdir(parents=True,exist_ok=True)
     c=sqlite3.connect(DB);c.row_factory=sqlite3.Row
     c.executescript("""PRAGMA journal_mode=WAL;
     CREATE TABLE IF NOT EXISTS lessons(id TEXT PRIMARY KEY,task TEXT NOT NULL,decision TEXT NOT NULL,
