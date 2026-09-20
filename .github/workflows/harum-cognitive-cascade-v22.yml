@@ -1,4 +1,4 @@
-name: Harum Cognitive Cascade v22
+name: Harum Cognitive Cascade v22.1
 on:
   pull_request:
     branches: [harum-durable-brain-fabric-v21]
@@ -11,7 +11,7 @@ permissions:
 jobs:
   cascade:
     runs-on: ubuntu-latest
-    timeout-minutes: 28
+    timeout-minutes: 24
     defaults:
       run:
         working-directory: tools/harum-cinematic-grid/v22
@@ -24,14 +24,14 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: ~/.cache/harum-deep
-          key: harum-qwen3-17b-q8-v1
+          key: harum-qwen3-17b-q4km-v1
       - name: Ensure models
         run: |
           mkdir -p ~/.cache/harum-fast ~/.cache/harum-deep
           test -f ~/.cache/harum-fast/Qwen3.5-0.8B-Q4_0.gguf || curl -L --fail --retry 4 -o ~/.cache/harum-fast/Qwen3.5-0.8B-Q4_0.gguf https://huggingface.co/ggml-org/Qwen3.5-0.8B-GGUF/resolve/main/Qwen3.5-0.8B-Q4_0.gguf
-          test -f ~/.cache/harum-deep/Qwen3-1.7B-Q8_0.gguf || curl -L --fail --retry 4 -o ~/.cache/harum-deep/Qwen3-1.7B-Q8_0.gguf https://huggingface.co/Qwen/Qwen3-1.7B-GGUF/resolve/main/Qwen3-1.7B-Q8_0.gguf
+          test -f ~/.cache/harum-deep/Qwen3-1.7B-Q4_K_M.gguf || curl -L --fail --retry 4 -o ~/.cache/harum-deep/Qwen3-1.7B-Q4_K_M.gguf https://huggingface.co/unsloth/Qwen3-1.7B-GGUF/resolve/main/Qwen3-1.7B-Q4_K_M.gguf
           test "$(sha256sum ~/.cache/harum-fast/Qwen3.5-0.8B-Q4_0.gguf | awk '{print $1}')" = "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
-          test "$(sha256sum ~/.cache/harum-deep/Qwen3-1.7B-Q8_0.gguf | awk '{print $1}')" = "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a"
+          test "$(sha256sum ~/.cache/harum-deep/Qwen3-1.7B-Q4_K_M.gguf | awk '{print $1}')" = "b139949c5bd74937ad8ed8c8cf3d9ffb1e99c866c823204dc42c0d91fa181897"
       - name: Install llama.cpp CPU
         run: |
           SKIP_CUDA=1 SKIP_ROCM=1 SKIP_VULKAN=1 sh -c 'curl -LsSf https://llama.app/install.sh | sh'
@@ -65,11 +65,11 @@ jobs:
           kill "$(cat /tmp/fast.pid)" || true
       - name: Start deep brain
         run: |
-          nohup "$HOME/.local/bin/llama" serve -m ~/.cache/harum-deep/Qwen3-1.7B-Q8_0.gguf --host 127.0.0.1 --port 8081 -c 2048 -np 1 -t 2 --no-webui --reasoning off >/tmp/deep.log 2>&1 &
+          nohup "$HOME/.local/bin/llama" serve -m ~/.cache/harum-deep/Qwen3-1.7B-Q4_K_M.gguf --host 127.0.0.1 --port 8081 -c 2048 -np 1 -t 2 --no-webui --reasoning off >/tmp/deep.log 2>&1 &
           echo $! >/tmp/deep.pid
           python - <<'PY'
           import time,urllib.request
-          for _ in range(180):
+          for _ in range(150):
               try:
                   if urllib.request.urlopen('http://127.0.0.1:8081/health',timeout=2).status==200: raise SystemExit(0)
               except SystemExit: raise
