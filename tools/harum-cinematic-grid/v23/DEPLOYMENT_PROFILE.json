@@ -1,0 +1,16 @@
+{
+  "version":"23.0",
+  "connection_order":["direct","hole_punch","authorized_circuit_relay_v2","store_carry_forward"],
+  "private_peer":["AutoNAT","AutoRelay with authorized static relays","DCUtR hole punching","Circuit Relay v2 fallback"],
+  "relay_policy":{
+    "third_party_relay_required":false,
+    "owned_or_authorized_relays_preferred":true,
+    "resource_limits_required_for_public_exposure":true,
+    "acl_recommended":true
+  },
+  "truth":{
+    "relay_proof_can_run_in_ci":true,
+    "real_two_nat_hole_punch_requires_independent_networks":true,
+    "do_not_claim_physical_multihost_without_measurement":true
+  }
+}
