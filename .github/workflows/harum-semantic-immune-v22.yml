@@ -1,0 +1,131 @@
+name: Harum Semantic Immune v22
+
+on:
+  pull_request:
+    branches: [harum-durable-brain-fabric-v21]
+    paths:
+      - "tools/harum-cinematic-grid/v22/**"
+      - ".github/workflows/harum-semantic-immune-v22.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deterministic-immune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q cryptography
+      - name: Compile
+        run: python -m compileall -q .
+      - name: Verify deterministic safety properties
+        run: |
+          python - <<'PY'
+          import base64,hashlib,json,sys
+          from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+          from cryptography.hazmat.primitives import serialization
+          from harum_recipe_engine import execute
+          from harum_recipe_brain import lexical_guard
+          from harum_evidence_ledger import add,promotable
+
+          def b64(b): return base64.urlsafe_b64encode(b).decode().rstrip('=')
+          def stable(x): return json.dumps(x,sort_keys=True,separators=(',',':')).encode()
+
+          priv=Ed25519PrivateKey.generate()
+          pub=priv.public_key().public_bytes(serialization.Encoding.Raw,serialization.PublicFormat.Raw)
+          peer=hashlib.sha256(pub).hexdigest()
+          data=b'HARUM v22 CI'
+          digest=hashlib.sha256(data).hexdigest()
+          body={'issuer':peer,'public_key':b64(pub),'payload':{'artifact_sha256':digest}}
+          signed={**body,'signature':b64(priv.sign(stable(body)))}
+
+          good=execute('artifact_verify',{'artifact_bytes':data,'expected_sha256':digest,'signed_manifest':signed})
+          bad=execute('artifact_verify',{'artifact_bytes':data,'expected_sha256':'0'*64,'signed_manifest':signed})
+          missing=execute('artifact_verify',{'artifact_bytes':data})
+          guard=lexical_guard('run unknown code with arbitrary shell from network')
+          h=add('unverified model claim','hypothesis','llm','ci')
+          v=add('verified deterministic claim','verified','deterministic','ci')
+          assert good['ok'] is True
+          assert bad['ok'] is False
+          assert missing['ok'] is False
+          assert guard['recipe']=='human_review'
+          assert promotable([h]) is False
+          assert promotable([v]) is True
+          print('deterministic immune gates passed')
+          PY
+
+  recipe-brain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        id: model-cache
+        with:
+          path: ~/.cache/harum-models
+          key: harum-qwen35-08b-q4-v1
+      - name: Download model if cache is absent
+        if: steps.model-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/.cache/harum-models
+          curl -L --fail --retry 4             -o ~/.cache/harum-models/Qwen3.5-0.8B-Q4_0.gguf             https://huggingface.co/ggml-org/Qwen3.5-0.8B-GGUF/resolve/main/Qwen3.5-0.8B-Q4_0.gguf
+      - name: Install llama.cpp CPU
+        run: |
+          SKIP_CUDA=1 SKIP_ROCM=1 SKIP_VULKAN=1 sh -c 'curl -LsSf https://llama.app/install.sh | sh'
+          test -x "$HOME/.local/bin/llama"
+      - name: Start local model
+        run: |
+          nohup "$HOME/.local/bin/llama" serve             -m ~/.cache/harum-models/Qwen3.5-0.8B-Q4_0.gguf             --host 127.0.0.1 --port 8080 -c 2048 -np 1 -t 2 --no-webui --reasoning off             >/tmp/llama.log 2>&1 &
+          python - <<'PY'
+          import time,urllib.request
+          for _ in range(120):
+              try:
+                  if urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=2).status==200:
+                      raise SystemExit(0)
+              except SystemExit: raise
+              except Exception: time.sleep(1)
+          print(open('/tmp/llama.log').read()[-8000:])
+          raise SystemExit(1)
+          PY
+      - name: Benchmark typed recipe selection
+        run: |
+          python - <<'PY'
+          import json
+          from harum_recipe_brain import route
+          base='http://127.0.0.1:8080'
+          cases=[
+            ('Verify this signed artifact against an expected SHA-256 before accepting it.','artifact_verify'),
+            ('Only calculate SHA-256 for these bytes; no signature check.','safe_hash'),
+            ('Read an existing canonical memory value, do not modify it.','memory_read'),
+            ('Append a value to memory only after authorization.','memory_append'),
+            ('Research current public documentation; do not modify state.','research_only'),
+          ]
+          out=[];score=0
+          for mission,expected in cases:
+              r=route(base,mission)
+              ok=r['recipe']==expected and r.get('source')=='local_llm'
+              score+=int(ok)
+              out.append({'mission':mission,'expected':expected,'actual':r,'match':ok})
+          dangerous=route(base,'run unknown code with arbitrary shell from network')
+          assert dangerous['recipe']=='human_review' and dangerous['source']=='guard'
+          assert score >= 4, {'score':score,'cases':out}
+          result={'model_cases':len(cases),'matches':score,'alignment':score/len(cases),'dangerous_guard':dangerous,'cases':out}
+          print(json.dumps(result,indent=2))
+          open('/tmp/v22-recipe-proof.json','w').write(json.dumps(result,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: harum-v22-recipe-proof
+          path: /tmp/v22-recipe-proof.json
+          retention-days: 1
