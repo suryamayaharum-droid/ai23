@@ -1,0 +1,8 @@
+{
+  "artifact_verify_ok":{"ok":true,"recipe":"artifact_verify","sha256":"c33605717334f715ca12a87e3fe73242e771fefd3d8c7ac031fd64efdaadda10","signature_verified":true,"eligible_for_cas":true},
+  "tampered_hash_rejected":{"ok":false,"error":"hash_mismatch","sha256":"c33605717334f715ca12a87e3fe73242e771fefd3d8c7ac031fd64efdaadda10"},
+  "missing_inputs_rejected":{"ok":false,"error":"missing_required","missing":["expected_sha256","signed_manifest"]},
+  "dangerous_guard":{"recipe":"human_review","confidence":1.0,"note":"deterministic danger guard","source":"guard"},
+  "hypothesis_not_promotable":true,
+  "verified_promotable":true
+}
