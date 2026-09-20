@@ -10,14 +10,14 @@ ALLOWED=[
 SCHEMA={
   "type":"object",
   "properties":{
-    "summary":{"type":"string","minLength":1,"maxLength":240},
+    "summary":{"type":"string","minLength":1,"maxLength":160},
     "actions":{
-      "type":"array","minItems":1,"maxItems":4,
+      "type":"array","minItems":1,"maxItems":2,
       "items":{
         "type":"object",
         "properties":{
           "kind":{"type":"string","enum":ALLOWED},
-          "reason":{"type":"string","minLength":1,"maxLength":240}
+          "reason":{"type":"string","minLength":1,"maxLength":160}
         },
         "required":["kind","reason"],
         "additionalProperties":False
@@ -59,7 +59,7 @@ def normalize(obj):
     if not actions:
         actions=[{"kind":"request_human_review","reason":"Structured local brain output could not be safely normalized."}]
         conf=0.0
-    return {"summary":summary.strip()[:240],"actions":actions[:4],"needs_external":ext,"confidence":conf}
+    return {"summary":summary.strip()[:240],"actions":actions[:2],"needs_external":ext,"confidence":conf}
 
 def plan(base_url,task):
     payload={
@@ -69,7 +69,7 @@ def plan(base_url,task):
         {"role":"user","content":task}
       ],
       "temperature":0,
-      "max_tokens":220,
+      "max_tokens":384,
       "response_format":{"type":"json_schema","schema":SCHEMA}
     }
     req=urllib.request.Request(
