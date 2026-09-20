@@ -1,0 +1,33 @@
+{
+  "version":"21.1",
+  "workflow_run_id":35515556394,
+  "status":"success",
+  "commit":"b28e6977d993c046c6fc4776a82a2ec1c13ff121",
+  "model":{
+    "name":"Qwen3.5-0.8B Q4_0 GGUF",
+    "sha256":"57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "cache_restored_on_fresh_job":true,
+    "cpu_only":true
+  },
+  "structured_brain":{
+    "job_id":106090815583,
+    "status":"success",
+    "attempt":1,
+    "elapsed_seconds":2.764,
+    "structured_valid":true,
+    "fallback":false,
+    "decision":"accept",
+    "actions":["verify_signature"],
+    "confidence":0.95,
+    "authority":"deterministic outside LLM"
+  },
+  "store_carry_forward":{
+    "sender_job":106090783213,
+    "receiver_job":106090811642,
+    "verifier_job":106090830881,
+    "all_success":true,
+    "signed_task":true,
+    "signed_receipt":true
+  },
+  "truth":"GitHub-hosted jobs proved model persistence across fresh VM jobs and signed asynchronous task carry. This does not prove direct P2P NAT traversal between two independently controlled physical devices."
+}
