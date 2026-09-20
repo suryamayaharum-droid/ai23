@@ -39,4 +39,4 @@ window.harumbrowser={
     status.textContent=JSON.stringify(out,null,2);return out;
   }
 };
-if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+if('serviceWorker' in navigator) navigator.serviceWorker.register('/web/sw.js').catch(()=>{});
