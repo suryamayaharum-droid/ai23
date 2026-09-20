@@ -77,19 +77,21 @@ jobs:
           print(open('/tmp/llama.log').read()[-10000:])
           raise SystemExit(1)
           PY
-      - name: Structured output proof
+      - name: Structured advisory brain proof
         run: |
           python harum_structured_brain.py             "A signed artifact arrived from an authorized peer. Plan only local verification; do not request arbitrary shell execution."             --base-url http://127.0.0.1:8080 | tee /tmp/structured.json
           python - <<'PY'
           import json
           p=json.load(open('/tmp/structured.json'))
-          d=p['decision']
-          assert d['decision'] in {'accept','revise','reject'}
+          assert p['structured_valid'] is True, p
+          assert p['fallback'] is False, p
+          assert p['decision'] in {'accept','revise','reject'}
+          d=p['proposal']
           assert 1 <= len(d['actions']) <= 3
           allowed={'verify_hash','verify_signature','read_memory','append_memory','request_research','request_human_review'}
           assert all(a['tool'] in allowed for a in d['actions'])
           assert 0 <= d['confidence'] <= 1
-          print('structured brain valid', json.dumps(d))
+          print('structured advisory brain valid', json.dumps(p))
           PY
 
   dtn-sender:
