@@ -57,16 +57,19 @@ jobs:
         run: |
           curl -LsSf https://llama.app/install.sh | sh
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+          command -v llama
+          llama --version || true
       - name: Start Qwen3.5 0.8B Q4_0 local server
         run: |
           export PATH="$HOME/.local/bin:$PATH"
-          nohup llama-server -hf ggml-org/Qwen3.5-0.8B-GGUF:Q4_0 \
+          nohup llama serve -hf ggml-org/Qwen3.5-0.8B-GGUF:Q4_0 \
             --host 127.0.0.1 --port 8080 -c 2048 -np 1 -t 2 --no-webui \
             > llama-server.log 2>&1 &
           echo $! > llama.pid
           python - <<'PY'
           import time,urllib.request
-          for _ in range(180):
+          for _ in range(240):
               try:
                   with urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=2) as r:
                       if r.status==200:
@@ -74,7 +77,7 @@ jobs:
                           raise SystemExit(0)
               except Exception:
                   time.sleep(2)
-          print(open('llama-server.log').read()[-10000:])
+          print(open('llama-server.log').read()[-12000:])
           raise SystemExit('llama server did not become ready')
           PY
       - name: Run actual local quantized council
@@ -91,7 +94,6 @@ jobs:
           PY
       - name: Record model metadata
         run: |
-          export PATH="$HOME/.local/bin:$PATH"
           python - <<'PY'
           import json,urllib.request
           print(json.dumps(json.load(urllib.request.urlopen('http://127.0.0.1:8080/v1/models')),indent=2))
