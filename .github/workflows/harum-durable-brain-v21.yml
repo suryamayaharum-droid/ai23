@@ -57,17 +57,18 @@ jobs:
           echo "portable model vault restore verified: $SHA"
       - name: Install llama.cpp CPU
         run: |
-          curl -LsSf https://llama.app/install.sh | sh
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          SKIP_CUDA=1 SKIP_ROCM=1 SKIP_VULKAN=1 sh -c 'curl -LsSf https://llama.app/install.sh | sh'
+          test -x "$HOME/.local/bin/llama"
+          "$HOME/.local/bin/llama" version
       - name: Start local model
         run: |
-          export PATH="$HOME/.local/bin:$PATH"
-          nohup llama-server             -m ~/.cache/harum-models/Qwen3.5-0.8B-Q4_0.gguf             --host 127.0.0.1 --port 8080 -c 2048 -np 1 -t 2 --no-webui             > /tmp/llama.log 2>&1 &
+          nohup "$HOME/.local/bin/llama" serve             -m ~/.cache/harum-models/Qwen3.5-0.8B-Q4_0.gguf             --host 127.0.0.1 --port 8080 -c 2048 -np 1 -t 2 --no-webui             --reasoning off             > /tmp/llama.log 2>&1 &
           python - <<'PY'
           import time,urllib.request
           for _ in range(120):
               try:
                   if urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=2).status==200:
+                      print('llama server ready')
                       raise SystemExit(0)
               except SystemExit:
                   raise
@@ -83,6 +84,7 @@ jobs:
           import json
           p=json.load(open('/tmp/structured.json'))
           d=p['decision']
+          assert d['decision'] in {'accept','revise','reject'}
           assert 1 <= len(d['actions']) <= 3
           allowed={'verify_hash','verify_signature','read_memory','append_memory','request_research','request_human_review'}
           assert all(a['tool'] in allowed for a in d['actions'])
