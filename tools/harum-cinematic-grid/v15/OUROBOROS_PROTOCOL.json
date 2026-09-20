@@ -1,0 +1,7 @@
+{
+  "version":"15.0",
+  "cycle":["sense","validate","learn","plan","act","measure","replicate","hibernate","wake"],
+  "hard_gates":["truth","zero_extra_spend_core","license","security","identity","authorization","rollback","benchmark_before_promotion"],
+  "promotion":{"minimum_score_delta":0.05,"held_out_required":true,"rollback_snapshot_required":true,"untrusted_network_input_can_modify_code":false},
+  "replication":{"content_addressed":true,"store_carry_forward":true,"eventual_convergence":true,"transport_independent":true,"target_replicas_default":3}
+}
