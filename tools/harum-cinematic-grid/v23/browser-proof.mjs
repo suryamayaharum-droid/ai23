@@ -1,0 +1,16 @@
+import { chromium } from '@playwright/test';
+const browser=await chromium.launch({headless:true});
+const ctx=await browser.newContext();
+const page=await ctx.newPage();
+page.on('console',m=>console.log('browser:',m.type(),m.text()));
+await page.goto('http://127.0.0.1:4173/',{waitUntil:'load'});
+const seed=await page.evaluate(()=>window.harumbrowser.seed());
+if(!seed.ok||!seed.cpu_only||seed.cached_models<1) throw new Error('seed failed '+JSON.stringify(seed));
+if(seed.cross_origin_isolated!==true) throw new Error('COOP/COEP isolation missing');
+let blocked=0;
+await page.route('**/model.gguf',route=>{blocked++;route.abort();});
+const offline=await page.evaluate(()=>window.harumbrowser.offlineReplay());
+if(!offline.ok||!offline.cpu_only||offline.cached_models<1) throw new Error('offline replay failed '+JSON.stringify(offline));
+if(blocked!==0) throw new Error('offline replay attempted model network fetch '+blocked);
+console.log(JSON.stringify({seed,offline,blocked_model_requests:blocked,browser:'chromium',backend_server_required_for_inference:false,gpu_used:false,wasm_cpu:true},null,2));
+await browser.close();

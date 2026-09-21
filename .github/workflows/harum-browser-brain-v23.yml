@@ -1,0 +1,48 @@
+name: Harum Browser Brain v23
+on:
+  pull_request:
+    branches: [harum-cognitive-cascade-v22]
+    paths:
+      - "tools/harum-cinematic-grid/v23/**"
+      - ".github/workflows/harum-browser-brain-v23.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-brain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    defaults:
+      run:
+        working-directory: tools/harum-cinematic-grid/v23
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install pinned browser runtime
+        run: npm install --ignore-scripts
+      - uses: actions/cache@v4
+        with:
+          path: tools/harum-cinematic-grid/v23/model.gguf
+          key: harum-browser-smollm2-135m-q4km-v1
+      - name: Ensure tiny browser GGUF
+        run: |
+          test -f model.gguf || curl -L --fail --retry 4 -o model.gguf https://huggingface.co/unsloth/SmolLM2-135M-Instruct-GGUF/resolve/main/SmolLM2-135M-Instruct-Q4_K_M.gguf
+          test "$(sha256sum model.gguf | awk '{print $1}')" = "ed5fa30c487b282ec156c29062f1222e5c20875a944ac98289dbd242e947f747"
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start isolated local origin
+        run: |
+          nohup node server.mjs >/tmp/browser-server.log 2>&1 &
+          echo $! >/tmp/browser-server.pid
+          sleep 2
+          curl --fail http://127.0.0.1:4173/ >/dev/null
+      - name: Browser CPU inference and blocked-network replay
+        shell: bash
+        run: |
+          set -o pipefail
+          node browser-proof.mjs | tee /tmp/browser-proof.jsonl
+      - name: Stop origin
+        if: always()
+        run: kill "$(cat /tmp/browser-server.pid)" || true

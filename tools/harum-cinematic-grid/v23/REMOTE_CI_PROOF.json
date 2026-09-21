@@ -1,0 +1,26 @@
+{
+  "version": "23.0",
+  "workflow_run_id": 35516805433,
+  "job_id": 106094020593,
+  "status": "success",
+  "browser": "Chromium",
+  "model": "SmolLM2-135M-Instruct Q4_K_M",
+  "backend": "wllama 3.6.1 / WebAssembly CPU",
+  "seed": {
+    "ok": true,
+    "text": "I'm currently active in the CPU inference process, which is a crucial step in the Harum browser's execution pipeline.",
+    "cached_models": 1,
+    "cpu_only": true,
+    "cross_origin_isolated": true
+  },
+  "offline_replay": {
+    "ok": true,
+    "text": "I'm currently offline and waiting for a new browser to be installed.",
+    "cached_models": 1,
+    "cpu_only": true,
+    "blocked_model_requests": 0
+  },
+  "backend_server_required_for_inference": false,
+  "gpu_used": false,
+  "truth": "Real browser/WASM CPU inference executed. After the first load the model was unloaded, /model.gguf requests were blocked, and a second inference succeeded from the wllama local model cache. A browser/device is still the physical compute substrate."
+}
