@@ -1,0 +1,30 @@
+name: HARUM — Global Distribution Pack
+on:
+  workflow_dispatch:
+    inputs:
+      media_path: {description: "QC-passed HARUM media path", required: true}
+      asset_code: {description: "Unique asset code", required: true}
+      title: {description: "Editorial title", required: true}
+      story: {description: "Canonical story seed", required: true}
+      cta: {description: "Verified CTA; no invented offer links", required: false, default: "Acompanhe o arquivo HARUM NOIR."}
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    permissions: {contents: read}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: {python-version: "3.12"}
+      - name: QC + duplicate-safe package
+        env:
+          MEDIA: ${{ inputs.media_path }}
+        run: |
+          set -euo pipefail
+          test -s "$MEDIA"
+          test -s "${MEDIA%.mp4}.qc.json"
+          python scripts/harum_social_packager.py --asset "$MEDIA" --code "${{ inputs.asset_code }}" --title "${{ inputs.title }}" --story "${{ inputs.story }}" --cta "${{ inputs.cta }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.asset_code }}-global-social-pack
+          path: distribution-pack.json
+          retention-days: 30
