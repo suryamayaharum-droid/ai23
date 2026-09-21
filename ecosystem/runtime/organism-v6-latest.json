@@ -1,15 +1,15 @@
 {
   "schema": "harum.organism.cycle.v6",
-  "timestamp": 1789995246,
-  "cycle_event": "a117e71f7d14c34b34008a26ea54c2e999ea924f4d0e61ea6f41800c682fcffb",
+  "timestamp": 1790020815,
+  "cycle_event": "3c3626230df8432e88e021fcb86e4d9b09863cb4c40353ec0542ce5cc0a86fc9",
   "pulse": {
     "schema": "harum.organism.pulse.v1",
-    "timestamp": 1789995246,
+    "timestamp": 1790020815,
     "organism_digest": "056884004778a698a2b34317766a4fd28d6ece89fd72512f5d05def87f127025",
     "vector_clock": {
-      "mayor": 13,
-      "dispatcher": 13,
-      "health_guard": 13
+      "mayor": 14,
+      "dispatcher": 14,
+      "health_guard": 14
     },
     "city": {
       "db": "runtime/harum_organism.db",
@@ -256,14 +256,14 @@
       "signals": [],
       "task_counts": {},
       "dead_letters": 0,
-      "checked_at": 1789995246
+      "checked_at": 1790020815
     },
     "synapses": {
-      "PENDING": 26
+      "PENDING": 28
     },
     "pulse_event": {
-      "event_id": "93762768-7222-4aac-a860-8af784d08c4a",
-      "correlation_id": "efd5bc9b-585d-4dce-b7db-dde0e162d3f5",
+      "event_id": "50fd0871-4130-49f5-83c6-127e32e38f94",
+      "correlation_id": "5a4a1ae6-a39c-499e-b2f1-3e3f339a74ee",
       "topic": "health.pulse",
       "delivered": [
         "mayor"
@@ -1193,7 +1193,7 @@
       "gaps": []
     },
     "actions": [],
-    "timestamp": 1789995246
+    "timestamp": 1790020815
   },
   "redundancy": {
     "schema": "harum.redundancy.audit.v1",
@@ -1368,9 +1368,9 @@
       "load": 0,
       "hologram_digest": "056884004778a698a2b34317766a4fd28d6ece89fd72512f5d05def87f127025",
       "vector_clock": {
-        "mayor": 13,
-        "dispatcher": 13,
-        "health_guard": 13
+        "mayor": 14,
+        "dispatcher": 14,
+        "health_guard": 14
       },
       "state": {
         "cycle": "v3",
@@ -1378,15 +1378,15 @@
         "resource_fabric_complete": true,
         "backend_mode": "local-only"
       },
-      "last_heartbeat": 1789995246
+      "last_heartbeat": 1790020815
     },
     "remote": "not-configured",
     "mode": "local-only"
   },
-  "timestamp_v3": 1789995246,
-  "timestamp_v4": 1789995247,
+  "timestamp_v3": 1790020815,
+  "timestamp_v4": 1790020815,
   "digital_twin": {
-    "digest": "6f48b67fe3fa41bc1efe66ef5fd07afc86b1024976e37cad2011bde132769be3",
+    "digest": "847a8c27c6f16bf256e104d6e30896f5f10e6212c958118195fe2c7b2aa9d597",
     "knowledge_counts": {
       "nodes": 262,
       "edges": 231
@@ -1394,9 +1394,9 @@
     "capability_count": 135
   },
   "reflexes": [],
-  "timestamp_v5": 1789995247,
+  "timestamp_v5": 1790020816,
   "digital_twin_v2": {
-    "digest": "3fa3c58a2949b3b7bd27451cf6bb6a1dd86d6a75b39aa9815aa058659ab986f2",
+    "digest": "20e2547831655df77af13406d5e74f19ce8ced3a781d0917df4c88a138e553e7",
     "capability_count": 145,
     "cortex_state": "STAGED"
   },
@@ -1426,12 +1426,12 @@
     "smoke": null,
     "dream": {
       "schema": "harum.cortex.dream.v2",
-      "timestamp": 1789907810,
+      "timestamp": 1790001116,
       "inputs": {
         "organism": true,
         "council": false,
         "smoke": false,
-        "knowledge": false
+        "knowledge": true
       },
       "proposals": [
         {
@@ -1442,7 +1442,7 @@
           },
           "reason": "No persisted proof of local GGUF inference exists yet.",
           "metrics": {},
-          "created_at": 1789907810,
+          "created_at": 1790001116,
           "status": "PROPOSED",
           "gates": [
             "regression",
@@ -1451,7 +1451,7 @@
             "rollback",
             "no_secret_dependency"
           ],
-          "id": "17035392b7c54120"
+          "id": "cf334e57e6f8cb42"
         },
         {
           "kind": "benchmark",
@@ -1460,7 +1460,7 @@
           },
           "reason": "No persisted multi-brain council benchmark exists yet.",
           "metrics": {},
-          "created_at": 1789907810,
+          "created_at": 1790001116,
           "status": "PROPOSED",
           "gates": [
             "regression",
@@ -1469,7 +1469,7 @@
             "rollback",
             "no_secret_dependency"
           ],
-          "id": "8b42f3668e063f64"
+          "id": "6e24c7f9a6c49835"
         }
       ]
     },
@@ -1549,9 +1549,9 @@
     ],
     "gaps": []
   },
-  "timestamp_v6": 1789995247,
+  "timestamp_v6": 1790020816,
   "digital_twin_v3": {
-    "digest": "49faba8f7316077f48ab92095bbfb40a203a40a63d5ec3a13afba667b118851d",
+    "digest": "44755d18986ec8e9c31530a0b576181d587d224344ace24a77a34e585d51bc41",
     "capability_count": 156,
     "browser_fabric_state": "STAGED"
   },
