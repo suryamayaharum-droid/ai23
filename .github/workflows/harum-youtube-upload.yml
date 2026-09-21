@@ -1,0 +1,76 @@
+name: HARUM — YouTube Upload
+
+on:
+  workflow_dispatch:
+    inputs:
+      media_path:
+        description: "Rights-cleared, QC-passed MP4 path in this repository"
+        required: true
+      title:
+        description: "YouTube title"
+        required: true
+      description:
+        description: "YouTube description"
+        required: true
+      privacy:
+        description: "private | unlisted | public"
+        required: true
+        default: "private"
+      made_for_kids:
+        description: "true | false"
+        required: true
+        default: "false"
+
+concurrency:
+  group: harum-youtube-publish
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Validate media and publication guard
+        env:
+          MEDIA_PATH: ${{ inputs.media_path }}
+          PRIVACY: ${{ inputs.privacy }}
+        run: |
+          set -euo pipefail
+          case "$MEDIA_PATH" in
+            public/harum-noir/interludios/*.mp4|public/harum-noir/cadernos/*.mp4) ;;
+            *) echo "Refusing media outside approved HARUM paths"; exit 2 ;;
+          esac
+          test -s "$MEDIA_PATH"
+          test -s "${MEDIA_PATH%.mp4}.qc.json"
+          case "$PRIVACY" in private|unlisted|public) ;; *) exit 2 ;; esac
+          ffprobe -v error "$MEDIA_PATH" >/dev/null
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install YouTube client
+        run: pip install --disable-pip-version-check google-api-python-client google-auth
+
+      - name: Upload once via YouTube Data API
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          MEDIA_PATH: ${{ inputs.media_path }}
+          TITLE: ${{ inputs.title }}
+          DESCRIPTION: ${{ inputs.description }}
+          PRIVACY: ${{ inputs.privacy }}
+          MADE_FOR_KIDS: ${{ inputs.made_for_kids }}
+        run: |
+          python scripts/harum_youtube_upload.py
+
+      - name: Persist factual receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: harum-youtube-receipt
+          path: youtube-receipt.json
+          retention-days: 30
