@@ -1,0 +1,67 @@
+name: HARUM — Direct Publish Fallbacks
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: "instagram | threads | pinterest"
+        required: true
+      asset_code:
+        required: true
+      media_path:
+        required: false
+      public_video_url:
+        required: false
+      public_image_url:
+        required: false
+      text:
+        required: false
+      title:
+        required: false
+      description:
+        required: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions: {contents: read}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: {python-version: "3.12"}
+      - name: Guard
+        run: python scripts/harum_publish_guard.py check --platform "${{ inputs.platform }}" --asset "${{ inputs.asset_code }}"
+      - name: Mark start
+        run: python scripts/harum_publish_guard.py start --platform "${{ inputs.platform }}" --asset "${{ inputs.asset_code }}"
+      - name: Instagram direct API
+        if: inputs.platform == 'instagram'
+        env:
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          META_GRAPH_VERSION: ${{ vars.META_GRAPH_VERSION || 'v24.0' }}
+          VIDEO_URL: ${{ inputs.public_video_url }}
+          CAPTION: ${{ inputs.text }}
+        run: python scripts/harum_instagram_api_publish.py
+      - name: Threads direct API
+        if: inputs.platform == 'threads'
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          MEDIA_TYPE: ${{ inputs.public_image_url && 'IMAGE' || 'TEXT' }}
+          IMAGE_URL: ${{ inputs.public_image_url }}
+          TEXT: ${{ inputs.text }}
+        run: python scripts/harum_threads_api_publish.py
+      - name: Pinterest direct API
+        if: inputs.platform == 'pinterest'
+        env:
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          IMAGE_URL: ${{ inputs.public_image_url }}
+          TITLE: ${{ inputs.title }}
+          DESCRIPTION: ${{ inputs.description }}
+        run: python scripts/harum_pinterest_api_publish.py
+      - name: Preserve receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.asset_code }}-${{ inputs.platform }}-receipt
+          path: "*-direct-receipt.json"
+          if-no-files-found: ignore
+          retention-days: 30
