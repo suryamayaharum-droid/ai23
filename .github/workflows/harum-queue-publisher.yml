@@ -1,0 +1,140 @@
+name: HARUM — Queue Publisher
+
+on:
+  push:
+    paths:
+      - "state/distribution/requests/*.json"
+  workflow_dispatch:
+    inputs:
+      request_path:
+        description: "Path to request JSON"
+        required: true
+
+concurrency:
+  group: harum-publisher-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  route:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Resolve request
+        shell: bash
+        env:
+          MANUAL_PATH: ${{ inputs.request_path || '' }}
+        run: |
+          set -euo pipefail
+          if [ -n "$MANUAL_PATH" ]; then
+            REQUEST_PATH="$MANUAL_PATH"
+          else
+            REQUEST_PATH="$(git diff-tree --no-commit-id --name-only -r HEAD | grep '^state/distribution/requests/.*\.json$' | head -n1)"
+          fi
+          test -n "$REQUEST_PATH"
+          test -s "$REQUEST_PATH"
+          echo "REQUEST_PATH=$REQUEST_PATH" >> "$GITHUB_ENV"
+          python scripts/harum_queue_request.py "$REQUEST_PATH"
+
+      - name: Validate QC and guard
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -n "$MEDIA_PATH" ]; then
+            test -s "$MEDIA_PATH"
+            test -s "${MEDIA_PATH%.mp4}.qc.json"
+          fi
+          python scripts/harum_publish_guard.py check --platform "$PLATFORM" --asset "$ASSET_CODE"
+
+      - name: Credential preflight
+        shell: bash
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+        run: |
+          set -euo pipefail
+          ok=false
+          case "$PLATFORM" in
+            youtube)   [ -n "$YOUTUBE_CLIENT_ID" ] && [ -n "$YOUTUBE_CLIENT_SECRET" ] && [ -n "$YOUTUBE_REFRESH_TOKEN" ] && ok=true ;;
+            tiktok)    [ -n "$TIKTOK_ACCESS_TOKEN" ] && ok=true ;;
+            instagram) [ -n "$META_PAGE_ACCESS_TOKEN" ] && [ -n "$META_IG_USER_ID" ] && ok=true ;;
+            threads)   [ -n "$THREADS_ACCESS_TOKEN" ] && ok=true ;;
+            pinterest) [ -n "$PINTEREST_ACCESS_TOKEN" ] && [ -n "$PINTEREST_BOARD_ID" ] && ok=true ;;
+            facebook)  ok=false ;;
+          esac
+          echo "CAN_PUBLISH=$ok" >> "$GITHUB_ENV"
+          if [ "$ok" != true ]; then
+            printf '{"platform":"%s","asset_code":"%s","status":"awaiting_credentials_or_route"}\n' "$PLATFORM" "$ASSET_CODE" > route-status.json
+          fi
+
+      - name: Mark start
+        if: env.CAN_PUBLISH == 'true'
+        run: python scripts/harum_publish_guard.py start --platform "$PLATFORM" --asset "$ASSET_CODE"
+
+      - name: YouTube direct
+        if: env.CAN_PUBLISH == 'true' && env.PLATFORM == 'youtube'
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          MADE_FOR_KIDS: "false"
+        run: |
+          pip install --disable-pip-version-check google-api-python-client google-auth
+          python scripts/harum_youtube_upload.py
+
+      - name: TikTok direct
+        if: env.CAN_PUBLISH == 'true' && env.PLATFORM == 'tiktok'
+        env:
+          TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
+        run: python scripts/harum_tiktok_publish.py
+
+      - name: Instagram direct
+        if: env.CAN_PUBLISH == 'true' && env.PLATFORM == 'instagram'
+        env:
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          VIDEO_URL: ${{ env.PUBLIC_VIDEO_URL }}
+          CAPTION: ${{ env.TEXT }}
+        run: python scripts/harum_instagram_api_publish.py
+
+      - name: Threads direct
+        if: env.CAN_PUBLISH == 'true' && env.PLATFORM == 'threads'
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          MEDIA_TYPE: ${{ env.PUBLIC_IMAGE_URL != '' && 'IMAGE' || 'TEXT' }}
+          IMAGE_URL: ${{ env.PUBLIC_IMAGE_URL }}
+        run: python scripts/harum_threads_api_publish.py
+
+      - name: Pinterest direct
+        if: env.CAN_PUBLISH == 'true' && env.PLATFORM == 'pinterest'
+        env:
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          IMAGE_URL: ${{ env.PUBLIC_IMAGE_URL }}
+        run: python scripts/harum_pinterest_api_publish.py
+
+      - name: Preserve factual route outcome
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ASSET_CODE || 'harum' }}-${{ env.PLATFORM || 'route' }}-outcome
+          path: |
+            *-receipt.json
+            route-status.json
+          if-no-files-found: ignore
+          retention-days: 30
