@@ -18,7 +18,7 @@ jobs:
   route:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
     steps:
       - uses: actions/checkout@v5
         with:
@@ -128,7 +128,39 @@ jobs:
           IMAGE_URL: ${{ env.PUBLIC_IMAGE_URL }}
         run: python scripts/harum_pinterest_api_publish.py
 
-      - name: Preserve factual route outcome
+      - name: Normalize factual route outcome
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          receipt="$(ls -1 *-receipt.json 2>/dev/null | head -n1 || true)"
+          if [ -z "$receipt" ] && [ ! -s route-status.json ]; then
+            printf '{"platform":"%s","asset_code":"%s","status":"indeterminate_requires_reconcile"}\n' "${PLATFORM:-unknown}" "${ASSET_CODE:-unknown}" > route-status.json
+          fi
+          mkdir -p state/distribution/receipts
+          if [ -n "$receipt" ]; then
+            cp "$receipt" "state/distribution/receipts/${ASSET_CODE}-${PLATFORM}.json"
+          else
+            cp route-status.json "state/distribution/receipts/${ASSET_CODE}-${PLATFORM}.json"
+          fi
+
+      - name: Persist factual outcome to repository
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/distribution/receipts
+          if git diff --cached --quiet; then
+            echo "No new route outcome."
+          else
+            git commit -m "state(distribution): ${ASSET_CODE:-harum} ${PLATFORM:-route} outcome"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin HEAD:"${GITHUB_REF_NAME}"
+          fi
+
+      - name: Preserve workflow artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -136,5 +168,6 @@ jobs:
           path: |
             *-receipt.json
             route-status.json
+            state/distribution/receipts/*.json
           if-no-files-found: ignore
           retention-days: 30
