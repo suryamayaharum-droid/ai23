@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "strategy": "platform-native-first",
+  "max_new_units_per_platform_per_run": 1,
+  "canonical_master": "1080x1920-h264-aac-30fps",
+  "platforms": {
+    "instagram": {
+      "primary": "windsor",
+      "fallback": "meta_content_publishing_api",
+      "format": "reel_or_carousel",
+      "variation": "visual-first; concise diary caption"
+    },
+    "threads": {
+      "primary": "windsor",
+      "fallback": "threads_api",
+      "format": "image_or_text",
+      "variation": "thought/process fragment; avoid duplicating Instagram caption"
+    },
+    "youtube": {
+      "primary": "youtube_data_api",
+      "fallback": "youtube_studio_manual_package",
+      "format": "short",
+      "variation": "searchable title + context; stronger opening"
+    },
+    "tiktok": {
+      "primary": "tiktok_content_posting_api",
+      "fallback": "tiktok_upload_draft",
+      "format": "vertical_video",
+      "variation": "native hook; no promotional watermark; creator settings preserved"
+    },
+    "pinterest": {
+      "primary": "pinterest_api_when_authorized",
+      "fallback": "ready_to_upload_pin_package",
+      "format": "pin",
+      "variation": "evergreen/search-led title and description"
+    },
+    "facebook": {
+      "primary": "meta_content_publishing_api_when_authorized",
+      "fallback": "ready_to_upload_reel_package",
+      "format": "reel",
+      "variation": "standalone context; not IG copy-paste"
+    }
+  },
+  "rules": [
+    "rights-cleared only",
+    "QC required",
+    "duplicate fingerprint guard",
+    "never fabricate publication",
+    "failed primary -> one safe retry -> fallback package",
+    "store factual receipt only after platform confirmation"
+  ]
+}
