@@ -1,6 +1,6 @@
 {
   "schema": "harum.cortex.dream.v2",
-  "timestamp": 1790001116,
+  "timestamp": 1790081369,
   "inputs": {
     "organism": true,
     "council": false,
@@ -16,7 +16,7 @@
       },
       "reason": "No persisted proof of local GGUF inference exists yet.",
       "metrics": {},
-      "created_at": 1790001116,
+      "created_at": 1790081369,
       "status": "PROPOSED",
       "gates": [
         "regression",
@@ -25,7 +25,7 @@
         "rollback",
         "no_secret_dependency"
       ],
-      "id": "cf334e57e6f8cb42"
+      "id": "d79d5a194b027fa8"
     },
     {
       "kind": "benchmark",
@@ -34,7 +34,7 @@
       },
       "reason": "No persisted multi-brain council benchmark exists yet.",
       "metrics": {},
-      "created_at": 1790001116,
+      "created_at": 1790081369,
       "status": "PROPOSED",
       "gates": [
         "regression",
@@ -43,7 +43,7 @@
         "rollback",
         "no_secret_dependency"
       ],
-      "id": "6e24c7f9a6c49835"
+      "id": "2aa882f07d3137f2"
     }
   ]
 }
