@@ -1,6 +1,6 @@
 {
   "schema": "harum.digital-twin.v3",
-  "timestamp": 1790096417,
+  "timestamp": 1790112175,
   "knowledge_counts": {
     "nodes": 262,
     "edges": 231
@@ -1069,7 +1069,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"inventory\",\"manifest\",\"hash\",\"versioning\",\"dedupe\",\"restore\"],\"id\":\"archivist\",\"priority\":90,\"role\":\"archive\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:atelier_curator",
@@ -1078,7 +1078,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"image_curate\",\"collection_structure\",\"novelty_check\",\"visual_taxonomy\"],\"id\":\"atelier_curator\",\"priority\":80,\"role\":\"visual_curator\"}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:canon_guard",
@@ -1087,7 +1087,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"canon\",\"face_lock\",\"voice_lock\",\"wardrobe_lock\",\"continuity\"],\"id\":\"canon_guard\",\"priority\":100,\"role\":\"character_guard\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:channel_router",
@@ -1096,7 +1096,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"youtube\",\"instagram\",\"github\",\"format_delivery\"],\"id\":\"channel_router\",\"priority\":75,\"role\":\"distribution\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:charcoal_master",
@@ -1105,7 +1105,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"charcoal\",\"gesture\",\"figure\",\"anatomy\",\"composition\"],\"id\":\"charcoal_master\",\"priority\":80,\"role\":\"drawing_specialist\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:cinebrain",
@@ -1114,7 +1114,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"scene_graph\",\"shot_plan\",\"camera\",\"cinematic_direction\"],\"id\":\"cinebrain\",\"priority\":90,\"role\":\"director\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:cinema_qc",
@@ -1123,7 +1123,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"video_qc\",\"continuity_qc\",\"encode_qc\",\"identity_qc\"],\"id\":\"cinema_qc\",\"priority\":95,\"role\":\"quality_control\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:commerce_guard",
@@ -1132,7 +1132,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"checkout_gate\",\"claim_check\",\"availability_check\",\"consumer_clarity\"],\"id\":\"commerce_guard\",\"priority\":100,\"role\":\"commerce_truth\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:compute_broker",
@@ -1141,7 +1141,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"compute_route\",\"vram_match\",\"cpu_gpu_split\",\"provider_policy\"],\"id\":\"compute_broker\",\"priority\":90,\"role\":\"compute_router\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:dispatcher",
@@ -1150,7 +1150,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"schedule\",\"queue\",\"retry\",\"dependency_resolution\",\"load_balance\"],\"id\":\"dispatcher\",\"priority\":95,\"role\":\"scheduler\"}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:editorial_planner",
@@ -1159,7 +1159,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"content_calendar\",\"sequence\",\"format_adaptation\"],\"id\":\"editorial_planner\",\"priority\":75,\"role\":\"calendar\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:health_guard",
@@ -1168,7 +1168,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"healthcheck\",\"dead_letter\",\"loop_detection\",\"recovery\"],\"id\":\"health_guard\",\"priority\":90,\"role\":\"resilience\"}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:license_guard",
@@ -1177,7 +1177,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"license\",\"provenance\",\"usage_rights\",\"attribution\"],\"id\":\"license_guard\",\"priority\":100,\"role\":\"rights\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:mayor",
@@ -1186,7 +1186,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"plan\",\"decompose\",\"route\",\"coordinate\",\"recover\",\"prioritize\"],\"id\":\"mayor\",\"priority\":100,\"role\":\"orchestrator\"}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:memory_librarian",
@@ -1195,7 +1195,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"index\",\"retrieve\",\"cross_reference\",\"context_pack\"],\"id\":\"memory_librarian\",\"priority\":85,\"role\":\"knowledge\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:noir_writer",
@@ -1204,7 +1204,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"story\",\"caption\",\"serial_narrative\",\"noir_loop\",\"cta\"],\"id\":\"noir_writer\",\"priority\":85,\"role\":\"narrative\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:post_master",
@@ -1213,7 +1213,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"edit\",\"audio\",\"subtitles\",\"grade\",\"master\"],\"id\":\"post_master\",\"priority\":80,\"role\":\"post\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:product_architect",
@@ -1222,7 +1222,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"pdf_product\",\"course_structure\",\"bundle\",\"offer_structure\"],\"id\":\"product_architect\",\"priority\":80,\"role\":\"product\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:publication_guard",
@@ -1231,7 +1231,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"publish_gate\",\"human_review\",\"release_checklist\"],\"id\":\"publication_guard\",\"priority\":100,\"role\":\"release\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:site_integrator",
@@ -1240,7 +1240,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"site\",\"seo\",\"metadata\",\"gallery\",\"deployment_brief\"],\"id\":\"site_integrator\",\"priority\":80,\"role\":\"web\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:tattoo_architect",
@@ -1249,7 +1249,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"tattoo\",\"body_flow\",\"negative_space\",\"flash\",\"placement\"],\"id\":\"tattoo_architect\",\"priority\":80,\"role\":\"tattoo_design\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "agent:truth_guard",
@@ -1258,7 +1258,7 @@
         "source": "agents.json",
         "data_json": "{\"capabilities\":[\"truth\",\"evidence\",\"fiction_label\",\"claim_gate\"],\"id\":\"truth_guard\",\"priority\":100,\"role\":\"truth\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:adobe",
@@ -1267,7 +1267,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:agent_observability",
@@ -1276,7 +1276,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:airtable",
@@ -1285,7 +1285,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:anatomy",
@@ -1294,7 +1294,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:artifact_output",
@@ -1303,7 +1303,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:attribution",
@@ -1312,7 +1312,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:audio",
@@ -1321,7 +1321,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:availability_check",
@@ -1330,7 +1330,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:body_flow",
@@ -1339,7 +1339,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:branches",
@@ -1348,7 +1348,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:bundle",
@@ -1357,7 +1357,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:camera",
@@ -1366,7 +1366,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:canon",
@@ -1375,7 +1375,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:canva",
@@ -1384,7 +1384,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:caption",
@@ -1393,7 +1393,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:charcoal",
@@ -1402,7 +1402,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:checkout_gate",
@@ -1411,7 +1411,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:checkpoint",
@@ -1420,7 +1420,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:cinematic_direction",
@@ -1429,7 +1429,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:claim_check",
@@ -1438,7 +1438,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:claim_gate",
@@ -1447,7 +1447,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:collection_structure",
@@ -1456,7 +1456,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:composition",
@@ -1465,7 +1465,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:compute_route",
@@ -1474,7 +1474,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:consumer_clarity",
@@ -1483,7 +1483,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:content_calendar",
@@ -1492,7 +1492,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:context_pack",
@@ -1501,7 +1501,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:continuity",
@@ -1510,7 +1510,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:continuity_qc",
@@ -1519,7 +1519,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:coordinate",
@@ -1528,7 +1528,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:course_structure",
@@ -1537,7 +1537,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:cpu_gpu_split",
@@ -1546,7 +1546,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:cron",
@@ -1555,7 +1555,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:cross_reference",
@@ -1564,7 +1564,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:cross_session_memory",
@@ -1573,7 +1573,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:cta",
@@ -1582,7 +1582,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:dead_letter",
@@ -1591,7 +1591,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:decompose",
@@ -1600,7 +1600,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:dedupe",
@@ -1609,7 +1609,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:dependency_resolution",
@@ -1618,7 +1618,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:deploy",
@@ -1627,7 +1627,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:deployment_brief",
@@ -1636,7 +1636,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:durable_small_state",
@@ -1645,7 +1645,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:edit",
@@ -1654,7 +1654,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:elevenlabs",
@@ -1663,7 +1663,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:encode_qc",
@@ -1672,7 +1672,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:event_store",
@@ -1681,7 +1681,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:evidence",
@@ -1690,7 +1690,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:face_lock",
@@ -1699,7 +1699,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:fiction_label",
@@ -1708,7 +1708,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:figure",
@@ -1717,7 +1717,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:flash",
@@ -1726,7 +1726,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:format_adaptation",
@@ -1735,7 +1735,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:format_delivery",
@@ -1744,7 +1744,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:functions",
@@ -1753,7 +1753,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:gallery",
@@ -1762,7 +1762,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:gesture",
@@ -1771,7 +1771,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:git",
@@ -1780,7 +1780,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:git_history",
@@ -1789,7 +1789,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:github",
@@ -1798,7 +1798,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:google_drive",
@@ -1807,7 +1807,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:grade",
@@ -1816,7 +1816,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:hash",
@@ -1825,7 +1825,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:healthcheck",
@@ -1834,7 +1834,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:heygen",
@@ -1843,7 +1843,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:http_api",
@@ -1852,7 +1852,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:human_readable_control",
@@ -1861,7 +1861,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:human_review",
@@ -1870,7 +1870,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:identity_qc",
@@ -1879,7 +1879,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:image_curate",
@@ -1888,7 +1888,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:index",
@@ -1897,7 +1897,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:instagram",
@@ -1906,7 +1906,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:inventory",
@@ -1915,7 +1915,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:license",
@@ -1924,7 +1924,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:load_balance",
@@ -1933,7 +1933,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:logs",
@@ -1942,7 +1942,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:loop_detection",
@@ -1951,7 +1951,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:manifest",
@@ -1960,7 +1960,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:manifests",
@@ -1969,7 +1969,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:master",
@@ -1978,7 +1978,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:metadata",
@@ -1987,7 +1987,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:missions",
@@ -1996,7 +1996,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:negative_space",
@@ -2005,7 +2005,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:network",
@@ -2014,7 +2014,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:noir_loop",
@@ -2023,7 +2023,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:novelty_check",
@@ -2032,7 +2032,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:offer_structure",
@@ -2041,7 +2041,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:offline",
@@ -2050,7 +2050,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:parallel_cpu",
@@ -2059,7 +2059,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:pdf_product",
@@ -2068,7 +2068,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:placement",
@@ -2077,7 +2077,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:plan",
@@ -2086,7 +2086,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:prioritize",
@@ -2095,7 +2095,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:provenance",
@@ -2104,7 +2104,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:provider_policy",
@@ -2113,7 +2113,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:publish_gate",
@@ -2122,7 +2122,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:python",
@@ -2131,7 +2131,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:queue",
@@ -2140,7 +2140,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:queues",
@@ -2149,7 +2149,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:recover",
@@ -2158,7 +2158,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:recovery",
@@ -2167,7 +2167,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:release_checklist",
@@ -2176,7 +2176,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:restore",
@@ -2185,7 +2185,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:retrieve",
@@ -2194,7 +2194,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:retry",
@@ -2203,7 +2203,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:route",
@@ -2212,7 +2212,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:scene_graph",
@@ -2221,7 +2221,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:schedule",
@@ -2230,7 +2230,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:seo",
@@ -2239,7 +2239,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:sequence",
@@ -2248,7 +2248,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:serial_narrative",
@@ -2257,7 +2257,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:shared_state",
@@ -2266,7 +2266,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:shell",
@@ -2275,7 +2275,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:shot_plan",
@@ -2284,7 +2284,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:site",
@@ -2293,7 +2293,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:source",
@@ -2302,7 +2302,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:sqlite_durable_objects",
@@ -2311,7 +2311,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:story",
@@ -2320,7 +2320,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:subtitles",
@@ -2329,7 +2329,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:tattoo",
@@ -2338,7 +2338,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:transactions",
@@ -2347,7 +2347,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:truth",
@@ -2356,7 +2356,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:usage_rights",
@@ -2365,7 +2365,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:vercel",
@@ -2374,7 +2374,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:versioning",
@@ -2383,7 +2383,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:video_qc",
@@ -2392,7 +2392,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:visual_taxonomy",
@@ -2401,7 +2401,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:voice_lock",
@@ -2410,7 +2410,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:vram_match",
@@ -2419,7 +2419,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:wal",
@@ -2428,7 +2428,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:wardrobe_lock",
@@ -2437,7 +2437,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:websockets",
@@ -2446,7 +2446,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:windsor_ai",
@@ -2455,7 +2455,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:workers",
@@ -2464,7 +2464,7 @@
         "source": "resource_profiles.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "cap:youtube",
@@ -2473,7 +2473,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "district:atelier",
@@ -2482,7 +2482,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "district:cinema",
@@ -2491,7 +2491,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "district:control_tower",
@@ -2500,7 +2500,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "node_id": "district:distribution",
@@ -2509,7 +2509,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "district:governance",
@@ -2518,7 +2518,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "district:memory_archive",
@@ -2527,7 +2527,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "district:noir_editorial",
@@ -2536,7 +2536,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "district:products",
@@ -2545,7 +2545,7 @@
         "source": "agents.json",
         "data_json": "{}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Audio",
@@ -2554,7 +2554,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Audio.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Voz, música, foley, mix e QC.\",\"name\":\"Audio\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Automacao",
@@ -2563,7 +2563,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Automacao.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Workflows, triggers, sync de estado e event bus.\",\"name\":\"Automacao\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:CRM",
@@ -2572,7 +2572,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Mista\",\"governor\":\"CRM.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Leads, follow-up, booking e comunicação.\",\"name\":\"CRM\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Cinema",
@@ -2581,7 +2581,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Cinema.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Planos, render, edição e QC cinematográfico.\",\"name\":\"Cinema\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Comercio",
@@ -2590,7 +2590,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Comercio.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Ofertas, preços, checkout e operações de produto.\",\"name\":\"Comercio\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Governo",
@@ -2599,7 +2599,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Governo.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Priorizar portfólio, aplicar políticas e resolver bloqueios entre distritos.\",\"name\":\"Governo\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Growth",
@@ -2608,7 +2608,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Growth.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"SEO, analytics, experimentos e retenção.\",\"name\":\"Growth\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Imagem",
@@ -2617,7 +2617,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Mista\",\"governor\":\"Imagem.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Storyboards, prompts, geração e QC de imagem.\",\"name\":\"Imagem\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Infraestrutura",
@@ -2626,7 +2626,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Infraestrutura.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Runtime, GitHub, compute e CI/CD.\",\"name\":\"Infraestrutura\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Marca",
@@ -2635,7 +2635,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Marca.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Preservar identidade, semiótica, direção de arte e voz.\",\"name\":\"Marca\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Memoria",
@@ -2644,7 +2644,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Memoria.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Manter contexto, ativos, decisões e grafo de conhecimento.\",\"name\":\"Memoria\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Narrativa",
@@ -2653,7 +2653,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Narrativa.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Construir arcos, episódios, continuidade e personagem.\",\"name\":\"Narrativa\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Pesquisa",
@@ -2662,7 +2662,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Pesquisa.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Pesquisar tecnologia, repositórios, tendências e evidências atuais.\",\"name\":\"Pesquisa\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Publicacao",
@@ -2671,7 +2671,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Mista\",\"governor\":\"Publicacao.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Instagram, YouTube, metadados e releases.\",\"name\":\"Publicacao\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Qualidade",
@@ -2680,7 +2680,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Qualidade.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Regressão, benchmarks, review visual e aceitação.\",\"name\":\"Qualidade\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Recursos",
@@ -2689,7 +2689,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Recursos.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Custo zero, capacidade, orçamento e alocação.\",\"name\":\"Recursos\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Seguranca",
@@ -2698,7 +2698,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Local automática\",\"governor\":\"Seguranca.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Segredos, licenças, permissões e integridade.\",\"name\":\"Seguranca\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "macro-district:Web",
@@ -2707,7 +2707,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"autonomy\":\"Mista\",\"governor\":\"Web.governor\",\"last_mission\":\"city-state-of-art-v8\",\"mission\":\"Site, Hotmart, Vercel e UX mobile.\",\"name\":\"Web\",\"state\":\"Online\",\"swarms\":4}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "resource:airtable_blackboard",
@@ -2716,7 +2716,7 @@
         "source": "resource_profiles.json",
         "data_json": "{\"capabilities\":[\"shared_state\",\"queues\",\"missions\",\"human_readable_control\",\"cross_session_memory\"],\"constraints\":[\"connector_required_for_chat_writes\",\"not_a_compute_engine\"],\"id\":\"airtable_blackboard\",\"persistent\":true,\"status\":\"active\",\"type\":\"shared_control_plane\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "resource:chatgpt_connector_fabric",
@@ -2725,7 +2725,7 @@
         "source": "resource_profiles.json",
         "data_json": "{\"capabilities\":[\"github\",\"airtable\",\"vercel\",\"adobe\",\"elevenlabs\",\"heygen\",\"windsor_ai\",\"google_drive\",\"canva\"],\"constraints\":[\"not_a_background_runtime\",\"authorization_scoped\"],\"id\":\"chatgpt_connector_fabric\",\"persistent\":false,\"status\":\"active_when_session_runs\",\"type\":\"authorized_tool_router\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "resource:cloudflare_free_candidate",
@@ -2734,7 +2734,7 @@
         "source": "resource_profiles.json",
         "data_json": "{\"capabilities\":[\"workers\",\"cron\",\"sqlite_durable_objects\",\"http_api\",\"websockets\"],\"constraints\":[\"free_tier_limits\",\"secure_deployment_required\"],\"id\":\"cloudflare_free_candidate\",\"persistent\":true,\"status\":\"candidate_not_configured\",\"type\":\"optional_stateful_edge\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "resource:github_actions_standard",
@@ -2743,7 +2743,7 @@
         "source": "resource_profiles.json",
         "data_json": "{\"capabilities\":[\"python\",\"shell\",\"git\",\"network\",\"parallel_cpu\",\"artifact_output\"],\"constraints\":[\"job_time_limit\",\"rate_limits\",\"ephemeral_filesystem\"],\"cost_policy\":\"free_on_public_standard_runners\",\"cpu\":4,\"id\":\"github_actions_standard\",\"max_parallel_policy\":4,\"memory_gb\":16,\"persistent\":false,\"status\":\"active\",\"storage_gb\":14,\"type\":\"ephemeral_compute\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "resource:github_repository",
@@ -2752,7 +2752,7 @@
         "source": "resource_profiles.json",
         "data_json": "{\"capabilities\":[\"git_history\",\"branches\",\"manifests\",\"source\",\"durable_small_state\"],\"constraints\":[\"not_for_large_runtime_databases\",\"api_rate_limits\"],\"id\":\"github_repository\",\"persistent\":true,\"status\":\"active\",\"type\":\"durable_versioned_store\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "resource:local_sqlite",
@@ -2761,7 +2761,7 @@
         "source": "resource_profiles.json",
         "data_json": "{\"capabilities\":[\"transactions\",\"wal\",\"event_store\",\"queue\",\"checkpoint\",\"offline\"],\"constraints\":[\"single_host_unless_replicated\"],\"id\":\"local_sqlite\",\"persistent\":\"when_backed_up\",\"status\":\"active\",\"type\":\"portable_state_engine\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "resource:vercel",
@@ -2770,7 +2770,7 @@
         "source": "resource_profiles.json",
         "data_json": "{\"capabilities\":[\"deploy\",\"functions\",\"logs\",\"agent_observability\"],\"constraints\":[\"project_binding_required\",\"platform_limits\"],\"id\":\"vercel\",\"persistent\":false,\"status\":\"available_not_bound\",\"type\":\"serverless_runtime\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:audio.foley",
@@ -2779,7 +2779,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Audio\",\"function\":\"foley — planejamento, operação, análise e QC dentro do distrito Audio.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"audio.foley\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:audio.mix_master",
@@ -2788,7 +2788,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Audio\",\"function\":\"mix master — planejamento, operação, análise e QC dentro do distrito Audio.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"audio.mix_master\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:audio.music",
@@ -2797,7 +2797,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Audio\",\"function\":\"music — planejamento, operação, análise e QC dentro do distrito Audio.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"audio.music\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:audio.voice",
@@ -2806,7 +2806,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Audio\",\"function\":\"voice — planejamento, operação, análise e QC dentro do distrito Audio.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"audio.voice\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:automacao.event_bus",
@@ -2815,7 +2815,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Automacao\",\"function\":\"event bus — planejamento, operação, análise e QC dentro do distrito Automacao.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"automacao.event_bus\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:automacao.state_sync",
@@ -2824,7 +2824,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Automacao\",\"function\":\"state sync — planejamento, operação, análise e QC dentro do distrito Automacao.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"automacao.state_sync\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:automacao.triggers",
@@ -2833,7 +2833,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Automacao\",\"function\":\"triggers — planejamento, operação, análise e QC dentro do distrito Automacao.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"automacao.triggers\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:automacao.workflow",
@@ -2842,7 +2842,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Automacao\",\"function\":\"workflow — planejamento, operação, análise e QC dentro do distrito Automacao.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"automacao.workflow\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:cinema.cinematic_qc",
@@ -2851,7 +2851,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Cinema\",\"function\":\"cinematic qc — planejamento, operação, análise e QC dentro do distrito Cinema.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"cinema.cinematic_qc\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:cinema.editing",
@@ -2860,7 +2860,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Cinema\",\"function\":\"editing — planejamento, operação, análise e QC dentro do distrito Cinema.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"cinema.editing\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:cinema.render_farm",
@@ -2869,7 +2869,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Cinema\",\"function\":\"render farm — planejamento, operação, análise e QC dentro do distrito Cinema.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"cinema.render_farm\",\"runtime\":\"Misto\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:cinema.shot_design",
@@ -2878,7 +2878,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Cinema\",\"function\":\"shot design — planejamento, operação, análise e QC dentro do distrito Cinema.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"cinema.shot_design\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:comercio.checkout",
@@ -2887,7 +2887,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Comercio\",\"function\":\"checkout — planejamento, operação, análise e QC dentro do distrito Comercio.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"comercio.checkout\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:comercio.offers",
@@ -2896,7 +2896,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Comercio\",\"function\":\"offers — planejamento, operação, análise e QC dentro do distrito Comercio.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"comercio.offers\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:comercio.pricing",
@@ -2905,7 +2905,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Comercio\",\"function\":\"pricing — planejamento, operação, análise e QC dentro do distrito Comercio.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"comercio.pricing\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:comercio.product_ops",
@@ -2914,7 +2914,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Comercio\",\"function\":\"product ops — planejamento, operação, análise e QC dentro do distrito Comercio.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"comercio.product_ops\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:crm.booking",
@@ -2923,7 +2923,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"CRM\",\"function\":\"booking — planejamento, operação, análise e QC dentro do distrito CRM.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"crm.booking\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:crm.client_comms",
@@ -2932,7 +2932,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"CRM\",\"function\":\"client comms — planejamento, operação, análise e QC dentro do distrito CRM.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"crm.client_comms\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:crm.followup",
@@ -2941,7 +2941,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"CRM\",\"function\":\"followup — planejamento, operação, análise e QC dentro do distrito CRM.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"crm.followup\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:crm.lead_intake",
@@ -2950,7 +2950,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"CRM\",\"function\":\"lead intake — planejamento, operação, análise e QC dentro do distrito CRM.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"crm.lead_intake\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:governo.executive",
@@ -2959,7 +2959,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Governo\",\"function\":\"executive — planejamento, operação, análise e QC dentro do distrito Governo.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"governo.executive\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:governo.policy",
@@ -2968,7 +2968,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Governo\",\"function\":\"policy — planejamento, operação, análise e QC dentro do distrito Governo.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"governo.policy\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:governo.portfolio",
@@ -2977,7 +2977,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Governo\",\"function\":\"portfolio — planejamento, operação, análise e QC dentro do distrito Governo.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"governo.portfolio\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:governo.strategy",
@@ -2986,7 +2986,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Governo\",\"function\":\"strategy — planejamento, operação, análise e QC dentro do distrito Governo.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"governo.strategy\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:growth.analytics",
@@ -2995,7 +2995,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Growth\",\"function\":\"analytics — planejamento, operação, análise e QC dentro do distrito Growth.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"growth.analytics\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:growth.experiments",
@@ -3004,7 +3004,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Growth\",\"function\":\"experiments — planejamento, operação, análise e QC dentro do distrito Growth.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"growth.experiments\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:growth.retention",
@@ -3013,7 +3013,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Growth\",\"function\":\"retention — planejamento, operação, análise e QC dentro do distrito Growth.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"growth.retention\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:growth.seo",
@@ -3022,7 +3022,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Growth\",\"function\":\"seo — planejamento, operação, análise e QC dentro do distrito Growth.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"growth.seo\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:imagem.image_generation",
@@ -3031,7 +3031,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Imagem\",\"function\":\"image generation — planejamento, operação, análise e QC dentro do distrito Imagem.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"imagem.image_generation\",\"runtime\":\"Misto\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:imagem.image_qc",
@@ -3040,7 +3040,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Imagem\",\"function\":\"image qc — planejamento, operação, análise e QC dentro do distrito Imagem.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"imagem.image_qc\",\"runtime\":\"Misto\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:imagem.prompt_lab",
@@ -3049,7 +3049,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Imagem\",\"function\":\"prompt lab — planejamento, operação, análise e QC dentro do distrito Imagem.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"imagem.prompt_lab\",\"runtime\":\"Misto\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:imagem.storyboard",
@@ -3058,7 +3058,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Imagem\",\"function\":\"storyboard — planejamento, operação, análise e QC dentro do distrito Imagem.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"imagem.storyboard\",\"runtime\":\"Misto\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:infraestrutura.ci_cd",
@@ -3067,7 +3067,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Infraestrutura\",\"function\":\"ci cd — planejamento, operação, análise e QC dentro do distrito Infraestrutura.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"infraestrutura.ci_cd\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:infraestrutura.compute",
@@ -3076,7 +3076,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Infraestrutura\",\"function\":\"compute — planejamento, operação, análise e QC dentro do distrito Infraestrutura.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"infraestrutura.compute\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:infraestrutura.github",
@@ -3085,7 +3085,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Infraestrutura\",\"function\":\"github — planejamento, operação, análise e QC dentro do distrito Infraestrutura.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"infraestrutura.github\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:infraestrutura.runtime",
@@ -3094,7 +3094,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Infraestrutura\",\"function\":\"runtime — planejamento, operação, análise e QC dentro do distrito Infraestrutura.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"infraestrutura.runtime\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:marca.art_direction",
@@ -3103,7 +3103,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Marca\",\"function\":\"art direction — planejamento, operação, análise e QC dentro do distrito Marca.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"marca.art_direction\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:marca.brand_system",
@@ -3112,7 +3112,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Marca\",\"function\":\"brand system — planejamento, operação, análise e QC dentro do distrito Marca.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"marca.brand_system\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:marca.copy_voice",
@@ -3121,7 +3121,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Marca\",\"function\":\"copy voice — planejamento, operação, análise e QC dentro do distrito Marca.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"marca.copy_voice\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:marca.semiotics",
@@ -3130,7 +3130,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Marca\",\"function\":\"semiotics — planejamento, operação, análise e QC dentro do distrito Marca.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"marca.semiotics\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:memoria.asset_memory",
@@ -3139,7 +3139,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Memoria\",\"function\":\"asset memory — planejamento, operação, análise e QC dentro do distrito Memoria.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"memoria.asset_memory\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:memoria.context_index",
@@ -3148,7 +3148,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Memoria\",\"function\":\"context index — planejamento, operação, análise e QC dentro do distrito Memoria.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"memoria.context_index\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:memoria.decision_memory",
@@ -3157,7 +3157,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Memoria\",\"function\":\"decision memory — planejamento, operação, análise e QC dentro do distrito Memoria.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"memoria.decision_memory\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:memoria.knowledge_graph",
@@ -3166,7 +3166,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Memoria\",\"function\":\"knowledge graph — planejamento, operação, análise e QC dentro do distrito Memoria.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"memoria.knowledge_graph\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:narrativa.character_room",
@@ -3175,7 +3175,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Narrativa\",\"function\":\"character room — planejamento, operação, análise e QC dentro do distrito Narrativa.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"narrativa.character_room\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:narrativa.continuity",
@@ -3184,7 +3184,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Narrativa\",\"function\":\"continuity — planejamento, operação, análise e QC dentro do distrito Narrativa.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"narrativa.continuity\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:narrativa.episode_room",
@@ -3193,7 +3193,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Narrativa\",\"function\":\"episode room — planejamento, operação, análise e QC dentro do distrito Narrativa.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"narrativa.episode_room\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:narrativa.story_architecture",
@@ -3202,7 +3202,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Narrativa\",\"function\":\"story architecture — planejamento, operação, análise e QC dentro do distrito Narrativa.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"narrativa.story_architecture\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:pesquisa.repo_scout",
@@ -3211,7 +3211,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Pesquisa\",\"function\":\"repo scout — planejamento, operação, análise e QC dentro do distrito Pesquisa.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"pesquisa.repo_scout\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:pesquisa.research_synthesis",
@@ -3220,7 +3220,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Pesquisa\",\"function\":\"research synthesis — planejamento, operação, análise e QC dentro do distrito Pesquisa.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"pesquisa.research_synthesis\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:pesquisa.tech_radar",
@@ -3229,7 +3229,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Pesquisa\",\"function\":\"tech radar — planejamento, operação, análise e QC dentro do distrito Pesquisa.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"pesquisa.tech_radar\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:pesquisa.web_intelligence",
@@ -3238,7 +3238,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Pesquisa\",\"function\":\"web intelligence — planejamento, operação, análise e QC dentro do distrito Pesquisa.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"pesquisa.web_intelligence\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:publicacao.instagram",
@@ -3247,7 +3247,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Publicacao\",\"function\":\"instagram — planejamento, operação, análise e QC dentro do distrito Publicacao.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"publicacao.instagram\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:publicacao.metadata",
@@ -3256,7 +3256,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Publicacao\",\"function\":\"metadata — planejamento, operação, análise e QC dentro do distrito Publicacao.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"publicacao.metadata\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:publicacao.release_ops",
@@ -3265,7 +3265,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Publicacao\",\"function\":\"release ops — planejamento, operação, análise e QC dentro do distrito Publicacao.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"publicacao.release_ops\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:publicacao.youtube",
@@ -3274,7 +3274,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Publicacao\",\"function\":\"youtube — planejamento, operação, análise e QC dentro do distrito Publicacao.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"publicacao.youtube\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:qualidade.acceptance",
@@ -3283,7 +3283,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Qualidade\",\"function\":\"acceptance — planejamento, operação, análise e QC dentro do distrito Qualidade.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"qualidade.acceptance\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:qualidade.benchmarks",
@@ -3292,7 +3292,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Qualidade\",\"function\":\"benchmarks — planejamento, operação, análise e QC dentro do distrito Qualidade.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"qualidade.benchmarks\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:qualidade.regression",
@@ -3301,7 +3301,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Qualidade\",\"function\":\"regression — planejamento, operação, análise e QC dentro do distrito Qualidade.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"qualidade.regression\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:qualidade.visual_review",
@@ -3310,7 +3310,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Qualidade\",\"function\":\"visual review — planejamento, operação, análise e QC dentro do distrito Qualidade.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"qualidade.visual_review\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:recursos.budget",
@@ -3319,7 +3319,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Recursos\",\"function\":\"budget — planejamento, operação, análise e QC dentro do distrito Recursos.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"recursos.budget\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:recursos.capacity",
@@ -3328,7 +3328,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Recursos\",\"function\":\"capacity — planejamento, operação, análise e QC dentro do distrito Recursos.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"recursos.capacity\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:recursos.resource_allocator",
@@ -3337,7 +3337,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Recursos\",\"function\":\"resource allocator — planejamento, operação, análise e QC dentro do distrito Recursos.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"recursos.resource_allocator\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:recursos.zero_cost",
@@ -3346,7 +3346,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Recursos\",\"function\":\"zero cost — planejamento, operação, análise e QC dentro do distrito Recursos.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"recursos.zero_cost\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:seguranca.integrity",
@@ -3355,7 +3355,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Seguranca\",\"function\":\"integrity — planejamento, operação, análise e QC dentro do distrito Seguranca.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"seguranca.integrity\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:seguranca.licenses",
@@ -3364,7 +3364,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Seguranca\",\"function\":\"licenses — planejamento, operação, análise e QC dentro do distrito Seguranca.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"seguranca.licenses\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:seguranca.permissions",
@@ -3373,7 +3373,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Seguranca\",\"function\":\"permissions — planejamento, operação, análise e QC dentro do distrito Seguranca.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"seguranca.permissions\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:seguranca.secrets",
@@ -3382,7 +3382,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Seguranca\",\"function\":\"secrets — planejamento, operação, análise e QC dentro do distrito Seguranca.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"seguranca.secrets\",\"runtime\":\"ChatGPT CPU Runtime\",\"state\":\"Idle\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:web.hotmart",
@@ -3391,7 +3391,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Web\",\"function\":\"hotmart — planejamento, operação, análise e QC dentro do distrito Web.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"web.hotmart\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:web.site",
@@ -3400,7 +3400,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Web\",\"function\":\"site — planejamento, operação, análise e QC dentro do distrito Web.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"web.site\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:web.ux_mobile",
@@ -3409,7 +3409,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Web\",\"function\":\"ux mobile — planejamento, operação, análise e QC dentro do distrito Web.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"web.ux_mobile\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "node_id": "swarm:web.vercel",
@@ -3418,7 +3418,7 @@
         "source": "city_v8_airtable_snapshot.json",
         "data_json": "{\"agents\":5,\"circuit_breaker\":\"Closed\",\"district\":\"Web\",\"function\":\"vercel — planejamento, operação, análise e QC dentro do distrito Web.\",\"last_mission\":\"city-state-of-art-v8\",\"name\":\"web.vercel\",\"runtime\":\"Connector Dispatch\",\"state\":\"Waiting external\"}",
         "confidence": 1.0,
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       }
     ],
     "edges": [
@@ -3429,7 +3429,7 @@
         "dst": "cap:dedupe",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9642662012f72086b1ba3194",
@@ -3438,7 +3438,7 @@
         "dst": "cap:hash",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "404215f4899e4a5fc2dcb113",
@@ -3447,7 +3447,7 @@
         "dst": "cap:inventory",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "672798da6cd4f22f3ee9e699",
@@ -3456,7 +3456,7 @@
         "dst": "cap:manifest",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "6a4924bddb3892c7940a7778",
@@ -3465,7 +3465,7 @@
         "dst": "cap:restore",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "f1fb4c8c2e13c0ba5c414c13",
@@ -3474,7 +3474,7 @@
         "dst": "cap:versioning",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "34ca91fde2c0a0b0c1ec1552",
@@ -3483,7 +3483,7 @@
         "dst": "cap:collection_structure",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "bd8869d70ef19f946d66f472",
@@ -3492,7 +3492,7 @@
         "dst": "cap:image_curate",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a2f4914d6dfdf658572c858a",
@@ -3501,7 +3501,7 @@
         "dst": "cap:novelty_check",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "ddca91ae15e0f77e4c080229",
@@ -3510,7 +3510,7 @@
         "dst": "cap:visual_taxonomy",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b493a08a3dbecce018fce81d",
@@ -3519,7 +3519,7 @@
         "dst": "cap:canon",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "64da0898f818e2ef9ebb39bb",
@@ -3528,7 +3528,7 @@
         "dst": "cap:continuity",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "24d5ac835ad693261877bd22",
@@ -3537,7 +3537,7 @@
         "dst": "cap:face_lock",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "0ace2c5c0e31d07206043676",
@@ -3546,7 +3546,7 @@
         "dst": "cap:voice_lock",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "6007a060225aa62bb0165808",
@@ -3555,7 +3555,7 @@
         "dst": "cap:wardrobe_lock",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a36f976407d990c7f9a1e794",
@@ -3564,7 +3564,7 @@
         "dst": "cap:format_delivery",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "0b1bf1adb7dc29e646f7af35",
@@ -3573,7 +3573,7 @@
         "dst": "cap:github",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d0714380cfaca1ec1bbd0f04",
@@ -3582,7 +3582,7 @@
         "dst": "cap:instagram",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "30c9490c966c9751a4b6ba5d",
@@ -3591,7 +3591,7 @@
         "dst": "cap:youtube",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b3a71314a2a2b4243ac656bd",
@@ -3600,7 +3600,7 @@
         "dst": "cap:anatomy",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "289d32314c9ee06de313087c",
@@ -3609,7 +3609,7 @@
         "dst": "cap:charcoal",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "840dc971b6e02822b811aa3a",
@@ -3618,7 +3618,7 @@
         "dst": "cap:composition",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "44bc9507502330904aadc574",
@@ -3627,7 +3627,7 @@
         "dst": "cap:figure",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c9c93a5a05c81c34a9f4c27f",
@@ -3636,7 +3636,7 @@
         "dst": "cap:gesture",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c1bea892b2ba58151ad756c8",
@@ -3645,7 +3645,7 @@
         "dst": "cap:camera",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "eba71fbf37cfb80ffd98d550",
@@ -3654,7 +3654,7 @@
         "dst": "cap:cinematic_direction",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "eb8695fe937c455367bba788",
@@ -3663,7 +3663,7 @@
         "dst": "cap:scene_graph",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d31fe55656de13acd9528660",
@@ -3672,7 +3672,7 @@
         "dst": "cap:shot_plan",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "fdfcd33a22f91399e4c595af",
@@ -3681,7 +3681,7 @@
         "dst": "cap:continuity_qc",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "63fd015fd9780db3f3bc6944",
@@ -3690,7 +3690,7 @@
         "dst": "cap:encode_qc",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "cdfeaf9569f9cde89875a386",
@@ -3699,7 +3699,7 @@
         "dst": "cap:identity_qc",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "75879085b009255ba9061173",
@@ -3708,7 +3708,7 @@
         "dst": "cap:video_qc",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "967491f823786e472d1bf1a1",
@@ -3717,7 +3717,7 @@
         "dst": "cap:availability_check",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "cddda44f4dc07aef00937c8f",
@@ -3726,7 +3726,7 @@
         "dst": "cap:checkout_gate",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "6120b7eb7d660e04a143f876",
@@ -3735,7 +3735,7 @@
         "dst": "cap:claim_check",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9b3f2ea0baee78d1fe09f2e1",
@@ -3744,7 +3744,7 @@
         "dst": "cap:consumer_clarity",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "e505b56cf18878636f293a76",
@@ -3753,7 +3753,7 @@
         "dst": "cap:compute_route",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b503d566b99f9239f1b7719c",
@@ -3762,7 +3762,7 @@
         "dst": "cap:cpu_gpu_split",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "6b41de049e6cf9555d7293a4",
@@ -3771,7 +3771,7 @@
         "dst": "cap:provider_policy",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b91d9076e6e6574850151c2e",
@@ -3780,7 +3780,7 @@
         "dst": "cap:vram_match",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "4efbc6ac09b5c89097070aec",
@@ -3789,7 +3789,7 @@
         "dst": "cap:dependency_resolution",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "bb1b6c81690b9d26ae2f4e67",
@@ -3798,7 +3798,7 @@
         "dst": "cap:load_balance",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "75e46fa693a360155cfc55c8",
@@ -3807,7 +3807,7 @@
         "dst": "cap:queue",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "26817a5639664e33e3e18312",
@@ -3816,7 +3816,7 @@
         "dst": "cap:retry",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "ec5d82f7f2a5e1607e38f9f6",
@@ -3825,7 +3825,7 @@
         "dst": "cap:schedule",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9b9caa6b684600f8634b87c7",
@@ -3834,7 +3834,7 @@
         "dst": "cap:content_calendar",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "6fff13fe0cb848d45c73ce6e",
@@ -3843,7 +3843,7 @@
         "dst": "cap:format_adaptation",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "28f1864df3ddb8e122794eba",
@@ -3852,7 +3852,7 @@
         "dst": "cap:sequence",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "142482ed8cd6da36959efcf5",
@@ -3861,7 +3861,7 @@
         "dst": "cap:dead_letter",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "4565cbd68c2208685b29ea8a",
@@ -3870,7 +3870,7 @@
         "dst": "cap:healthcheck",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "016cf7ef4f96d5426ab72b83",
@@ -3879,7 +3879,7 @@
         "dst": "cap:loop_detection",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a0c4cd5bf6e2863e1c2350d3",
@@ -3888,7 +3888,7 @@
         "dst": "cap:recovery",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "fd38c90be2f48830422b6e80",
@@ -3897,7 +3897,7 @@
         "dst": "cap:attribution",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "77cb8bb55c16121f5e5f8fe8",
@@ -3906,7 +3906,7 @@
         "dst": "cap:license",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "5ccfc335efbfb55108358318",
@@ -3915,7 +3915,7 @@
         "dst": "cap:provenance",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c5babb24ed06699c56812e8f",
@@ -3924,7 +3924,7 @@
         "dst": "cap:usage_rights",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "e85a4f50b9d7d4d335c4bd0b",
@@ -3933,7 +3933,7 @@
         "dst": "cap:coordinate",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b87d26b3e5b1a1e8502d6335",
@@ -3942,7 +3942,7 @@
         "dst": "cap:decompose",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d1a84e94f33824471d90d0a1",
@@ -3951,7 +3951,7 @@
         "dst": "cap:plan",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "8b761aadccf52dbe8967dfb5",
@@ -3960,7 +3960,7 @@
         "dst": "cap:prioritize",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "5d9a8e90b33e50d56112dce0",
@@ -3969,7 +3969,7 @@
         "dst": "cap:recover",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "e84b587f8aa744cac6cf8cd3",
@@ -3978,7 +3978,7 @@
         "dst": "cap:route",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "f2669d48f42a76d9bad60353",
@@ -3987,7 +3987,7 @@
         "dst": "cap:context_pack",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "766cc846f39682e91a5c72b2",
@@ -3996,7 +3996,7 @@
         "dst": "cap:cross_reference",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9bf9b7094ce7820dec2bab9c",
@@ -4005,7 +4005,7 @@
         "dst": "cap:index",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "21472dc935ddf555e878d9b6",
@@ -4014,7 +4014,7 @@
         "dst": "cap:retrieve",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "0f54a3dd30dd5c6813df8d43",
@@ -4023,7 +4023,7 @@
         "dst": "cap:caption",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "e0229649acc0e84735842199",
@@ -4032,7 +4032,7 @@
         "dst": "cap:cta",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "23f12c46bf6aee064ce38b36",
@@ -4041,7 +4041,7 @@
         "dst": "cap:noir_loop",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "35d1f34843a2a94d89f41fc7",
@@ -4050,7 +4050,7 @@
         "dst": "cap:serial_narrative",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "4290c739ab79558212b5355a",
@@ -4059,7 +4059,7 @@
         "dst": "cap:story",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "96b6984e06890c71c1bf9d61",
@@ -4068,7 +4068,7 @@
         "dst": "cap:audio",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "ac712f65cac3c13a1dd4ebd7",
@@ -4077,7 +4077,7 @@
         "dst": "cap:edit",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b90aeb095f576ee99216efc8",
@@ -4086,7 +4086,7 @@
         "dst": "cap:grade",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9b47b9aa5379a6de2eead5fd",
@@ -4095,7 +4095,7 @@
         "dst": "cap:master",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "eed3678522735a5b93e2baff",
@@ -4104,7 +4104,7 @@
         "dst": "cap:subtitles",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9589fec9bc3db564820f1792",
@@ -4113,7 +4113,7 @@
         "dst": "cap:bundle",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "26f8ed4b4dbfeb0ca8d85238",
@@ -4122,7 +4122,7 @@
         "dst": "cap:course_structure",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9517db894cbf29812282d319",
@@ -4131,7 +4131,7 @@
         "dst": "cap:offer_structure",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "423ac52a27d10434e1b4d6d4",
@@ -4140,7 +4140,7 @@
         "dst": "cap:pdf_product",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "64d13c5faf25fb808c2239ae",
@@ -4149,7 +4149,7 @@
         "dst": "cap:human_review",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "ed3250eb14fcb70ef5b1ad53",
@@ -4158,7 +4158,7 @@
         "dst": "cap:publish_gate",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "2c839ae589493d563493b79e",
@@ -4167,7 +4167,7 @@
         "dst": "cap:release_checklist",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "3e16bb97d02dec345cb225e3",
@@ -4176,7 +4176,7 @@
         "dst": "cap:deployment_brief",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "93d55162e0796c495fb27769",
@@ -4185,7 +4185,7 @@
         "dst": "cap:gallery",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "712a9f684cc96858bc8ca5f5",
@@ -4194,7 +4194,7 @@
         "dst": "cap:metadata",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "e29b2fafafc76fdb0115d1e6",
@@ -4203,7 +4203,7 @@
         "dst": "cap:seo",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "4b94d93805a3d63e0ef77c2e",
@@ -4212,7 +4212,7 @@
         "dst": "cap:site",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "5ec021f3bd562369018e1054",
@@ -4221,7 +4221,7 @@
         "dst": "cap:body_flow",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "60fa81720883626e5a2a553c",
@@ -4230,7 +4230,7 @@
         "dst": "cap:flash",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a6473091f5dec04be249d5e3",
@@ -4239,7 +4239,7 @@
         "dst": "cap:negative_space",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "978c64c1ca6126617689a111",
@@ -4248,7 +4248,7 @@
         "dst": "cap:placement",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9c34266a08fa051af758f7e6",
@@ -4257,7 +4257,7 @@
         "dst": "cap:tattoo",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "0d4029ed0d782642e1088c24",
@@ -4266,7 +4266,7 @@
         "dst": "cap:claim_gate",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "0eeca3d774c3d281afa065d8",
@@ -4275,7 +4275,7 @@
         "dst": "cap:evidence",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a3718ba284cc5f5aaa7493dc",
@@ -4284,7 +4284,7 @@
         "dst": "cap:fiction_label",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "1b4e3c60899bb6bf5c133ded",
@@ -4293,7 +4293,7 @@
         "dst": "cap:truth",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b5e6fb3fcd32512189d3bc70",
@@ -4302,7 +4302,7 @@
         "dst": "agent:atelier_curator",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d20f87a8e2dcc47cd42f48af",
@@ -4311,7 +4311,7 @@
         "dst": "agent:charcoal_master",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a24f28f6a8c28ff735c78679",
@@ -4320,7 +4320,7 @@
         "dst": "agent:tattoo_architect",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "90eab1604f6451cea85f336b",
@@ -4329,7 +4329,7 @@
         "dst": "agent:cinebrain",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a8babd38a45cec7e2416d95c",
@@ -4338,7 +4338,7 @@
         "dst": "agent:cinema_qc",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "1cdc63c5f113f086850dc2e5",
@@ -4347,7 +4347,7 @@
         "dst": "agent:compute_broker",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b2357e3e94782f5d3d09ec77",
@@ -4356,7 +4356,7 @@
         "dst": "agent:post_master",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "f08eda6ad1c015e365b0e511",
@@ -4365,7 +4365,7 @@
         "dst": "agent:dispatcher",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "cc272960fec6a4bb0b43f40e",
@@ -4374,7 +4374,7 @@
         "dst": "agent:health_guard",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "97e1e86432342e06a59bcf58",
@@ -4383,7 +4383,7 @@
         "dst": "agent:mayor",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096416
+        "updated_at": 1790112175
       },
       {
         "edge_id": "512f1a5078470def677ad0f5",
@@ -4392,7 +4392,7 @@
         "dst": "agent:channel_router",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "34c00429591ad5c803ac75d3",
@@ -4401,7 +4401,7 @@
         "dst": "agent:site_integrator",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c06a345b24ae952aa71e8106",
@@ -4410,7 +4410,7 @@
         "dst": "agent:license_guard",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "750820a5dfb28fdd37936db2",
@@ -4419,7 +4419,7 @@
         "dst": "agent:publication_guard",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "49fa9a6babc7aa26366cc198",
@@ -4428,7 +4428,7 @@
         "dst": "agent:truth_guard",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "4e5c292db5d445fd7e23aaf5",
@@ -4437,7 +4437,7 @@
         "dst": "agent:archivist",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "eca649fab466093f3d8278c1",
@@ -4446,7 +4446,7 @@
         "dst": "agent:memory_librarian",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a927a63470f71334c4a4f10d",
@@ -4455,7 +4455,7 @@
         "dst": "agent:canon_guard",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "e77c75637b4f51315849adbe",
@@ -4464,7 +4464,7 @@
         "dst": "agent:editorial_planner",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "2ad7ec5c46c54fab3cea87fb",
@@ -4473,7 +4473,7 @@
         "dst": "agent:noir_writer",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "1e57f9169d656ce4e472f225",
@@ -4482,7 +4482,7 @@
         "dst": "agent:commerce_guard",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "0e10a0f07afa74fe2ad60373",
@@ -4491,7 +4491,7 @@
         "dst": "agent:product_architect",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "19eb2d4625682b3eaca59182",
@@ -4500,7 +4500,7 @@
         "dst": "swarm:audio.foley",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "e8f2550dbb4a97e7b525cce9",
@@ -4509,7 +4509,7 @@
         "dst": "swarm:audio.mix_master",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "38bdfed230ebbdb7dd3dbb2d",
@@ -4518,7 +4518,7 @@
         "dst": "swarm:audio.music",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "121c67dd1c5e7ec12c67c13b",
@@ -4527,7 +4527,7 @@
         "dst": "swarm:audio.voice",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d70bf1d1bfbd8da073e78f31",
@@ -4536,7 +4536,7 @@
         "dst": "swarm:automacao.event_bus",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c51ba20f44360d56b9e65fb0",
@@ -4545,7 +4545,7 @@
         "dst": "swarm:automacao.state_sync",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d3ff1d6867fafcfd2b0d6671",
@@ -4554,7 +4554,7 @@
         "dst": "swarm:automacao.triggers",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d57f616b5c8da9febf15db82",
@@ -4563,7 +4563,7 @@
         "dst": "swarm:automacao.workflow",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c28934685620af79d48b1a0d",
@@ -4572,7 +4572,7 @@
         "dst": "swarm:crm.booking",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "3821647c526c58f3b0363b5e",
@@ -4581,7 +4581,7 @@
         "dst": "swarm:crm.client_comms",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9c6542a88803eee2e11fa44b",
@@ -4590,7 +4590,7 @@
         "dst": "swarm:crm.followup",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "fc39131dc20d57c573e52e2c",
@@ -4599,7 +4599,7 @@
         "dst": "swarm:crm.lead_intake",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "3a66be62c2a9315236ae50c4",
@@ -4608,7 +4608,7 @@
         "dst": "swarm:cinema.cinematic_qc",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "0fe27f2a7b9efc04dc224390",
@@ -4617,7 +4617,7 @@
         "dst": "swarm:cinema.editing",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "497ca03926df49cdb8bc7938",
@@ -4626,7 +4626,7 @@
         "dst": "swarm:cinema.render_farm",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "bb23f68ec3bdb2b5d9fb177d",
@@ -4635,7 +4635,7 @@
         "dst": "swarm:cinema.shot_design",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "60fc09c297fd56cda089fe01",
@@ -4644,7 +4644,7 @@
         "dst": "swarm:comercio.checkout",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "5fd8cac9415cd83d1eafd67f",
@@ -4653,7 +4653,7 @@
         "dst": "swarm:comercio.offers",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a35077172225b7dc5be9c31d",
@@ -4662,7 +4662,7 @@
         "dst": "swarm:comercio.pricing",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9a418cd23ad6da3a3b4354e5",
@@ -4671,7 +4671,7 @@
         "dst": "swarm:comercio.product_ops",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "21a06441e4f22a5a1d8714e8",
@@ -4680,7 +4680,7 @@
         "dst": "swarm:governo.executive",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "1bacdbfe427a315ec988f196",
@@ -4689,7 +4689,7 @@
         "dst": "swarm:governo.policy",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "85d331c40e4c63860c065326",
@@ -4698,7 +4698,7 @@
         "dst": "swarm:governo.portfolio",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "744139b7f1bccd31c1fbdbc8",
@@ -4707,7 +4707,7 @@
         "dst": "swarm:governo.strategy",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "fd41daff9277e618c56f8e48",
@@ -4716,7 +4716,7 @@
         "dst": "swarm:growth.analytics",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9ba3935b62f3b1433975b484",
@@ -4725,7 +4725,7 @@
         "dst": "swarm:growth.experiments",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "de1fbbebd4222bb5daf5b3d4",
@@ -4734,7 +4734,7 @@
         "dst": "swarm:growth.retention",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "f5782ed9671af97a85e2184c",
@@ -4743,7 +4743,7 @@
         "dst": "swarm:growth.seo",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "02a5647dfdb38dccbc4ae20a",
@@ -4752,7 +4752,7 @@
         "dst": "swarm:imagem.image_generation",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "65892dcfccc4bc85b80ba481",
@@ -4761,7 +4761,7 @@
         "dst": "swarm:imagem.image_qc",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b9c9a9b34c2b31594f9790b2",
@@ -4770,7 +4770,7 @@
         "dst": "swarm:imagem.prompt_lab",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "af3b79a23db02ebb4af41367",
@@ -4779,7 +4779,7 @@
         "dst": "swarm:imagem.storyboard",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a58cc968760a08397f6738aa",
@@ -4788,7 +4788,7 @@
         "dst": "swarm:infraestrutura.ci_cd",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "87485bcb9f34e66dbe6292c2",
@@ -4797,7 +4797,7 @@
         "dst": "swarm:infraestrutura.compute",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "28a75b19560bfc3df81bdcc4",
@@ -4806,7 +4806,7 @@
         "dst": "swarm:infraestrutura.github",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "3932d1b51c34c39eed710a12",
@@ -4815,7 +4815,7 @@
         "dst": "swarm:infraestrutura.runtime",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "15b3f5909e3a246b78c28f68",
@@ -4824,7 +4824,7 @@
         "dst": "swarm:marca.art_direction",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "4f36ab77113def2045ea6d81",
@@ -4833,7 +4833,7 @@
         "dst": "swarm:marca.brand_system",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "6b9c6f670fd0eb9b47f3e30e",
@@ -4842,7 +4842,7 @@
         "dst": "swarm:marca.copy_voice",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "6271f3a15f6e949d1e4f3ed8",
@@ -4851,7 +4851,7 @@
         "dst": "swarm:marca.semiotics",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "02c5949ca5f0e14607bd2826",
@@ -4860,7 +4860,7 @@
         "dst": "swarm:memoria.asset_memory",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "29ea62f39d943a324be90cb6",
@@ -4869,7 +4869,7 @@
         "dst": "swarm:memoria.context_index",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "8e15586bfe864f3422ab693c",
@@ -4878,7 +4878,7 @@
         "dst": "swarm:memoria.decision_memory",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "78591301dae221ec470f344f",
@@ -4887,7 +4887,7 @@
         "dst": "swarm:memoria.knowledge_graph",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "37b2e6a335274f16515c5352",
@@ -4896,7 +4896,7 @@
         "dst": "swarm:narrativa.character_room",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "44751fd6def4753c3b087833",
@@ -4905,7 +4905,7 @@
         "dst": "swarm:narrativa.continuity",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a0e4c1f190ca3bff8bfe33e1",
@@ -4914,7 +4914,7 @@
         "dst": "swarm:narrativa.episode_room",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c1dc298d198ddb608525a990",
@@ -4923,7 +4923,7 @@
         "dst": "swarm:narrativa.story_architecture",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "39c2846cca29c5171665e4b2",
@@ -4932,7 +4932,7 @@
         "dst": "swarm:pesquisa.repo_scout",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "66b80e25f5699011e70b1b7b",
@@ -4941,7 +4941,7 @@
         "dst": "swarm:pesquisa.research_synthesis",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "03c258d970cd96cbe9b0f259",
@@ -4950,7 +4950,7 @@
         "dst": "swarm:pesquisa.tech_radar",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "330276cb4c84ebc477e97c5f",
@@ -4959,7 +4959,7 @@
         "dst": "swarm:pesquisa.web_intelligence",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "8355dac06f8925c4912b614f",
@@ -4968,7 +4968,7 @@
         "dst": "swarm:publicacao.instagram",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "49ad64450cd54e9dc81d9410",
@@ -4977,7 +4977,7 @@
         "dst": "swarm:publicacao.metadata",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9a2451246674bfd15cd91cbd",
@@ -4986,7 +4986,7 @@
         "dst": "swarm:publicacao.release_ops",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b2fa91de024089c261c4b95a",
@@ -4995,7 +4995,7 @@
         "dst": "swarm:publicacao.youtube",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "1f2d30cb940a57372fdd0f17",
@@ -5004,7 +5004,7 @@
         "dst": "swarm:qualidade.acceptance",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c8930798852d0cf2ff1e3d15",
@@ -5013,7 +5013,7 @@
         "dst": "swarm:qualidade.benchmarks",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c8db231d15a2f8206352bfa2",
@@ -5022,7 +5022,7 @@
         "dst": "swarm:qualidade.regression",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b9b7b2c2ef2013d8cfa6174c",
@@ -5031,7 +5031,7 @@
         "dst": "swarm:qualidade.visual_review",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "4e1b758a4aa4ea1ed97c4c37",
@@ -5040,7 +5040,7 @@
         "dst": "swarm:recursos.budget",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d620f8f7e049427237eedf61",
@@ -5049,7 +5049,7 @@
         "dst": "swarm:recursos.capacity",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c6d63ac301c22862df159eeb",
@@ -5058,7 +5058,7 @@
         "dst": "swarm:recursos.resource_allocator",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "aa57215801fe266e0b9a3459",
@@ -5067,7 +5067,7 @@
         "dst": "swarm:recursos.zero_cost",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b31242844d41433b86eb8678",
@@ -5076,7 +5076,7 @@
         "dst": "swarm:seguranca.integrity",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c8df90ad28a8959fa5f9f7df",
@@ -5085,7 +5085,7 @@
         "dst": "swarm:seguranca.licenses",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "322dbfe794f53cdd85be238c",
@@ -5094,7 +5094,7 @@
         "dst": "swarm:seguranca.permissions",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d9dcd766308a1720b9b30163",
@@ -5103,7 +5103,7 @@
         "dst": "swarm:seguranca.secrets",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "64aa8ee7334275723105333b",
@@ -5112,7 +5112,7 @@
         "dst": "swarm:web.hotmart",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d94d9be5fcc85aa1c7e217f7",
@@ -5121,7 +5121,7 @@
         "dst": "swarm:web.site",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "170a2b3b3883ea7d470b2a57",
@@ -5130,7 +5130,7 @@
         "dst": "swarm:web.ux_mobile",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "857313263915692139f7ba70",
@@ -5139,7 +5139,7 @@
         "dst": "swarm:web.vercel",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "2b50cd083b43f35bb6e6843d",
@@ -5148,7 +5148,7 @@
         "dst": "cap:cross_session_memory",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c0d7a5325606880af6bc7772",
@@ -5157,7 +5157,7 @@
         "dst": "cap:human_readable_control",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "437a38e51a7ea8a0a7377804",
@@ -5166,7 +5166,7 @@
         "dst": "cap:missions",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "b93f37733c32831cfce24612",
@@ -5175,7 +5175,7 @@
         "dst": "cap:queues",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9cfce9760e6a36e682eadb5c",
@@ -5184,7 +5184,7 @@
         "dst": "cap:shared_state",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "0c03960cd35708fadcb3fe53",
@@ -5193,7 +5193,7 @@
         "dst": "cap:adobe",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "ac73353331392de6374478eb",
@@ -5202,7 +5202,7 @@
         "dst": "cap:airtable",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "656b0b55f0f11a180ebe093c",
@@ -5211,7 +5211,7 @@
         "dst": "cap:canva",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "0ee428b17042ce16523a5359",
@@ -5220,7 +5220,7 @@
         "dst": "cap:elevenlabs",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c48b695b875a92fcd0e41855",
@@ -5229,7 +5229,7 @@
         "dst": "cap:github",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "02672fad17a0832600ace59c",
@@ -5238,7 +5238,7 @@
         "dst": "cap:google_drive",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "6629e0359ca3c5a68f0dabae",
@@ -5247,7 +5247,7 @@
         "dst": "cap:heygen",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "1a481063ce4fd7aa4f344fed",
@@ -5256,7 +5256,7 @@
         "dst": "cap:vercel",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "cf38c918d78051237ce31062",
@@ -5265,7 +5265,7 @@
         "dst": "cap:windsor_ai",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "1934cb09d2233ed269599675",
@@ -5274,7 +5274,7 @@
         "dst": "cap:cron",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "fabc1f2d8e3dca791f8e88ea",
@@ -5283,7 +5283,7 @@
         "dst": "cap:http_api",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "eaee40106cceb4bcfb853610",
@@ -5292,7 +5292,7 @@
         "dst": "cap:sqlite_durable_objects",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "c1bd57e880c9ad95a899da3c",
@@ -5301,7 +5301,7 @@
         "dst": "cap:websockets",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "bd16f977cf8b40fa874f7734",
@@ -5310,7 +5310,7 @@
         "dst": "cap:workers",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "0584275e16b2f97c763fb372",
@@ -5319,7 +5319,7 @@
         "dst": "cap:artifact_output",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "f9d98b5c0b51ea1ae5661343",
@@ -5328,7 +5328,7 @@
         "dst": "cap:git",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "85035e795df68f69b6f779ec",
@@ -5337,7 +5337,7 @@
         "dst": "cap:network",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "50e52ac587bc52a81e5eb409",
@@ -5346,7 +5346,7 @@
         "dst": "cap:parallel_cpu",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "131adf0109d64a0881fcd191",
@@ -5355,7 +5355,7 @@
         "dst": "cap:python",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9a62eeac2d5f4c9f193cef34",
@@ -5364,7 +5364,7 @@
         "dst": "cap:shell",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "ab73a7dd5c0a4ba0d5b61524",
@@ -5373,7 +5373,7 @@
         "dst": "cap:branches",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "475fe6349ac7dfcf4bdb27af",
@@ -5382,7 +5382,7 @@
         "dst": "cap:durable_small_state",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "2974902740ee8bff333a9829",
@@ -5391,7 +5391,7 @@
         "dst": "cap:git_history",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "7febda6ed1b5bbff56d81c75",
@@ -5400,7 +5400,7 @@
         "dst": "cap:manifests",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "22c0095b108e0b5dd14542ed",
@@ -5409,7 +5409,7 @@
         "dst": "cap:source",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "4196046633b871caf504592c",
@@ -5418,7 +5418,7 @@
         "dst": "cap:checkpoint",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "d3ade1fb3fd92286fa3d1691",
@@ -5427,7 +5427,7 @@
         "dst": "cap:event_store",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9e3d8a261b4a8297b0eab7d5",
@@ -5436,7 +5436,7 @@
         "dst": "cap:offline",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "488c4b252fffb6ba86677118",
@@ -5445,7 +5445,7 @@
         "dst": "cap:queue",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "761bd7ac647c410f4939e10a",
@@ -5454,7 +5454,7 @@
         "dst": "cap:transactions",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "200231ee69b251be8652ace5",
@@ -5463,7 +5463,7 @@
         "dst": "cap:wal",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "a942364c8ac2aaac57fe80a2",
@@ -5472,7 +5472,7 @@
         "dst": "cap:agent_observability",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "cd34aa9975630cf7d8412610",
@@ -5481,7 +5481,7 @@
         "dst": "cap:deploy",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "251682c237b92ebaa9071ef7",
@@ -5490,7 +5490,7 @@
         "dst": "cap:functions",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       },
       {
         "edge_id": "9e35cfce400a995c3a6a434e",
@@ -5499,11 +5499,11 @@
         "dst": "cap:logs",
         "weight": 1.0,
         "evidence_json": "[]",
-        "updated_at": 1790096417
+        "updated_at": 1790112175
       }
     ]
   },
-  "timestamp_v2": 1790096417,
+  "timestamp_v2": 1790112175,
   "capabilities_v2": {
     "adobe": [
       {
@@ -6871,7 +6871,7 @@
     },
     "fallback": "deterministic_swarm_runtime"
   },
-  "timestamp_v3": 1790096417,
+  "timestamp_v3": 1790112175,
   "capabilities_v3": {
     "adobe": [
       {
@@ -8287,5 +8287,5 @@
     "cost_policy": "zero-extra-spend; uses client browser resources",
     "constraint": "browser compute exists only while an eligible browser/runtime is active"
   },
-  "digest": "95a17b41920d38d814e31f676e78991f10e829b088bba030ce488c3540866255"
+  "digest": "253e420bec2ecff92c0b57f1b9a02d3f85274fd7bf083740412531e8e3ff05f3"
 }
