@@ -1,6 +1,6 @@
 {
   "schema": "harum.resource.fabric.v2",
-  "timestamp": 1790113308,
+  "timestamp": 1790140056,
   "shards": [
     {
       "shard": 0,
@@ -75,5 +75,5 @@
     }
   ],
   "task_count": 8,
-  "digest": "ad445c63650db494ff680a1f72ed46026853b614e918df64c41d70e3e61ad33c"
+  "digest": "4d5808b19dd061608e4fb8721f8de6eed583aedfe92dcd54ce3b656a0af7625b"
 }
