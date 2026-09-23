@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "policy_version": "NO-REUSE-2026-09-23",
+  "account": {
+    "instagram_username": "harum.noir",
+    "instagram_account_id": "17841476031037191"
+  },
+  "rules": {
+    "reuse_visual_automatically": false,
+    "same_asset_different_surface_counts_as_duplicate": true,
+    "same_asset_new_caption_counts_as_duplicate": true,
+    "same_asset_new_crop_counts_as_duplicate": true,
+    "explicit_user_repost_can_override": true,
+    "preflight_requires_live_instagram_check": true
+  },
+  "last_manual_sync": "2026-09-23",
+  "known_prior_instagram_media": [
+    {"media_id":"18122289256900777","title":"Caderno I","surface":"feed","locked":true},
+    {"media_id":"18017422250737216","title":"Caderno II: Gesto","surface":"feed","locked":true},
+    {"media_id":"17939953719097553","title":"Caderno III: Olhar","surface":"feed","locked":true},
+    {"media_id":"18624266518007216","title":"Caderno IV: Curva","surface":"feed","locked":true},
+    {"media_id":"18115912685064184","title":"Caderno V: Tensão","surface":"feed","locked":true},
+    {"media_id":"18224737741334688","title":"Caderno VI: Pausa","surface":"feed","locked":true},
+    {"media_id":"18089576471204132","title":"Caderno VII: Retorno","surface":"feed","locked":true},
+    {"media_id":"18338960023258137","title":"Caderno VIII: Mãos","surface":"feed","locked":true},
+    {"media_id":"18106153226605840","title":"Caderno IX: Intervalo","surface":"feed","locked":true},
+    {"media_id":"18054311309799504","title":"Caderno X: Detalhe","surface":"carousel","locked":true},
+    {"media_id":"17883614901619819","title":"Caderno XI: Matéria","surface":"feed","locked":true},
+    {"media_id":"18205183534324521","title":"Caderno XII: Vestígio","surface":"feed","locked":true},
+    {"media_id":"18105672413247274","title":"Caderno XIII: Ritmo","surface":"feed","locked":true},
+    {"media_id":"18104908475364884","title":"Caderno XIII: Ritmo — duplicate historical publish","surface":"feed","locked":true},
+    {"media_id":"18346091305248195","title":"Caderno XIV: Quatro presenças","surface":"carousel","locked":true},
+    {"media_id":"18031370273675304","title":"Caderno XV: Presença","surface":"feed","locked":true},
+    {"media_id":"18158766274499436","title":"O que o carvão guarda","surface":"carousel","locked":true},
+    {"media_id":"18443578534130333","title":"Três Estudos de Olhar","surface":"feed","locked":true},
+    {"media_id":"17896148610398491","title":"Interlúdio I: Detalhe em Movimento","surface":"reel","locked":true},
+    {"media_id":"18097469189166059","title":"Interlúdio II: Diário em Movimento","surface":"reel","locked":true},
+    {"media_id":"18047214722807533","title":"Reflexo em Trânsito","surface":"reel","locked":true},
+    {"media_id":"17896061982398723","title":"Reflexo em Trânsito — duplicate historical publish","surface":"reel","locked":true}
+  ],
+  "publications_2026_09_23": [
+    {
+      "sequence": 1,
+      "published_media_id": "18225693307332084",
+      "surface": "story",
+      "source_key": "hands-dirty-2-table-paper-charcoal",
+      "adobe_asset_id": "urn:aaid:sc:US:40f7633f-c078-494d-9d1c-c42ee9a8a99c",
+      "status": "published_verified",
+      "locked": true
+    },
+    {
+      "sequence": 2,
+      "published_media_id": "17923298232199664",
+      "surface": "story",
+      "source_key": "hands-dirty-2-hand-charcoal",
+      "adobe_asset_id": "urn:aaid:sc:US:71e6b822-e2b8-4bad-9ed8-cd8ad1a6514c",
+      "status": "published",
+      "locked": true
+    },
+    {
+      "sequence": 3,
+      "published_media_id": "18100141529572510",
+      "surface": "story",
+      "source_key": "hands-dirty-2-atelier-residue",
+      "adobe_asset_id": "urn:aaid:sc:US:39c5f039-4a9a-4a0f-8057-0291368530c3",
+      "status": "published",
+      "locked": true
+    },
+    {
+      "sequence": 4,
+      "published_media_id": "18131547301679880",
+      "surface": "story",
+      "source_key": "caderno-x-detalhe-reuse-incident",
+      "instagram_source_media_id": "18054311309799504",
+      "status": "published_reuse_incident",
+      "locked": true
+    },
+    {
+      "sequence": 5,
+      "published_media_id": "18491275927110581",
+      "surface": "story",
+      "source_key": "caderno-xi-materia-reuse-incident",
+      "instagram_source_media_id": "17883614901619819",
+      "status": "published_reuse_incident",
+      "locked": true
+    },
+    {
+      "sequence": 6,
+      "published_media_id": "18439787230130613",
+      "surface": "story",
+      "source_key": "caderno-xii-vestigio-reuse-incident",
+      "instagram_source_media_id": "18205183534324521",
+      "status": "published_reuse_incident",
+      "locked": true
+    },
+    {
+      "sequence": 7,
+      "published_media_id": "18116061337966437",
+      "surface": "story",
+      "source_key": "caderno-iv-curva-reuse-incident",
+      "instagram_source_media_id": "18624266518007216",
+      "status": "published_reuse_incident",
+      "locked": true
+    },
+    {
+      "sequence": 8,
+      "published_media_id": "17961523350200967",
+      "surface": "story",
+      "source_key": "caderno-v-tensao-reuse-incident",
+      "instagram_source_media_id": "18115912685064184",
+      "status": "published_reuse_incident",
+      "locked": true
+    },
+    {
+      "sequence": 9,
+      "published_media_id": "17998558689034668",
+      "surface": "story",
+      "source_key": "caderno-vi-pausa-reuse-incident",
+      "instagram_source_media_id": "18224737741334688",
+      "status": "published_reuse_incident",
+      "locked": true
+    },
+    {
+      "sequence": 10,
+      "published_media_id": "17987831825870367",
+      "surface": "story",
+      "source_key": "caderno-vii-retorno-reuse-incident",
+      "instagram_source_media_id": "18089576471204132",
+      "status": "published_reuse_incident",
+      "locked": true
+    },
+    {
+      "sequence": 11,
+      "published_media_id": "17936985123367384",
+      "surface": "story",
+      "source_key": "caderno-viii-maos-reuse-incident",
+      "instagram_source_media_id": "18338960023258137",
+      "status": "published_reuse_incident",
+      "locked": true
+    },
+    {
+      "sequence": 12,
+      "published_media_id": "17965737336207645",
+      "surface": "story",
+      "source_key": "caderno-xv-presenca-reuse-incident",
+      "instagram_source_media_id": "18031370273675304",
+      "status": "published_reuse_incident",
+      "locked": true
+    }
+  ]
+}
