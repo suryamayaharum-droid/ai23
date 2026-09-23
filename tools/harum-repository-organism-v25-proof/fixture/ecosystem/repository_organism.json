@@ -1,0 +1,360 @@
+{
+  "schema": "meaw.repository-organism/v1",
+  "organism": "PROOF",
+  "authority": "fixture/root",
+  "nervous_system": "fixture/nervous",
+  "components": [
+    {
+      "name": "root",
+      "repository": "fixture/root",
+      "role": "orchestrator-root",
+      "organ": "brainstem",
+      "capabilities": [
+        "route"
+      ],
+      "lifecycle": "active",
+      "trust": "core",
+      "priority": 100,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-01",
+      "repository": "fixture/repo-01",
+      "role": "semantic-memory-index",
+      "organ": "hippocampus",
+      "capabilities": [
+        "memory-search",
+        "memory-index"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 89,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-02",
+      "repository": "fixture/repo-02",
+      "role": "organ",
+      "organ": "organ-2",
+      "capabilities": [
+        "cap-2"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 88,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-03",
+      "repository": "fixture/repo-03",
+      "role": "organ",
+      "organ": "organ-3",
+      "capabilities": [
+        "cap-3"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 87,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-04",
+      "repository": "fixture/repo-04",
+      "role": "organ",
+      "organ": "organ-4",
+      "capabilities": [
+        "cap-4"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 86,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-05",
+      "repository": "fixture/repo-05",
+      "role": "organ",
+      "organ": "organ-5",
+      "capabilities": [
+        "cap-5"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 85,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-06",
+      "repository": "fixture/repo-06",
+      "role": "organ",
+      "organ": "organ-6",
+      "capabilities": [
+        "cap-6"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 84,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-07",
+      "repository": "fixture/repo-07",
+      "role": "organ",
+      "organ": "organ-7",
+      "capabilities": [
+        "cap-7"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 83,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-08",
+      "repository": "fixture/repo-08",
+      "role": "organ",
+      "organ": "organ-8",
+      "capabilities": [
+        "cap-8"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 82,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-09",
+      "repository": "fixture/repo-09",
+      "role": "organ",
+      "organ": "organ-9",
+      "capabilities": [
+        "cap-9"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 81,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-10",
+      "repository": "fixture/repo-10",
+      "role": "organ",
+      "organ": "organ-10",
+      "capabilities": [
+        "cap-10"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 80,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-11",
+      "repository": "fixture/repo-11",
+      "role": "organ",
+      "organ": "organ-11",
+      "capabilities": [
+        "cap-11"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 79,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-12",
+      "repository": "fixture/repo-12",
+      "role": "organ",
+      "organ": "organ-12",
+      "capabilities": [
+        "cap-12"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 78,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-13",
+      "repository": "fixture/repo-13",
+      "role": "organ",
+      "organ": "organ-13",
+      "capabilities": [
+        "cap-13"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 77,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-14",
+      "repository": "fixture/repo-14",
+      "role": "organ",
+      "organ": "organ-14",
+      "capabilities": [
+        "cap-14"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 76,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-15",
+      "repository": "fixture/repo-15",
+      "role": "organ",
+      "organ": "organ-15",
+      "capabilities": [
+        "cap-15"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 75,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-16",
+      "repository": "fixture/repo-16",
+      "role": "organ",
+      "organ": "organ-16",
+      "capabilities": [
+        "cap-16"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 74,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-17",
+      "repository": "fixture/repo-17",
+      "role": "organ",
+      "organ": "organ-17",
+      "capabilities": [
+        "cap-17"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 73,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-18",
+      "repository": "fixture/repo-18",
+      "role": "organ",
+      "organ": "organ-18",
+      "capabilities": [
+        "cap-18"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 72,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-19",
+      "repository": "fixture/repo-19",
+      "role": "organ",
+      "organ": "organ-19",
+      "capabilities": [
+        "cap-19"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 71,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-20",
+      "repository": "fixture/repo-20",
+      "role": "organ",
+      "organ": "organ-20",
+      "capabilities": [
+        "cap-20"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 70,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-21",
+      "repository": "fixture/repo-21",
+      "role": "organ",
+      "organ": "organ-21",
+      "capabilities": [
+        "cap-21"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 69,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-22",
+      "repository": "fixture/repo-22",
+      "role": "organ",
+      "organ": "organ-22",
+      "capabilities": [
+        "cap-22"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 68,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-23",
+      "repository": "fixture/repo-23",
+      "role": "organ",
+      "organ": "organ-23",
+      "capabilities": [
+        "cap-23"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 67,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-24",
+      "repository": "fixture/repo-24",
+      "role": "organ",
+      "organ": "organ-24",
+      "capabilities": [
+        "cap-24"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 66,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-25",
+      "repository": "fixture/repo-25",
+      "role": "organ",
+      "organ": "organ-25",
+      "capabilities": [
+        "cap-25"
+      ],
+      "lifecycle": "active",
+      "trust": "owned",
+      "priority": 65,
+      "default_branch": "main"
+    },
+    {
+      "name": "organ-26",
+      "repository": "fixture/repo-26",
+      "role": "organ",
+      "organ": "organ-26",
+      "capabilities": [
+        "cap-26"
+      ],
+      "lifecycle": "legacy",
+      "trust": "owned",
+      "priority": 64,
+      "default_branch": "main"
+    }
+  ]
+}

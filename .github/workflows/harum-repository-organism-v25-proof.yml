@@ -1,0 +1,22 @@
+name: Repository Organism v25 Public Proof
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tools/harum-repository-organism-v25-proof/**"
+      - ".github/workflows/harum-repository-organism-v25-proof.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Execute exact generic repository-organism primitives
+        working-directory: tools/harum-repository-organism-v25-proof
+        run: python -m unittest test_proof -v
