@@ -2,19 +2,19 @@
   "last_by_topic": {
     "organism.cycle.started": {
       "correlation_id": null,
-      "id": "778c59bb5c663b1b918f72d92231221d190aa2428da5a2e6c47dcd8f5bf31853",
+      "id": "5d5b07d8c8ec445d5935e65b776fac3da0d02087d1554fae65a51654047d08be",
       "payload": {
         "version": "v2"
       },
       "source": "cycle_v2",
       "topic": "organism.cycle.started",
-      "ts": 1790270111
+      "ts": 1790285627
     },
     "organism.cycle.completed": {
       "correlation_id": null,
-      "id": "9ab58cb4281990ad79bfee7ba4d123adb44d0061a07fd222f96a5da120349938",
+      "id": "c3fcf42aa1397ce05ceccf38d42ec7f63eee41c526445a88b1045641debaf15d",
       "payload": {
-        "cycle_event": "778c59bb5c663b1b918f72d92231221d190aa2428da5a2e6c47dcd8f5bf31853",
+        "cycle_event": "5d5b07d8c8ec445d5935e65b776fac3da0d02087d1554fae65a51654047d08be",
         "health": "healthy",
         "proposal_count": 0,
         "redundancy_score": 0.5,
@@ -22,8 +22,8 @@
       },
       "source": "cycle_v2",
       "topic": "organism.cycle.completed",
-      "ts": 1790270111
+      "ts": 1790285627
     }
   },
-  "event_count": 52
+  "event_count": 54
 }
