@@ -1,13 +1,8 @@
 name: HARUM Cortex Local Smoke
 
+# PAUSED 2026-09-27: no automatic cortex smoke while Harumverso is the sole focus.
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/harum-cortex-smoke.yml'
   workflow_dispatch:
-  schedule:
-    - cron: '37 5 * * 1,4'
 
 permissions:
   contents: write
