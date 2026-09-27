@@ -2,9 +2,8 @@ name: Auto Lock Stale Discussions
 # lock discussions that have not been updated in 30 days,
 # starting with oldest, and running once per day
 
+# PAUSED 2026-09-27: upstream maintenance is irrelevant while ai23 is a Harumverso toolbox.
 on:
-  schedule:
-    - cron: '45 * * * *'
   workflow_dispatch:
 
 permissions:
