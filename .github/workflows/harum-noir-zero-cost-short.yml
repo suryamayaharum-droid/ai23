@@ -1,5 +1,6 @@
 name: Harum Noir — Zero Cost Short
 
+# PAUSED 2026-09-27: automatic trigger removed; manual renderer preserved.
 on:
   workflow_dispatch:
     inputs:
@@ -13,10 +14,6 @@ on:
         description: "Output base name"
         required: true
         default: "HARUM_NOIR_DISCOVERY"
-  push:
-    paths:
-      - "examples/harum-noir-zero-cost/TRIGGER.md"
-
 jobs:
   render:
     runs-on: ubuntu-latest
