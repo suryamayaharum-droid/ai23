@@ -1,9 +1,7 @@
 name: HARUM — Queue Publisher
 
+# PAUSED 2026-09-27: publication can only be started manually during Harumverso migration.
 on:
-  push:
-    paths:
-      - "state/distribution/requests/*.json"
   workflow_dispatch:
     inputs:
       request_path:
