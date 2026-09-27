@@ -1,13 +1,9 @@
 name: HARUM Resource Fabric v2
 
+# PAUSED 2026-09-27: Harumverso is the only active project focus.
+# Kept available for explicit manual recovery only.
 on:
-  schedule:
-    - cron: '41 */6 * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/harum-resource-fabric-v2.yml'
 
 permissions:
   contents: write
