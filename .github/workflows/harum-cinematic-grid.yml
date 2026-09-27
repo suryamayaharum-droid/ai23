@@ -1,10 +1,7 @@
 name: Harum Cinematic Grid integration test
+# PAUSED 2026-09-27: manual-only; tool remains available as Harumverso media infrastructure.
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'tools/harum-cinematic-grid/**'
-      - '.github/workflows/harum-cinematic-grid.yml'
 
 jobs:
   render-test:
