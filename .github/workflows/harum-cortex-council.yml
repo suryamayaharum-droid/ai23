@@ -1,9 +1,8 @@
 name: HARUM Cortex Council
 
+# PAUSED 2026-09-27: retained for manual archival/recovery only.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '11 6 * * 0,3'
 
 permissions:
   contents: write
