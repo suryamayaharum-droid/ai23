@@ -1,0 +1,1255 @@
+{
+  "version": "7.0",
+  "truth": "Functional software workers; not independent conscious agents.",
+  "agent_count": 96,
+  "swarms": [
+    {
+      "id": "executive",
+      "lead": "president",
+      "agents": [
+        {
+          "id": "executive.president",
+          "role": "president",
+          "capabilities": [
+            "president",
+            "executive",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "executive.chief_of_staff",
+          "role": "chief_of_staff",
+          "capabilities": [
+            "chief_of_staff",
+            "executive",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "executive.priority_router",
+          "role": "priority_router",
+          "capabilities": [
+            "priority_router",
+            "executive",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "executive.policy_guard",
+          "role": "policy_guard",
+          "capabilities": [
+            "policy_guard",
+            "executive",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "executive.resource_allocator",
+          "role": "resource_allocator",
+          "capabilities": [
+            "resource_allocator",
+            "executive",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "executive.mission_closer",
+          "role": "mission_closer",
+          "capabilities": [
+            "mission_closer",
+            "executive",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "lead": "research_lead",
+      "agents": [
+        {
+          "id": "research.research_lead",
+          "role": "research_lead",
+          "capabilities": [
+            "research_lead",
+            "research",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "research.web_radar",
+          "role": "web_radar",
+          "capabilities": [
+            "web_radar",
+            "research",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "research.repo_scout",
+          "role": "repo_scout",
+          "capabilities": [
+            "repo_scout",
+            "research",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "research.tech_mapper",
+          "role": "tech_mapper",
+          "capabilities": [
+            "tech_mapper",
+            "research",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "research.license_analyst",
+          "role": "license_analyst",
+          "capabilities": [
+            "license_analyst",
+            "research",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "research.research_synthesizer",
+          "role": "research_synthesizer",
+          "capabilities": [
+            "research_synthesizer",
+            "research",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "memory",
+      "lead": "memory_lead",
+      "agents": [
+        {
+          "id": "memory.memory_lead",
+          "role": "memory_lead",
+          "capabilities": [
+            "memory_lead",
+            "memory",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "memory.context_indexer",
+          "role": "context_indexer",
+          "capabilities": [
+            "context_indexer",
+            "memory",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "memory.artifact_cataloger",
+          "role": "artifact_cataloger",
+          "capabilities": [
+            "artifact_cataloger",
+            "memory",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "memory.decision_log",
+          "role": "decision_log",
+          "capabilities": [
+            "decision_log",
+            "memory",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "memory.continuity_keeper",
+          "role": "continuity_keeper",
+          "capabilities": [
+            "continuity_keeper",
+            "memory",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "memory.retrieval_planner",
+          "role": "retrieval_planner",
+          "capabilities": [
+            "retrieval_planner",
+            "memory",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "lead": "brand_lead",
+      "agents": [
+        {
+          "id": "brand.brand_lead",
+          "role": "brand_lead",
+          "capabilities": [
+            "brand_lead",
+            "brand",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "brand.visual_identity_guard",
+          "role": "visual_identity_guard",
+          "capabilities": [
+            "visual_identity_guard",
+            "brand",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "brand.semiotics",
+          "role": "semiotics",
+          "capabilities": [
+            "semiotics",
+            "brand",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "brand.copy_tone_guard",
+          "role": "copy_tone_guard",
+          "capabilities": [
+            "copy_tone_guard",
+            "brand",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "brand.asset_curator",
+          "role": "asset_curator",
+          "capabilities": [
+            "asset_curator",
+            "brand",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "brand.brand_qc",
+          "role": "brand_qc",
+          "capabilities": [
+            "brand_qc",
+            "brand",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "narrative",
+      "lead": "narrative_lead",
+      "agents": [
+        {
+          "id": "narrative.narrative_lead",
+          "role": "narrative_lead",
+          "capabilities": [
+            "narrative_lead",
+            "narrative",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "narrative.story_architect",
+          "role": "story_architect",
+          "capabilities": [
+            "story_architect",
+            "narrative",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "narrative.noir_loop",
+          "role": "noir_loop",
+          "capabilities": [
+            "noir_loop",
+            "narrative",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "narrative.open_loop_keeper",
+          "role": "open_loop_keeper",
+          "capabilities": [
+            "open_loop_keeper",
+            "narrative",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "narrative.character_guard",
+          "role": "character_guard",
+          "capabilities": [
+            "character_guard",
+            "narrative",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "narrative.episode_planner",
+          "role": "episode_planner",
+          "capabilities": [
+            "episode_planner",
+            "narrative",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "image",
+      "lead": "image_lead",
+      "agents": [
+        {
+          "id": "image.image_lead",
+          "role": "image_lead",
+          "capabilities": [
+            "image_lead",
+            "image",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "image.prompt_compiler",
+          "role": "prompt_compiler",
+          "capabilities": [
+            "prompt_compiler",
+            "image",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "image.reference_guard",
+          "role": "reference_guard",
+          "capabilities": [
+            "reference_guard",
+            "image",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "image.storyboarder",
+          "role": "storyboarder",
+          "capabilities": [
+            "storyboarder",
+            "image",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "image.image_qc",
+          "role": "image_qc",
+          "capabilities": [
+            "image_qc",
+            "image",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "image.variant_manager",
+          "role": "variant_manager",
+          "capabilities": [
+            "variant_manager",
+            "image",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        }
+      ]
+    },
+    {
+      "id": "cinematic",
+      "lead": "cinematic_lead",
+      "agents": [
+        {
+          "id": "cinematic.cinematic_lead",
+          "role": "cinematic_lead",
+          "capabilities": [
+            "cinematic_lead",
+            "cinematic",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "cinematic.shot_planner",
+          "role": "shot_planner",
+          "capabilities": [
+            "shot_planner",
+            "cinematic",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "cinematic.camera_director",
+          "role": "camera_director",
+          "capabilities": [
+            "camera_director",
+            "cinematic",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "cinematic.render_router",
+          "role": "render_router",
+          "capabilities": [
+            "render_router",
+            "cinematic",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "cinematic.editor",
+          "role": "editor",
+          "capabilities": [
+            "editor",
+            "cinematic",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "cinematic.cinematic_qc",
+          "role": "cinematic_qc",
+          "capabilities": [
+            "cinematic_qc",
+            "cinematic",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "lead": "audio_lead",
+      "agents": [
+        {
+          "id": "audio.audio_lead",
+          "role": "audio_lead",
+          "capabilities": [
+            "audio_lead",
+            "audio",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "audio.voice_guard",
+          "role": "voice_guard",
+          "capabilities": [
+            "voice_guard",
+            "audio",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "audio.music_director",
+          "role": "music_director",
+          "capabilities": [
+            "music_director",
+            "audio",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "audio.foley",
+          "role": "foley",
+          "capabilities": [
+            "foley",
+            "audio",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "audio.mix_engineer",
+          "role": "mix_engineer",
+          "capabilities": [
+            "mix_engineer",
+            "audio",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "audio.audio_qc",
+          "role": "audio_qc",
+          "capabilities": [
+            "audio_qc",
+            "audio",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "publishing",
+      "lead": "publishing_lead",
+      "agents": [
+        {
+          "id": "publishing.publishing_lead",
+          "role": "publishing_lead",
+          "capabilities": [
+            "publishing_lead",
+            "publishing",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "publishing.instagram_ops",
+          "role": "instagram_ops",
+          "capabilities": [
+            "instagram_ops",
+            "publishing",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "publishing.youtube_ops",
+          "role": "youtube_ops",
+          "capabilities": [
+            "youtube_ops",
+            "publishing",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "publishing.metadata_writer",
+          "role": "metadata_writer",
+          "capabilities": [
+            "metadata_writer",
+            "publishing",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "publishing.thumbnail_ops",
+          "role": "thumbnail_ops",
+          "capabilities": [
+            "thumbnail_ops",
+            "publishing",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "publishing.publish_qc",
+          "role": "publish_qc",
+          "capabilities": [
+            "publish_qc",
+            "publishing",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        }
+      ]
+    },
+    {
+      "id": "growth",
+      "lead": "growth_lead",
+      "agents": [
+        {
+          "id": "growth.growth_lead",
+          "role": "growth_lead",
+          "capabilities": [
+            "growth_lead",
+            "growth",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "growth.seo",
+          "role": "seo",
+          "capabilities": [
+            "seo",
+            "growth",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "growth.analytics",
+          "role": "analytics",
+          "capabilities": [
+            "analytics",
+            "growth",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "growth.experiments",
+          "role": "experiments",
+          "capabilities": [
+            "experiments",
+            "growth",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "growth.retention_analyst",
+          "role": "retention_analyst",
+          "capabilities": [
+            "retention_analyst",
+            "growth",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "growth.learning_loop",
+          "role": "learning_loop",
+          "capabilities": [
+            "learning_loop",
+            "growth",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "commerce",
+      "lead": "commerce_lead",
+      "agents": [
+        {
+          "id": "commerce.commerce_lead",
+          "role": "commerce_lead",
+          "capabilities": [
+            "commerce_lead",
+            "commerce",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "commerce.offer_architect",
+          "role": "offer_architect",
+          "capabilities": [
+            "offer_architect",
+            "commerce",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "commerce.checkout_guard",
+          "role": "checkout_guard",
+          "capabilities": [
+            "checkout_guard",
+            "commerce",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "commerce.product_mapper",
+          "role": "product_mapper",
+          "capabilities": [
+            "product_mapper",
+            "commerce",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "commerce.pricing_ops",
+          "role": "pricing_ops",
+          "capabilities": [
+            "pricing_ops",
+            "commerce",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "commerce.commerce_qc",
+          "role": "commerce_qc",
+          "capabilities": [
+            "commerce_qc",
+            "commerce",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "web",
+      "lead": "web_lead",
+      "agents": [
+        {
+          "id": "web.web_lead",
+          "role": "web_lead",
+          "capabilities": [
+            "web_lead",
+            "web",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "web.landing_pages",
+          "role": "landing_pages",
+          "capabilities": [
+            "landing_pages",
+            "web",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "web.hotmart_ops",
+          "role": "hotmart_ops",
+          "capabilities": [
+            "hotmart_ops",
+            "web",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "web.vercel_ops",
+          "role": "vercel_ops",
+          "capabilities": [
+            "vercel_ops",
+            "web",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "web.ux_mobile",
+          "role": "ux_mobile",
+          "capabilities": [
+            "ux_mobile",
+            "web",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "web.web_qc",
+          "role": "web_qc",
+          "capabilities": [
+            "web_qc",
+            "web",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        }
+      ]
+    },
+    {
+      "id": "crm",
+      "lead": "crm_lead",
+      "agents": [
+        {
+          "id": "crm.crm_lead",
+          "role": "crm_lead",
+          "capabilities": [
+            "crm_lead",
+            "crm",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "crm.lead_router",
+          "role": "lead_router",
+          "capabilities": [
+            "lead_router",
+            "crm",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "crm.followup",
+          "role": "followup",
+          "capabilities": [
+            "followup",
+            "crm",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "crm.client_comms",
+          "role": "client_comms",
+          "capabilities": [
+            "client_comms",
+            "crm",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "crm.booking_ops",
+          "role": "booking_ops",
+          "capabilities": [
+            "booking_ops",
+            "crm",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        },
+        {
+          "id": "crm.crm_qc",
+          "role": "crm_qc",
+          "capabilities": [
+            "crm_qc",
+            "crm",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "Connector Dispatch",
+          "autonomy": "Despacho supervisionado"
+        }
+      ]
+    },
+    {
+      "id": "automation",
+      "lead": "automation_lead",
+      "agents": [
+        {
+          "id": "automation.automation_lead",
+          "role": "automation_lead",
+          "capabilities": [
+            "automation_lead",
+            "automation",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "automation.airtable_ops",
+          "role": "airtable_ops",
+          "capabilities": [
+            "airtable_ops",
+            "automation",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "automation.workflow_builder",
+          "role": "workflow_builder",
+          "capabilities": [
+            "workflow_builder",
+            "automation",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "automation.event_bus",
+          "role": "event_bus",
+          "capabilities": [
+            "event_bus",
+            "automation",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "automation.scheduler",
+          "role": "scheduler",
+          "capabilities": [
+            "scheduler",
+            "automation",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "automation.automation_qc",
+          "role": "automation_qc",
+          "capabilities": [
+            "automation_qc",
+            "automation",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "lead": "infra_lead",
+      "agents": [
+        {
+          "id": "infrastructure.infra_lead",
+          "role": "infra_lead",
+          "capabilities": [
+            "infra_lead",
+            "infrastructure",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "infrastructure.github_ops",
+          "role": "github_ops",
+          "capabilities": [
+            "github_ops",
+            "infrastructure",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "infrastructure.ci_guard",
+          "role": "ci_guard",
+          "capabilities": [
+            "ci_guard",
+            "infrastructure",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "infrastructure.runtime_ops",
+          "role": "runtime_ops",
+          "capabilities": [
+            "runtime_ops",
+            "infrastructure",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "infrastructure.compute_broker",
+          "role": "compute_broker",
+          "capabilities": [
+            "compute_broker",
+            "infrastructure",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "infrastructure.infra_qc",
+          "role": "infra_qc",
+          "capabilities": [
+            "infra_qc",
+            "infrastructure",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "lead": "security_lead",
+      "agents": [
+        {
+          "id": "security.security_lead",
+          "role": "security_lead",
+          "capabilities": [
+            "security_lead",
+            "security",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "security.secret_scanner",
+          "role": "secret_scanner",
+          "capabilities": [
+            "secret_scanner",
+            "security",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "security.permissions_guard",
+          "role": "permissions_guard",
+          "capabilities": [
+            "permissions_guard",
+            "security",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "security.license_gate",
+          "role": "license_gate",
+          "capabilities": [
+            "license_gate",
+            "security",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "security.integrity_guard",
+          "role": "integrity_guard",
+          "capabilities": [
+            "integrity_guard",
+            "security",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        },
+        {
+          "id": "security.security_qc",
+          "role": "security_qc",
+          "capabilities": [
+            "security_qc",
+            "security",
+            "report",
+            "message_bus"
+          ],
+          "runtime": "ChatGPT CPU Runtime",
+          "autonomy": "Local automática"
+        }
+      ]
+    }
+  ]
+}
