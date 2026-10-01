@@ -1,0 +1,110 @@
+{
+  "version": "5.1",
+  "plugins": [
+    {
+      "id": "diffsynth_studio",
+      "kind": "runtime",
+      "license": "Apache-2.0",
+      "capabilities": [
+        "vram_management",
+        "vae_tiling",
+        "disk_offload",
+        "tea_cache",
+        "multi_gpu_xfuser"
+      ],
+      "min_vram_gb": 8
+    },
+    {
+      "id": "cogvideox_2b",
+      "kind": "video_model",
+      "license": "Apache-2.0",
+      "capabilities": [
+        "text_to_video"
+      ],
+      "min_vram_gb": 3.6,
+      "auto_public_commercial": true
+    },
+    {
+      "id": "mochi_1",
+      "kind": "video_model",
+      "license": "Apache-2.0",
+      "capabilities": [
+        "text_to_video",
+        "lora"
+      ],
+      "min_vram_gb": null,
+      "auto_public_commercial": true
+    },
+    {
+      "id": "teacache",
+      "kind": "accelerator",
+      "license": "Apache-2.0-majority",
+      "capabilities": [
+        "diffusion_cache"
+      ],
+      "min_vram_gb": 0
+    },
+    {
+      "id": "sageattention",
+      "kind": "accelerator",
+      "license": "Apache-2.0",
+      "capabilities": [
+        "attention_acceleration"
+      ],
+      "min_vram_gb": 0
+    },
+    {
+      "id": "torchao",
+      "kind": "accelerator",
+      "license": "BSD-3-Clause",
+      "capabilities": [
+        "int4",
+        "int8",
+        "float8",
+        "quantization"
+      ],
+      "min_vram_gb": 0
+    },
+    {
+      "id": "flash_attention",
+      "kind": "accelerator",
+      "license": "BSD-3-Clause",
+      "capabilities": [
+        "attention_acceleration"
+      ],
+      "min_vram_gb": 0
+    },
+    {
+      "id": "whisper_cpp",
+      "kind": "audio_tool",
+      "license": "MIT",
+      "capabilities": [
+        "transcription",
+        "timestamps",
+        "cpu_asr"
+      ],
+      "min_vram_gb": 0
+    },
+    {
+      "id": "vapoursynth",
+      "kind": "post_tool",
+      "license": "LGPL-2.1",
+      "capabilities": [
+        "frame_server",
+        "filter_graph"
+      ],
+      "min_vram_gb": 0
+    },
+    {
+      "id": "moviepy",
+      "kind": "post_tool",
+      "license": "MIT",
+      "capabilities": [
+        "python_compositing",
+        "titles",
+        "audio_edit"
+      ],
+      "min_vram_gb": 0
+    }
+  ]
+}

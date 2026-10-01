@@ -1,0 +1,45 @@
+{
+  "version": "5.0",
+  "updated": "2026-09-19",
+  "providers": [
+    {
+      "id": "local_cpu",
+      "cost_extra_usd": 0,
+      "gpu_count": 0,
+      "vram_per_gpu_gb": 0,
+      "mode": "batch"
+    },
+    {
+      "id": "kaggle_t4x2",
+      "cost_extra_usd": 0,
+      "gpu_count": 2,
+      "vram_per_gpu_gb": 16,
+      "mode": "interactive_notebook",
+      "policy": "one authorized session; respect weekly quota"
+    },
+    {
+      "id": "hf_zerogpu",
+      "cost_extra_usd": 0,
+      "gpu_count": 1,
+      "vram_per_gpu_gb": 48,
+      "mode": "burst",
+      "policy": "respect daily quota and queues"
+    },
+    {
+      "id": "colab_free",
+      "cost_extra_usd": 0,
+      "gpu_count": 1,
+      "vram_per_gpu_gb": 0,
+      "mode": "interactive_notebook",
+      "policy": "not a distributed worker"
+    },
+    {
+      "id": "github_actions_public",
+      "cost_extra_usd": 0,
+      "gpu_count": 0,
+      "vram_per_gpu_gb": 0,
+      "mode": "ci_cpu",
+      "policy": "CI/QC/post only"
+    }
+  ]
+}

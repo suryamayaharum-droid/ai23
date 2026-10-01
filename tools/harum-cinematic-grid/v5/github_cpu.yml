@@ -1,0 +1,14 @@
+name: Harum v5 CPU CI
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/harum-cinematic-grid/v5/**'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: python -m compileall -q tools/harum-cinematic-grid/v5
+      - run: python tools/harum-cinematic-grid/v5/harum_fusion.py image_generate --provider kaggle_t4x2

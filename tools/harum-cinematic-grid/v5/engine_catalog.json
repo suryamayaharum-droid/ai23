@@ -1,0 +1,147 @@
+{
+  "version": "5.0",
+  "updated": "2026-09-19",
+  "engines": [
+    {
+      "id": "ffmpeg",
+      "capabilities": [
+        "still_motion",
+        "edit",
+        "compile",
+        "grade",
+        "subtitles",
+        "qc"
+      ],
+      "vram_gb": 0,
+      "cost_extra_usd": 0,
+      "license": "tool-permissive",
+      "auto_public_commercial": true
+    },
+    {
+      "id": "flux2_klein_4b",
+      "capabilities": [
+        "text_to_image",
+        "image_edit",
+        "multi_reference_image",
+        "storyboard_frame"
+      ],
+      "vram_gb": 8,
+      "cost_extra_usd": 0,
+      "license": "Apache-2.0",
+      "auto_public_commercial": true
+    },
+    {
+      "id": "qwen_image_edit_2511",
+      "capabilities": [
+        "text_to_image",
+        "image_edit",
+        "portrait_edit",
+        "multi_reference_image",
+        "storyboard_frame"
+      ],
+      "vram_gb": 16,
+      "cost_extra_usd": 0,
+      "license": "Apache-2.0",
+      "auto_public_commercial": true
+    },
+    {
+      "id": "wan22",
+      "capabilities": [
+        "text_to_video",
+        "image_to_video",
+        "speech_to_video",
+        "animate"
+      ],
+      "vram_gb": 8,
+      "cost_extra_usd": 0,
+      "license": "Apache-2.0",
+      "auto_public_commercial": true
+    },
+    {
+      "id": "lightx2v",
+      "capabilities": [
+        "quantization",
+        "offload",
+        "cache",
+        "distillation",
+        "multi_gpu"
+      ],
+      "vram_gb": 8,
+      "cost_extra_usd": 0,
+      "license": "tool-layer",
+      "auto_public_commercial": true
+    },
+    {
+      "id": "ace_step_15",
+      "capabilities": [
+        "music",
+        "instrumental",
+        "song"
+      ],
+      "vram_gb": 4,
+      "cost_extra_usd": 0,
+      "license": "MIT",
+      "auto_public_commercial": true
+    },
+    {
+      "id": "sam2",
+      "capabilities": [
+        "segmentation",
+        "video_mask_tracking"
+      ],
+      "vram_gb": 6,
+      "cost_extra_usd": 0,
+      "license": "Apache-2.0",
+      "auto_public_commercial": true
+    },
+    {
+      "id": "hunyuan15",
+      "capabilities": [
+        "text_to_video",
+        "image_to_video",
+        "video_super_resolution"
+      ],
+      "vram_gb": 14,
+      "cost_extra_usd": 0,
+      "license": "community-review",
+      "auto_public_commercial": false
+    },
+    {
+      "id": "ltx2",
+      "capabilities": [
+        "text_to_video",
+        "image_to_video",
+        "native_audio_video",
+        "multi_keyframe",
+        "video_extend"
+      ],
+      "vram_gb": 16,
+      "cost_extra_usd": 0,
+      "license": "community-conditional",
+      "auto_public_commercial": false
+    },
+    {
+      "id": "skyreels_v3",
+      "capabilities": [
+        "multi_reference_video",
+        "audio_guided_video",
+        "video_to_video"
+      ],
+      "vram_gb": 24,
+      "cost_extra_usd": 0,
+      "license": "review-checkpoint",
+      "auto_public_commercial": false
+    },
+    {
+      "id": "cotracker3",
+      "capabilities": [
+        "point_tracking",
+        "motion_tracking"
+      ],
+      "vram_gb": 6,
+      "cost_extra_usd": 0,
+      "license": "CC-BY-NC-majority",
+      "auto_public_commercial": false
+    }
+  ]
+}
